@@ -65,14 +65,14 @@ public class BinarySearch {
     }
 
     public static void main(String[] args){
-        final int[] binarySrcarray = {1, 2, 5, 4, 3, 7, 7, 6, 8, 7, 8, 9, 10};
+        final int[] binaryArray = {1, 2, 5, 4, 3, 7, 7, 6, 8, 7, 8, 9, 10};
         final int binaryKey = 8;    // Read key, print if not in srcArray.
 
         print(new int[]{binaryKey}, "The value of the key: ");
 
-        Arrays.sort(binarySrcarray);
-        print(binarySrcarray, "a sorted array of int values:");
-        print(new int[]{rankOne(binaryKey ,binarySrcarray)}, "The value of the rank: ");
-        print(new int[]{rankTwo(binaryKey ,binarySrcarray)}, "The value of the rank: ");
+        Arrays.sort(binaryArray);
+        print(binaryArray, "a sorted array of int values:");
+        print(new int[]{rankOne(binaryKey ,binaryArray)}, "The value of the rank: ");
+        print(new int[]{rankTwo(binaryKey ,binaryArray)}, "The value of the rank: ");
     }
 }
