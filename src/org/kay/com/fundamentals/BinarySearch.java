@@ -27,6 +27,7 @@ import static java.lang.System.out;
  * @version 1.0
  */
 public class BinarySearch {
+
     private static int rankOne(int key, int[] srcArray){
         // Array must be sorted.
         int low = 0;
