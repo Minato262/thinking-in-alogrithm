@@ -21,7 +21,7 @@ package org.kay.com.fundamentals;
  * @author kay
  * @version 1.0
  */
-public class SortSearch {
+public class BubbleSort {
 
     public static void main(String[] args){
 
