@@ -13,17 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.fundamentals;
 
 /**
- *
- *
- * @author kay
- * @version 1.0
+ * Sort include:
+ *    1.Basic Programming Model:BubbleSort
+ *    2.Data Abstraction:
+ *    3.Bags,Queues,and Stacks:
+ *    4.Analysis of Algorithms:
+ *    5.Case Study:Union-Find:
  */
-public class BubbleSort {
-
-    public static void main(String[] args){
-
-    }
-}
+package org.kay.com.sort;
