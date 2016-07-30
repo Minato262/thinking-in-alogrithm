@@ -26,6 +26,7 @@ public class SelectSort {
     private static void sort(int[] data){
         int flag;
         int tmp;
+
         for(int i = 0 ; i < data.length - 1 ; i++){
             flag = i;
             for(int j = i + 1 ; j <= data.length - 1 ; j++){
@@ -37,6 +38,7 @@ public class SelectSort {
             data[i] = data[flag];
             data[flag] = tmp;
         }
+
         display(data);
     }
 
