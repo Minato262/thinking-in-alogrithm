@@ -24,14 +24,16 @@ package org.kay.com.sort;
 public class SelectSort {
 
     private static void sort(int[] data){
+        int flag;
+        int tmp;
         for(int i = 0 ; i < data.length - 1 ; i++){
-            int flag = i;
+            flag = i;
             for(int j = i + 1 ; j <= data.length - 1 ; j++){
                 if(data[j] < data[flag]){
                     flag = j;
                 }
             }
-            int tmp = data[i];
+            tmp = data[i];
             data[i] = data[flag];
             data[flag] = tmp;
         }

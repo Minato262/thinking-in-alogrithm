@@ -24,10 +24,11 @@ package org.kay.com.sort;
 public class BubbleSort {
 
     private static void sort(int[] data){
+        int tmp;
         for(int p = data.length - 1 ; p > 0 ; p--){
             for(int i = 0 ; i < p ; i++){
                 if(data[i] > data[i + 1] ){
-                    int tmp = data[i];
+                    tmp = data[i];
                     data[i] = data[i + 1];
                     data[i+1] = tmp;
                 }
