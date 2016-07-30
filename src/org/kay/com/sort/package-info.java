@@ -16,10 +16,7 @@
 
 /**
  * Sort include:
- *    1.Basic Programming Model:BubbleSort
- *    2.Data Abstraction:
- *    3.Bags,Queues,and Stacks:
- *    4.Analysis of Algorithms:
- *    5.Case Study:Union-Find:
+ *    1.Bubble Sort.
+ *    2.Select Sort.
  */
 package org.kay.com.sort;
