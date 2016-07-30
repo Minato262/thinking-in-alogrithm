@@ -16,7 +16,7 @@
 package org.kay.com.sort;
 
 /**
- * <p></p>
+ * <p>Bubble Sort</p>
  *
  * @author kay
  * @version 1.0
