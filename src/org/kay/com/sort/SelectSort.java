@@ -22,6 +22,7 @@ package org.kay.com.sort;
  * @version 1.0
  */
 public class SelectSort {
+
     private static void sort(int[] data){
         for(int i = 0 ; i < data.length - 1 ; i++){
             int flag = i;
