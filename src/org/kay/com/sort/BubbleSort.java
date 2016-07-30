@@ -22,7 +22,7 @@ package org.kay.com.sort;
  * @version 1.0
  */
 public class BubbleSort {
-    private void sort(int[] data){
+    private static void sort(int[] data){
         for(int p = data.length - 1 ; p > 0 ; p--){
             for(int i = 0 ; i < p ; i++){
                 if(data[i] > data[i + 1] ){
@@ -32,7 +32,7 @@ public class BubbleSort {
                 }
             }
         }
-        this.display(data);
+        display(data);
     }
 
     private static void display(int[] data){
@@ -43,7 +43,6 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         final int[] data = {6, 5, 4, 3, 2, 1};
-        BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.sort(data);
+        sort(data);
     }
 }
