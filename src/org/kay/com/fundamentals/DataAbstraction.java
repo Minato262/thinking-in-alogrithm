@@ -24,6 +24,5 @@ package org.kay.com.fundamentals;
 public class DataAbstraction {
 
     public static void main(String[] args){
-
     }
 }
