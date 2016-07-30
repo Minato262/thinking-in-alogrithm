@@ -26,9 +26,9 @@ public class BubbleSort {
     private static void sort(int[] data){
         for(int p = data.length - 1 ; p > 0 ; p--){
             for(int i = 0 ; i < p ; i++){
-                if(data[i] > data[i+1] ){
+                if(data[i] > data[i + 1] ){
                     int tmp = data[i];
-                    data[i] = data[i+1];
+                    data[i] = data[i + 1];
                     data[i+1] = tmp;
                 }
             }
