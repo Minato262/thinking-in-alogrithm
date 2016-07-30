@@ -23,7 +23,7 @@ package org.kay.com.sort;
  */
 public class BubbleSort {
 
-    private void sort(int[] data){
+    private static void sort(int[] data){
         for(int p = data.length - 1 ; p > 0 ; p--){
             for(int i = 0 ; i < p ; i++){
                 if(data[i] > data[i+1] ){
@@ -33,18 +33,17 @@ public class BubbleSort {
                 }
             }
         }
-        this.display(data);
+        display(data);
     }
 
-    private void display(int[] data){
+    private static void display(int[] data){
         for(int i : data){
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
     }
 
     public static void main(String[] args) {
         int[] data = {6, 5, 4, 3, 2, 1};
-        BubbleSort bs = new BubbleSort();
-        bs.sort(data);
+        sort(data);
     }
 }
