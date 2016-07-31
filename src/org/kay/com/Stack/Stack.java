@@ -1,0 +1,66 @@
+/*
+ * Copyright 2016-2016 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.kay.com.stack;
+
+/**
+ * <p>stack</p>
+ *
+ * @author kay
+ * @version 1.0
+ */
+public class Stack {
+
+    private int top = -1;
+    private Object[] objs = null;
+
+    public Stack(int capacity) throws IllegalArgumentException {
+        if(capacity < 0)
+            throw new IllegalArgumentException("Illegal capacity:" + capacity);
+        objs = new Object[capacity];
+    }
+
+    private void push(Object obj) throws StackOverflowError {
+        if(top == objs.length - 1)
+            throw new StackOverflowError("stack is full!");
+        objs[++top] = obj;
+    }
+
+    private Object pop() throws RuntimeException {
+        if(top == -1)
+            throw new RuntimeException("stack is empty!");
+        return objs[top--];
+    }
+
+    private void dispaly(){
+        System.out.print("bottom -> top: | ");
+        for(int i = 0 ; i <= top ; i++){
+            System.out.print(objs[i]+" | ");
+        }
+        System.out.print("\n");
+    }
+
+    public static void main(String[] args) throws RuntimeException {
+        Stack s = new Stack(2);
+        s.push(1);
+        s.push(2);
+        s.dispaly();
+        System.out.println(s.pop());
+        s.dispaly();
+        s.push(99);
+        s.dispaly();
+        s.push(99);
+    }
+}
