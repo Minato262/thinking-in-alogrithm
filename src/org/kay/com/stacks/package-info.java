@@ -15,8 +15,7 @@
  */
 
 /**
- * Sort include:
- *    1.Bubble Sort.
- *    2.Select Sort.
+ * Stack include:
+ *      1,Stack
  */
-package org.kay.com.sort;
+package org.kay.com.stacks;

@@ -13,30 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.sort;
+package org.kay.com.sorts;
 
 /**
- * <p>Insert Sort</p>
+ * <p>Select Sort</p>
  *
  * @author kay
  * @version 1.0
  */
-public class InsertSort {
+public class SelectSort {
 
     private static void sort(int[] data){
+        int flag;
         int tmp;
-        int insertPoint;
 
-        for(int i = 1 ; i < data.length ; i++){
+        for(int i = 0 ; i < data.length - 1 ; i++){
+            flag = i;
+            for(int j = i + 1 ; j <= data.length - 1 ; j++){
+                if(data[j] < data[flag]){
+                    flag = j;
+                }
+            }
             tmp = data[i];
-            insertPoint = i;
-            while(insertPoint > 0 && data[insertPoint-1] > tmp){
-                data[insertPoint] = data[insertPoint-1];
-                insertPoint -= 1;
-            }
-            if(insertPoint < i){
-                data[insertPoint] = tmp;
-            }
+            data[i] = data[flag];
+            data[flag] = tmp;
         }
 
         display(data);
@@ -49,7 +49,7 @@ public class InsertSort {
     }
 
     public static void main(String[] args) {
-        final int[] data = {1, 2, 3, 6, 5, 4};
+        final int[] data = {6, 5, 4, 3, 2, 1};
         sort(data);
     }
 }
