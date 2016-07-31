@@ -16,26 +16,26 @@
 package org.kay.com.linkeds;
 
 /**
- * <p></p>
+ * <p>Linked List</p>
  *
  * @author kay
  * @version 1.0
  */
 public class LinkedList {
 
-    private class Data{
+    private class Note{
         private Object obj;
-        private Data next = null;
+        private Note next = null;
 
-        Data(Object obj){
+        Note(Object obj){
             this.obj = obj;
         }
     }
 
-    private Data first;
+    private Note first;
 
     public void insertFirst(Object obj){
-        Data data = new Data(obj);
+        Note data = new Note(obj);
         data.next = first;
         first = data;
     }
@@ -45,7 +45,7 @@ public class LinkedList {
             throw new RuntimeException("empty!");
         }
 
-        Data temp = first;
+        Note temp = first;
         first = first.next;
         return temp.obj;
     }
@@ -55,7 +55,7 @@ public class LinkedList {
             throw new RuntimeException("LinkedList is empty!");
         }
 
-        Data cur = first;
+        Note cur = first;
         while(cur != null){
             if(cur.obj.equals(obj)){
                 return cur.obj;
@@ -73,8 +73,8 @@ public class LinkedList {
         if(first.obj.equals(obj)){
             first = first.next;
         }else{
-            Data pre = first;
-            Data cur = first.next;
+            Note pre = first;
+            Note cur = first.next;
             while(cur != null){
                 if(cur.obj.equals(obj)){
                     pre.next = cur.next;
@@ -94,7 +94,7 @@ public class LinkedList {
             System.out.println("empty");
         }
 
-        Data cur = first;
+        Note cur = first;
         while(cur != null){
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
