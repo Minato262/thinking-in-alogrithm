@@ -57,10 +57,13 @@ public class Stack {
         s.push(1);
         s.push(2);
         s.display();
+
         System.out.println(s.pop());
         s.display();
+
         s.push(99);
         s.display();
+
         s.push(99);
     }
 }
