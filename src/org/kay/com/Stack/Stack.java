@@ -16,7 +16,7 @@
 package org.kay.com.stack;
 
 /**
- * <p>stack</p>
+ * <p>Stack</p>
  *
  * @author kay
  * @version 1.0
@@ -26,41 +26,41 @@ public class Stack {
     private int top = -1;
     private Object[] objs = null;
 
-    public Stack(int capacity) throws IllegalArgumentException {
+    public Stack(int capacity) {
         if(capacity < 0)
             throw new IllegalArgumentException("Illegal capacity:" + capacity);
         objs = new Object[capacity];
     }
 
-    private void push(Object obj) throws StackOverflowError {
+    private void push(Object obj) {
         if(top == objs.length - 1)
-            throw new StackOverflowError("stack is full!");
+            throw new StackOverflowError("Stack is full!");
         objs[++top] = obj;
     }
 
-    private Object pop() throws RuntimeException {
+    private Object pop() {
         if(top == -1)
-            throw new RuntimeException("stack is empty!");
+            throw new RuntimeException("Stack is empty!");
         return objs[top--];
     }
 
-    private void dispaly(){
+    private void display(){
         System.out.print("bottom -> top: | ");
         for(int i = 0 ; i <= top ; i++){
-            System.out.print(objs[i]+" | ");
+            System.out.print(objs[i] + " | ");
         }
         System.out.print("\n");
     }
 
-    public static void main(String[] args) throws RuntimeException {
+    public static void main(String[] args) {
         Stack s = new Stack(2);
         s.push(1);
         s.push(2);
-        s.dispaly();
+        s.display();
         System.out.println(s.pop());
-        s.dispaly();
+        s.display();
         s.push(99);
-        s.dispaly();
+        s.display();
         s.push(99);
     }
 }
