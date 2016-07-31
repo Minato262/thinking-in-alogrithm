@@ -35,9 +35,9 @@ public class LinkedList {
     private Note first;
 
     public void insertFirst(Object obj){
-        Note data = new Note(obj);
-        data.next = first;
-        first = data;
+        Note note = new Note(obj);
+        note.next = first;
+        first = note;
     }
 
     public Object deleteFirst() {
