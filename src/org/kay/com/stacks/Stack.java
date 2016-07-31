@@ -24,7 +24,7 @@ package org.kay.com.stacks;
 public class Stack {
 
     private int top = -1;
-    private Object[] objs = null;
+    private Object[] objs;
 
     public Stack(int capacity) {
         if(capacity < 0)
