@@ -53,17 +53,17 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack s = new Stack(2);
-        s.push(1);
-        s.push(2);
-        s.display();
+        Stack stack = new Stack(2);
+        stack.push(1);
+        stack.push(2);
+        stack.display();
 
-        System.out.println(s.pop());
-        s.display();
+        System.out.println(stack.pop());
+        stack.display();
 
-        s.push(99);
-        s.display();
+        stack.push(99);
+        stack.display();
 
-        s.push(99);
+        stack.push(99);
     }
 }
