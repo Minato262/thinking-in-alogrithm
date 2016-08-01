@@ -32,8 +32,10 @@ public class PriorityQueue {
     }
 
     private void push(int toInsert) {
-        if(size == data.length)
+        if(size == data.length){
             throw new RuntimeException("Queue is full!");
+        }
+
         if(size == 0){
             data[0] = toInsert;
         }else{
