@@ -36,20 +36,20 @@ public class FirstLastList {
     private Note last = null;
 
     private void insertFirst(Object obj){
-        Note data = new Note(obj);
-        if(first == null) last = data;
-        data.next = first;
-        first = data;
+        Note note = new Note(obj);
+        if(first == null) last = note;
+        note.next = first;
+        first = note;
     }
 
     private void insertLast(Object obj){
-        Note data = new Note(obj);
+        Note note = new Note(obj);
         if(first == null){
-            first = data;
+            first = note;
         }else{
-            last.next = data;
+            last.next = note;
         }
-        last = data;
+        last = note;
     }
 
     private Object deleteFirst(){
@@ -85,8 +85,9 @@ public class FirstLastList {
     }
 
     private void display(){
-        if(first == null)
+        if(first == null){
             System.out.println("empty");
+        }
 
         Note cur = first;
         while(cur != null){
@@ -97,18 +98,18 @@ public class FirstLastList {
     }
 
     public static void main(String[] args){
-        FirstLastList fll = new FirstLastList();
-        fll.insertFirst(2);
-        fll.insertFirst(1);
-        fll.display();
+        FirstLastList firstLastList = new FirstLastList();
+        firstLastList.insertFirst(2);
+        firstLastList.insertFirst(1);
+        firstLastList.display();
 
-        fll.insertLast(3);
-        fll.display();
+        firstLastList.insertLast(3);
+        firstLastList.display();
 
-        fll.deleteFirst();
-        fll.display();
+        firstLastList.deleteFirst();
+        firstLastList.display();
 
-        fll.deleteLast();
-        fll.display();
+        firstLastList.deleteLast();
+        firstLastList.display();
     }
 }
