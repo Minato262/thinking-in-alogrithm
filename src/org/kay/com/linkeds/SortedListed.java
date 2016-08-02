@@ -43,6 +43,7 @@ public class SortedListed {
             pre = cur;
             cur = cur.next;
         }
+
         if(pre == null)
             first = note;
         else
