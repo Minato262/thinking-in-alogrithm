@@ -35,19 +35,19 @@ public class SortedList {
     private Note first = null;
 
     private void insert(Object obj){
-        Note data = new Note(obj);
+        Note note = new Note(obj);
         Note pre = null;
         Note cur = first;
-        while(cur != null && (Integer.valueOf(data.obj.toString()).intValue() >
+        while(cur != null && (Integer.valueOf(note.obj.toString()).intValue() >
                 Integer.valueOf(cur.obj.toString()).intValue())){
             pre = cur;
             cur = cur.next;
         }
         if(pre == null)
-            first = data;
+            first = note;
         else
-            pre.next = data;
-        data.next = cur;
+            pre.next = note;
+        note.next = cur;
     }
 
     private Object deleteFirst(){
@@ -61,8 +61,10 @@ public class SortedList {
     }
 
     private void display(){
-        if(first == null)
+        if(first == null) {
             System.out.println("empty");
+        }
+
         System.out.print("first -> last : ");
         Note cur = first;
         while(cur != null){
@@ -73,17 +75,17 @@ public class SortedList {
     }
 
     public static void main(String[] args){
-        SortedList sl = new SortedList();
-        sl.insert(80);
-        sl.insert(2);
-        sl.insert(100);
-        sl.display();
-        System.out.println(sl.deleteFirst());
+        SortedList sortedList = new SortedList();
+        sortedList.insert(80);
+        sortedList.insert(2);
+        sortedList.insert(100);
+        sortedList.display();
+        System.out.println(sortedList.deleteFirst());
 
-        sl.insert(33);
-        sl.display();
+        sortedList.insert(33);
+        sortedList.display();
 
-        sl.insert(99);
-        sl.display();
+        sortedList.insert(99);
+        sortedList.display();
     }
 }
