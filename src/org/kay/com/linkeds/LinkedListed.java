@@ -21,7 +21,7 @@ package org.kay.com.linkeds;
  * @author kay
  * @version 1.0
  */
-public class LinkedList {
+public class LinkedListed {
 
     private class Note{
         private Object obj;
@@ -52,7 +52,7 @@ public class LinkedList {
 
     public Object find(Object obj){
         if(first == null){
-            throw new RuntimeException("LinkedList is empty!");
+            throw new RuntimeException("LinkedListed is empty!");
         }
 
         Note cur = first;
@@ -67,7 +67,7 @@ public class LinkedList {
 
     public void remove(Object obj){
         if(first == null){
-            throw new RuntimeException("LinkedList is empty!");
+            throw new RuntimeException("LinkedListed is empty!");
         }
 
         if(first.obj.equals(obj)){
@@ -103,7 +103,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
+        LinkedListed linkedList = new LinkedListed();
         linkedList.insertFirst(4);
         linkedList.insertFirst(3);
         linkedList.insertFirst(2);

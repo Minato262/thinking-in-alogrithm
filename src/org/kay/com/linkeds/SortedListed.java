@@ -16,12 +16,12 @@
 package org.kay.com.linkeds;
 
 /**
- * <p>SortedList</p>
+ * <p>SortedListed</p>
  *
  * @author kay
  * @version 1.0
  */
-public class SortedList {
+public class SortedListed {
 
     private class Note{
         private Object obj;
@@ -52,7 +52,7 @@ public class SortedList {
 
     private Object deleteFirst(){
         if(first == null){
-            throw new RuntimeException("empty!");
+            throw new RuntimeException("SortedListed is empty!");
         }
 
         Note temp = first;
@@ -62,7 +62,7 @@ public class SortedList {
 
     private void display(){
         if(first == null) {
-            System.out.println("empty");
+            System.out.println("SortedListed is empty");
         }
 
         System.out.print("first -> last : ");
@@ -75,7 +75,7 @@ public class SortedList {
     }
 
     public static void main(String[] args){
-        SortedList sortedList = new SortedList();
+        SortedListed sortedList = new SortedListed();
         sortedList.insert(80);
         sortedList.insert(2);
         sortedList.insert(100);

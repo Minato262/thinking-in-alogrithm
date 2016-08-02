@@ -15,6 +15,9 @@
  */
 
 /**
- *
+ * Linked include:
+ *     1.Linked Listed.
+ *     2.FirstLast Listed.
+ *     3.Sorted Listed.
  */
 package org.kay.com.linkeds;

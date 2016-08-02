@@ -18,5 +18,6 @@
  * Sort include:
  *    1.Bubble Sort.
  *    2.Select Sort.
+ *    3.Insert Sort.
  */
 package org.kay.com.sorts;
