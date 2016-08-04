@@ -16,7 +16,7 @@
 package org.kay.com.linkeds;
 
 /**
- * <p>FirstLastListed</p>
+ * <p>First Last Listed</p>
  *
  * @author kay
  * @version 1.0
