@@ -21,7 +21,7 @@ package org.kay.com.linkeds;
  * @author kay
  * @version 1.0
  */
-public class SortedListed {
+public class SortedLinked {
 
     private class Note{
         private Object obj;
@@ -53,7 +53,7 @@ public class SortedListed {
 
     private Object delete(){
         if(first == null){
-            throw new RuntimeException("SortedListed is empty!");
+            throw new RuntimeException("SortedLinked is empty!");
         }
 
         Note temp = first;
@@ -63,7 +63,7 @@ public class SortedListed {
 
     private void display(){
         if(first == null) {
-            System.out.println("SortedListed is empty");
+            System.out.println("SortedLinked is empty");
         }
 
         System.out.print("first -> last : ");
@@ -76,17 +76,17 @@ public class SortedListed {
     }
 
     public static void main(String[] args){
-        SortedListed sortedList = new SortedListed();
-        sortedList.insert(80);
-        sortedList.insert(2);
-        sortedList.insert(100);
-        sortedList.display();
-        System.out.println(sortedList.delete());
+        SortedLinked sortedLinked = new SortedLinked();
+        sortedLinked.insert(80);
+        sortedLinked.insert(2);
+        sortedLinked.insert(100);
+        sortedLinked.display();
+        System.out.println(sortedLinked.delete());
 
-        sortedList.insert(33);
-        sortedList.display();
+        sortedLinked.insert(33);
+        sortedLinked.display();
 
-        sortedList.insert(99);
-        sortedList.display();
+        sortedLinked.insert(99);
+        sortedLinked.display();
     }
 }

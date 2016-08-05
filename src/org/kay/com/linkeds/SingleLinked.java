@@ -21,7 +21,7 @@ package org.kay.com.linkeds;
  * @author kay
  * @version 1.0
  */
-public class LinkedListed {
+public class SingleLinked {
 
     private class Note{
         private Object obj;
@@ -42,7 +42,7 @@ public class LinkedListed {
 
     private Object delete() {
         if(first == null){
-            throw new RuntimeException("empty!");
+            throw new RuntimeException("SingleLinked is empty!");
         }
 
         Note temp = first;
@@ -52,7 +52,7 @@ public class LinkedListed {
 
     private Object find(Object obj){
         if(first == null){
-            throw new RuntimeException("LinkedListed is empty!");
+            throw new RuntimeException("SingleLinked is empty!");
         }
 
         Note cur = first;
@@ -67,7 +67,7 @@ public class LinkedListed {
 
     private void remove(Object obj){
         if(first == null){
-            throw new RuntimeException("LinkedListed is empty!");
+            throw new RuntimeException("SingleLinked is empty!");
         }
 
         if(first.obj.equals(obj)){
@@ -91,7 +91,7 @@ public class LinkedListed {
 
     private void display(){
         if(first == null){
-            System.out.println("empty");
+            System.out.println("SingleLinked is empty");
         }
 
         Note cur = first;
@@ -103,19 +103,19 @@ public class LinkedListed {
     }
 
     public static void main(String[] args) {
-        LinkedListed linkedList = new LinkedListed();
-        linkedList.insert(4);
-        linkedList.insert(3);
-        linkedList.insert(2);
-        linkedList.insert(1);
-        linkedList.display();
+        SingleLinked singleLinked = new SingleLinked();
+        singleLinked.insert(4);
+        singleLinked.insert(3);
+        singleLinked.insert(2);
+        singleLinked.insert(1);
+        singleLinked.display();
 
-        linkedList.delete();
-        linkedList.display();
+        singleLinked.delete();
+        singleLinked.display();
 
-        linkedList.remove(3);
-        linkedList.display();
-        System.out.println(linkedList.find(1));
-        System.out.println(linkedList.find(4));
+        singleLinked.remove(3);
+        singleLinked.display();
+        System.out.println(singleLinked.find(1));
+        System.out.println(singleLinked.find(4));
     }
 }

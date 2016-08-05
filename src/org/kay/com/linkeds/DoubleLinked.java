@@ -21,7 +21,7 @@ package org.kay.com.linkeds;
  * @author kay
  * @version 1.0
  */
-public class FirstLastListed {
+public class DoubleLinked {
 
     private class Note{
         private Object obj;
@@ -54,7 +54,7 @@ public class FirstLastListed {
 
     private Object deleteFirst(){
         if(first == null){
-            throw new RuntimeException("FirstLastListed is empty!");
+            throw new RuntimeException("DoubleLinked is empty!");
         }
 
         Note temp = first;
@@ -65,7 +65,7 @@ public class FirstLastListed {
 
     private void deleteLast(){
         if(first == null){
-            throw new RuntimeException("FirstLastListed is empty!");
+            throw new RuntimeException("DoubleLinked is empty!");
         }
 
         if(first.next == null){
@@ -98,18 +98,18 @@ public class FirstLastListed {
     }
 
     public static void main(String[] args){
-        FirstLastListed firstLastList = new FirstLastListed();
-        firstLastList.insertFirst(2);
-        firstLastList.insertFirst(1);
-        firstLastList.display();
+        DoubleLinked doubleLinked = new DoubleLinked();
+        doubleLinked.insertFirst(2);
+        doubleLinked.insertFirst(1);
+        doubleLinked.display();
 
-        firstLastList.insertLast(3);
-        firstLastList.display();
+        doubleLinked.insertLast(3);
+        doubleLinked.display();
 
-        firstLastList.deleteFirst();
-        firstLastList.display();
+        doubleLinked.deleteFirst();
+        doubleLinked.display();
 
-        firstLastList.deleteLast();
-        firstLastList.display();
+        doubleLinked.deleteLast();
+        doubleLinked.display();
     }
 }
