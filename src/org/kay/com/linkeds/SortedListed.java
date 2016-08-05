@@ -51,7 +51,7 @@ public class SortedListed {
         note.next = cur;
     }
 
-    private Object deleteFirst(){
+    private Object delete(){
         if(first == null){
             throw new RuntimeException("SortedListed is empty!");
         }
@@ -81,7 +81,7 @@ public class SortedListed {
         sortedList.insert(2);
         sortedList.insert(100);
         sortedList.display();
-        System.out.println(sortedList.deleteFirst());
+        System.out.println(sortedList.delete());
 
         sortedList.insert(33);
         sortedList.display();

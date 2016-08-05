@@ -34,13 +34,13 @@ public class LinkedListed {
 
     private Note first;
 
-    private void insertFirst(Object obj){
+    private void insert(Object obj){
         Note note = new Note(obj);
         note.next = first;
         first = note;
     }
 
-    private Object deleteFirst() {
+    private Object delete() {
         if(first == null){
             throw new RuntimeException("empty!");
         }
@@ -104,13 +104,13 @@ public class LinkedListed {
 
     public static void main(String[] args) {
         LinkedListed linkedList = new LinkedListed();
-        linkedList.insertFirst(4);
-        linkedList.insertFirst(3);
-        linkedList.insertFirst(2);
-        linkedList.insertFirst(1);
+        linkedList.insert(4);
+        linkedList.insert(3);
+        linkedList.insert(2);
+        linkedList.insert(1);
         linkedList.display();
 
-        linkedList.deleteFirst();
+        linkedList.delete();
         linkedList.display();
 
         linkedList.remove(3);
