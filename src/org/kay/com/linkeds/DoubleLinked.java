@@ -86,7 +86,7 @@ public class DoubleLinked {
 
     private void display(){
         if(first == null){
-            System.out.println("empty");
+            System.out.println("DoubleLinked is empty!");
         }
 
         Note cur = first;
