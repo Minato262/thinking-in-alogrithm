@@ -24,8 +24,8 @@ package org.kay.com.linkeds;
 public class SortedLinked {
 
     private class Note{
-        private Object obj;
-        private Note next = null;
+        Object obj;
+        Note next = null;
 
         Note(Object obj){
             this.obj = obj;
