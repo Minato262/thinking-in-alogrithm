@@ -34,13 +34,13 @@ public class LinkedListed {
 
     private Note first;
 
-    public void insertFirst(Object obj){
+    private void insertFirst(Object obj){
         Note note = new Note(obj);
         note.next = first;
         first = note;
     }
 
-    public Object deleteFirst() {
+    private Object deleteFirst() {
         if(first == null){
             throw new RuntimeException("empty!");
         }
@@ -50,7 +50,7 @@ public class LinkedListed {
         return temp.obj;
     }
 
-    public Object find(Object obj){
+    private Object find(Object obj){
         if(first == null){
             throw new RuntimeException("LinkedListed is empty!");
         }
@@ -65,7 +65,7 @@ public class LinkedListed {
         return null;
     }
 
-    public void remove(Object obj){
+    private void remove(Object obj){
         if(first == null){
             throw new RuntimeException("LinkedListed is empty!");
         }
@@ -85,11 +85,11 @@ public class LinkedListed {
         }
     }
 
-    public boolean isEmpty(){
+    private boolean isEmpty(){
         return (first == null);
     }
 
-    public void display(){
+    private void display(){
         if(first == null){
             System.out.println("empty");
         }
@@ -115,7 +115,6 @@ public class LinkedListed {
 
         linkedList.remove(3);
         linkedList.display();
-
         System.out.println(linkedList.find(1));
         System.out.println(linkedList.find(4));
     }
