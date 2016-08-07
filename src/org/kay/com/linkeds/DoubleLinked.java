@@ -32,12 +32,14 @@ public class DoubleLinked {
         }
     }
 
-    private Note first = null;
-    private Note last = null;
+    private Note first;
+    private Note last;
 
     private void insertFirst(Object obj){
         Note note = new Note(obj);
-        if(first == null) last = note;
+        if(first == null){
+            last = note;
+        }
         note.next = first;
         first = note;
     }
@@ -58,7 +60,9 @@ public class DoubleLinked {
         }
 
         Note temp = first;
-        if(first.next == null) last = null;
+        if(first.next == null){
+            last = null;
+        }
         first = first.next;
         return temp.obj;
     }
