@@ -46,7 +46,7 @@ public class Stack {
 
     private void display(){
         System.out.print("bottom -> top: | ");
-        for(int i = 0 ; i <= top ; i++){
+        for(int i = 0; i <= top; i++){
             System.out.print(objs[i] + " | ");
         }
         System.out.print("\n");
