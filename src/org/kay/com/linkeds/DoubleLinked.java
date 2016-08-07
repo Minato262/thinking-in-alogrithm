@@ -102,18 +102,18 @@ public class DoubleLinked {
     }
 
     public static void main(String[] args){
-        DoubleLinked doubleLinked = new DoubleLinked();
-        doubleLinked.insertFirst(2);
-        doubleLinked.insertFirst(1);
-        doubleLinked.display();
+        DoubleLinked linked = new DoubleLinked();
+        linked.insertFirst(2);
+        linked.insertFirst(1);
+        linked.display();
 
-        doubleLinked.insertLast(3);
-        doubleLinked.display();
+        linked.insertLast(3);
+        linked.display();
 
-        doubleLinked.deleteFirst();
-        doubleLinked.display();
+        linked.deleteFirst();
+        linked.display();
 
-        doubleLinked.deleteLast();
-        doubleLinked.display();
+        linked.deleteLast();
+        linked.display();
     }
 }

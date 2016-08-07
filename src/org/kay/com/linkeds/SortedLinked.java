@@ -76,17 +76,17 @@ public class SortedLinked {
     }
 
     public static void main(String[] args){
-        SortedLinked sortedLinked = new SortedLinked();
-        sortedLinked.insert(80);
-        sortedLinked.insert(2);
-        sortedLinked.insert(100);
-        sortedLinked.display();
-        System.out.println(sortedLinked.delete());
+        SortedLinked linked = new SortedLinked();
+        linked.insert(80);
+        linked.insert(2);
+        linked.insert(100);
+        linked.display();
+        System.out.println(linked.delete());
 
-        sortedLinked.insert(33);
-        sortedLinked.display();
+        linked.insert(33);
+        linked.display();
 
-        sortedLinked.insert(99);
-        sortedLinked.display();
+        linked.insert(99);
+        linked.display();
     }
 }

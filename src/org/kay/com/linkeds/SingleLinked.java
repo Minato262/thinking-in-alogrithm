@@ -103,19 +103,19 @@ public class SingleLinked {
     }
 
     public static void main(String[] args) {
-        SingleLinked singleLinked = new SingleLinked();
-        singleLinked.insert(4);
-        singleLinked.insert(3);
-        singleLinked.insert(2);
-        singleLinked.insert(1);
-        singleLinked.display();
+        SingleLinked linked = new SingleLinked();
+        linked.insert(4);
+        linked.insert(3);
+        linked.insert(2);
+        linked.insert(1);
+        linked.display();
 
-        singleLinked.delete();
-        singleLinked.display();
+        linked.delete();
+        linked.display();
 
-        singleLinked.remove(3);
-        singleLinked.display();
-        System.out.println(singleLinked.find(1));
-        System.out.println(singleLinked.find(4));
+        linked.remove(3);
+        linked.display();
+        System.out.println(linked.find(1));
+        System.out.println(linked.find(4));
     }
 }
