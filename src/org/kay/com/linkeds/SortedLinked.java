@@ -32,7 +32,7 @@ public class SortedLinked {
         }
     }
 
-    private Note first = null;
+    private Note first;
 
     private void insert(Object obj){
         Note note = new Note(obj);

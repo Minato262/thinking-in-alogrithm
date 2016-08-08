@@ -85,10 +85,6 @@ public class SingleLinked {
         }
     }
 
-    private boolean isEmpty(){
-        return (first == null);
-    }
-
     private void display(){
         if(first == null){
             System.out.println("SingleLinked is empty");
