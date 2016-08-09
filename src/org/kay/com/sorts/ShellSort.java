@@ -32,8 +32,8 @@ public class ShellSort {
     private void sort(){
         int num = data.length;
         int h = 1;
-        while(h*3 + 1 < num)
-            h = h*3 + 1;
+        while(h * 3 + 1 < num)
+            h = h * 3 + 1;
 
         while(h > 0){
             System.out.println(h);
