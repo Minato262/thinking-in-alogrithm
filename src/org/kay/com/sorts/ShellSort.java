@@ -23,13 +23,7 @@ package org.kay.com.sorts;
  */
 public class ShellSort {
 
-    private int[] data;
-
-    public ShellSort(int[] data){
-        this.data = data;
-    }
-
-    private void sort(){
+    private static void sort(int[] data){
         int num = data.length;
         int h = 1;
         while(h * 3 + 1 < num)
@@ -48,20 +42,19 @@ public class ShellSort {
             }
             h = (h - 1)/3;
         }
+
+        display(data);
     }
 
-    private void display(){
+    private static void display(int[] data){
         for(int i = 0 ; i < data.length ; i++){
             System.out.print(data[i] + " ");
         }
-        System.out.print("\n");
+        System.out.println();
     }
 
     public static void main(String[] args) {
         final int[] data = {7, 10, 1, 9, 2, 5, 8, 6, 4, 3};
-
-        ShellSort sort = new ShellSort(data);
-        sort.sort();
-        sort.display();
+        sort(data);
     }
 }

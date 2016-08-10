@@ -87,7 +87,7 @@ public class SingleLinked {
 
     private void display(){
         if(first == null){
-            System.out.println("SingleLinked is empty");
+            System.out.println("SingleLinked is empty!");
         }
 
         Note cur = first;
@@ -95,7 +95,7 @@ public class SingleLinked {
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
         }
-        System.out.print("\n");
+        System.out.println();
     }
 
     public static void main(String[] args) {

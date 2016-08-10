@@ -63,7 +63,7 @@ public class SortedLinked {
 
     private void display(){
         if(first == null) {
-            System.out.println("SortedLinked is empty");
+            System.out.println("SortedLinked is empty!");
         }
 
         System.out.print("first -> last : ");
@@ -72,7 +72,7 @@ public class SortedLinked {
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
         }
-        System.out.print("\n");
+        System.out.println();
     }
 
     public static void main(String[] args){

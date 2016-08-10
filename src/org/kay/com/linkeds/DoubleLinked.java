@@ -98,7 +98,7 @@ public class DoubleLinked {
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
         }
-        System.out.print("\n");
+        System.out.println();
     }
 
     public static void main(String[] args){
