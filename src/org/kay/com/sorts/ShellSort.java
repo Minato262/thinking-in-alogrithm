@@ -60,8 +60,8 @@ public class ShellSort {
     public static void main(String[] args) {
         final int[] data = {7, 10, 1, 9, 2, 5, 8, 6, 4, 3};
 
-        ShellSort ss = new ShellSort(data);
-        ss.sort();
-        ss.display();
+        ShellSort sort = new ShellSort(data);
+        sort.sort();
+        sort.display();
     }
 }
