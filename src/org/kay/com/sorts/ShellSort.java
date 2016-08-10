@@ -47,8 +47,8 @@ public class ShellSort {
     }
 
     private static void display(int[] data){
-        for(int i = 0 ; i < data.length ; i++){
-            System.out.print(data[i] + " ");
+        for(int i: data){
+            System.out.print(i + " ");
         }
         System.out.println();
     }
