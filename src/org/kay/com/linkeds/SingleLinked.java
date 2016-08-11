@@ -42,7 +42,7 @@ public class SingleLinked {
 
     private Object delete() {
         if(first == null){
-            throw new RuntimeException("SingleLinked is empty!");
+            throw new NullPointerException("SingleLinked is empty!");
         }
 
         Note temp = first;
@@ -52,7 +52,7 @@ public class SingleLinked {
 
     private Object find(Object obj){
         if(first == null){
-            throw new RuntimeException("SingleLinked is empty!");
+            throw new NullPointerException("SingleLinked is empty!");
         }
 
         Note cur = first;
@@ -67,7 +67,7 @@ public class SingleLinked {
 
     private void remove(Object obj){
         if(first == null){
-            throw new RuntimeException("SingleLinked is empty!");
+            throw new NullPointerException("SingleLinked is empty!");
         }
 
         if(first.obj.equals(obj)){

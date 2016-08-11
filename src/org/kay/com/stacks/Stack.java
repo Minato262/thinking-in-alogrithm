@@ -40,7 +40,7 @@ public class Stack {
 
     private Object pop() {
         if(top == -1)
-            throw new RuntimeException("Stack is empty!");
+            throw new NullPointerException("Stack is empty!");
         return objs[top--];
     }
 

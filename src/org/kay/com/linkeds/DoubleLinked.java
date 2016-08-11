@@ -56,7 +56,7 @@ public class DoubleLinked {
 
     private Object deleteFirst(){
         if(first == null){
-            throw new RuntimeException("DoubleLinked is empty!");
+            throw new NullPointerException("DoubleLinked is empty!");
         }
 
         Note temp = first;
@@ -69,7 +69,7 @@ public class DoubleLinked {
 
     private void deleteLast(){
         if(first == null){
-            throw new RuntimeException("DoubleLinked is empty!");
+            throw new NullPointerException("DoubleLinked is empty!");
         }
 
         if(first.next == null){

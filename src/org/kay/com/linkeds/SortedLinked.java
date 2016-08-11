@@ -53,7 +53,7 @@ public class SortedLinked {
 
     private Object delete(){
         if(first == null){
-            throw new RuntimeException("SortedLinked is empty!");
+            throw new NullPointerException("SortedLinked is empty!");
         }
 
         Note temp = first;
