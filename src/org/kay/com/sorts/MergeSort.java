@@ -27,16 +27,19 @@ public class MergeSort {
         int a = 0;
         int b = 0;
         int c = 0;
+
         while(a < A.length && b < B.length){
             if(A[a] < B[b])
                 C[c++] = A[a++];
             else
                 C[c++] = B[b++];
         }
-        while(a < A.length)
+        while(a < A.length) {
             C[c++] = A[a++];
-        while(b < B.length)
+        }
+        while(b < B.length) {
             C[c++] = B[b++];
+        }
 
         display(C);
     }
