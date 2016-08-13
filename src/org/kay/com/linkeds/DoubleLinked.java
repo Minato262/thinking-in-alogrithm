@@ -36,6 +36,7 @@ public class DoubleLinked {
     private Note last;
 
     private void insertFirst(Object obj){
+        // obj cannot be null
         Note note = new Note(obj);
         if(first == null){
             last = note;
@@ -45,6 +46,7 @@ public class DoubleLinked {
     }
 
     private void insertLast(Object obj){
+        // obj cannot be null
         Note note = new Note(obj);
         if(first == null){
             first = note;
