@@ -35,6 +35,7 @@ public class SortedLinked {
     private Note first;
 
     private void insert(Object obj){
+        // obj cannot be null
         Note note = new Note(obj);
         Note pre = null;
         Note cur = first;
