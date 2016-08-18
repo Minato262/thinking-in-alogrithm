@@ -23,11 +23,11 @@ package org.kay.com.linkeds;
  */
 public class DoubleLinked {
 
-    private class Note{
+    private class Note {
         Object obj;
         Note next = null;
 
-        Note(Object obj){
+        Note(Object obj) {
             this.obj = obj;
         }
     }
@@ -35,52 +35,52 @@ public class DoubleLinked {
     private Note first;
     private Note last;
 
-    private void insertFirst(Object obj){
+    private void insertFirst(Object obj) {
         // obj cannot be null
         Note note = new Note(obj);
-        if(first == null){
+        if (first == null) {
             last = note;
         }
         note.next = first;
         first = note;
     }
 
-    private void insertLast(Object obj){
+    private void insertLast(Object obj) {
         // obj cannot be null
         Note note = new Note(obj);
-        if(first == null){
+        if (first == null) {
             first = note;
-        }else{
+        } else {
             last.next = note;
         }
         last = note;
     }
 
-    private Object deleteFirst(){
-        if(first == null){
+    private Object deleteFirst() {
+        if (first == null) {
             throw new NullPointerException("DoubleLinked is empty!");
         }
 
         Note temp = first;
-        if(first.next == null){
+        if (first.next == null) {
             last = null;
         }
         first = first.next;
         return temp.obj;
     }
 
-    private void deleteLast(){
-        if(first == null){
+    private void deleteLast() {
+        if (first == null) {
             throw new NullPointerException("DoubleLinked is empty!");
         }
 
-        if(first.next == null){
+        if (first.next == null) {
             first = null;
             last = null;
-        }else{
+        } else {
             Note temp = first;
-            while(temp.next != null){
-                if(temp.next == last){
+            while (temp.next != null) {
+                if (temp.next == last) {
                     last = temp;
                     last.next = null;
                     break;
@@ -90,20 +90,20 @@ public class DoubleLinked {
         }
     }
 
-    private void display(){
-        if(first == null){
+    private void display() {
+        if (first == null) {
             System.out.println("DoubleLinked is empty!");
         }
 
         Note cur = first;
-        while(cur != null){
+        while (cur != null) {
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
         }
         System.out.println();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         DoubleLinked linked = new DoubleLinked();
         linked.insertFirst(2);
         linked.insertFirst(1);

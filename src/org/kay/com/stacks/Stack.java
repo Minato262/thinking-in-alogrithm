@@ -27,26 +27,26 @@ public class Stack {
     private Object[] objs;
 
     public Stack(int capacity) {
-        if(capacity < 0)
+        if (capacity < 0)
             throw new IllegalArgumentException("Illegal capacity:" + capacity);
         objs = new Object[capacity];
     }
 
     private void push(Object obj) {
-        if(top == objs.length - 1)
+        if (top == objs.length - 1)
             throw new StackOverflowError("Stack is full!");
         objs[++top] = obj;
     }
 
     private Object pop() {
-        if(top == -1)
+        if (top == -1)
             throw new NullPointerException("Stack is empty!");
         return objs[top--];
     }
 
-    private void display(){
+    private void display() {
         System.out.print("bottom -> top: | ");
-        for(int i = 0; i <= top; i++){
+        for (int i = 0; i <= top; i++) {
             System.out.print(objs[i] + " | ");
         }
         System.out.print("\n");

@@ -23,18 +23,18 @@ package org.kay.com.linkeds;
  */
 public class SingleLinked {
 
-    private class Note{
+    private class Note {
         Object obj;
         Note next = null;
 
-        Note(Object obj){
+        Note(Object obj) {
             this.obj = obj;
         }
     }
 
     private Note first;
 
-    private void insert(Object obj){
+    private void insert(Object obj) {
         // obj cannot be null
         Note note = new Note(obj);
         note.next = first;
@@ -42,7 +42,7 @@ public class SingleLinked {
     }
 
     private Object delete() {
-        if(first == null){
+        if (first == null) {
             throw new NullPointerException("SingleLinked is empty!");
         }
 
@@ -51,14 +51,14 @@ public class SingleLinked {
         return temp.obj;
     }
 
-    private Object find(Object obj){
-        if(first == null){
+    private Object find(Object obj) {
+        if (first == null) {
             throw new NullPointerException("SingleLinked is empty!");
         }
 
         Note cur = first;
-        while(cur != null){
-            if(cur.obj.equals(obj)){
+        while (cur != null) {
+            if (cur.obj.equals(obj)) {
                 return cur.obj;
             }
             cur = cur.next;
@@ -66,18 +66,18 @@ public class SingleLinked {
         return null;
     }
 
-    private void remove(Object obj){
-        if(first == null){
+    private void remove(Object obj) {
+        if (first == null) {
             throw new NullPointerException("SingleLinked is empty!");
         }
 
-        if(first.obj.equals(obj)){
+        if (first.obj.equals(obj)) {
             first = first.next;
-        }else{
+        } else {
             Note pre = first;
             Note cur = first.next;
-            while(cur != null){
-                if(cur.obj.equals(obj)){
+            while (cur != null) {
+                if (cur.obj.equals(obj)) {
                     pre.next = cur.next;
                 }
                 pre = cur;
@@ -86,13 +86,13 @@ public class SingleLinked {
         }
     }
 
-    private void display(){
-        if(first == null){
+    private void display() {
+        if (first == null) {
             System.out.println("SingleLinked is empty!");
         }
 
         Note cur = first;
-        while(cur != null){
+        while (cur != null) {
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
         }

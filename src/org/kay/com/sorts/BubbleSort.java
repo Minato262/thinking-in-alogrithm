@@ -23,15 +23,15 @@ package org.kay.com.sorts;
  */
 public class BubbleSort {
 
-    private static void sort(int[] data){
+    private static void sort(int[] data) {
         int tmp;
 
-        for(int p = data.length - 1 ; p > 0 ; p--){
-            for(int i = 0 ; i < p ; i++){
-                if(data[i] > data[i + 1] ){
+        for (int p = data.length - 1; p > 0; p--) {
+            for (int i = 0; i < p; i++) {
+                if (data[i] > data[i + 1]) {
                     tmp = data[i];
                     data[i] = data[i + 1];
-                    data[i+1] = tmp;
+                    data[i + 1] = tmp;
                 }
             }
         }
@@ -39,8 +39,8 @@ public class BubbleSort {
         display(data);
     }
 
-    private static void display(int[] data){
-        for(int i : data){
+    private static void display(int[] data) {
+        for (int i : data) {
             System.out.print(i + " ");
         }
     }

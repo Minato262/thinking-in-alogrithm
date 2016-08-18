@@ -23,18 +23,18 @@ package org.kay.com.sorts;
  */
 public class InsertSort {
 
-    private static void sort(int[] data){
+    private static void sort(int[] data) {
         int tmp;
         int insertPoint;
 
-        for(int i = 1 ; i < data.length ; i++){
+        for (int i = 1; i < data.length; i++) {
             tmp = data[i];
             insertPoint = i;
-            while(insertPoint > 0 && data[insertPoint-1] > tmp){
-                data[insertPoint] = data[insertPoint-1];
+            while (insertPoint > 0 && data[insertPoint - 1] > tmp) {
+                data[insertPoint] = data[insertPoint - 1];
                 insertPoint -= 1;
             }
-            if(insertPoint < i){
+            if (insertPoint < i) {
                 data[insertPoint] = tmp;
             }
         }
@@ -42,8 +42,8 @@ public class InsertSort {
         display(data);
     }
 
-    private static void display(int[] data){
-        for(int i : data){
+    private static void display(int[] data) {
+        for (int i : data) {
             System.out.print(i + " ");
         }
     }

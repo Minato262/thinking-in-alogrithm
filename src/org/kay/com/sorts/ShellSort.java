@@ -23,31 +23,34 @@ package org.kay.com.sorts;
  */
 public class ShellSort {
 
-    private static void sort(int[] data){
+    private static void sort(int[] data) {
         int num = data.length;
         int h = 1;
-        while(h * 3 + 1 < num)
+        while (h * 3 + 1 < num){
             h = h * 3 + 1;
+        }
 
-        while(h > 0){
+        int tmp;
+        int insertPoint;
+        while (h > 0) {
             System.out.println(h);
-            for(int i = h ; i < data.length ; i++){
-                int tmp = data[i];
-                int insertPoint = i;
-                while(insertPoint - h >= 0 && data[insertPoint-h] > tmp){
-                    data[insertPoint] = data[insertPoint-h];
+            for (int i = h; i < data.length; i++) {
+                tmp = data[i];
+                insertPoint = i;
+                while (insertPoint - h >= 0 && data[insertPoint - h] > tmp) {
+                    data[insertPoint] = data[insertPoint - h];
                     insertPoint -= h;
                 }
                 data[insertPoint] = tmp;
             }
-            h = (h - 1)/3;
+            h = (h - 1) / 3;
         }
 
         display(data);
     }
 
-    private static void display(int[] data){
-        for(int i: data){
+    private static void display(int[] data) {
+        for (int i : data) {
             System.out.print(i + " ");
         }
         System.out.println();

@@ -28,14 +28,14 @@ import static java.lang.System.out;
  */
 public class BinarySearch {
 
-    private static int rankOne(int key, int[] srcArray){
+    private static int rankOne(int key, int[] srcArray) {
         // Array must be sorted.
         int low = 0;
         int high = srcArray.length - 1;
         int mid;
 
-        while (low <= high){ // Key is in a[low..high] or not present.
-            mid = low + ( high - low )/2;
+        while (low <= high) { // Key is in a[low..high] or not present.
+            mid = low + (high - low) / 2;
 
             if (key < srcArray[mid])
                 high = mid - 1;
@@ -47,25 +47,25 @@ public class BinarySearch {
         return -1;
     }
 
-    private static int rankTwo(int key, int[] srcArray){
+    private static int rankTwo(int key, int[] srcArray) {
         // Array must be sorted.
-        for (int i = 0;i < srcArray.length;i++){
-            if (key == srcArray[i]){
+        for (int i = 0; i < srcArray.length; i++) {
+            if (key == srcArray[i]) {
                 return i;
             }
         }
         return -1;
     }
 
-    private static void print(int[] array, String warn){
+    private static void print(int[] array, String warn) {
         out.println(warn);
-        for(int i = 0;i < array.length;i++){
+        for (int i = 0; i < array.length; i++) {
             out.print(array[i] + " ");
         }
         out.println();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         final int[] binaryArray = {1, 2, 5, 4, 3, 7, 7, 6, 8, 7, 8, 9, 10};
         final int binaryKey = 8;    // Read key, print if not in binaryArray.
 
@@ -73,7 +73,7 @@ public class BinarySearch {
 
         Arrays.sort(binaryArray);
         print(binaryArray, "a sorted array of int values:");
-        print(new int[]{rankOne(binaryKey ,binaryArray)}, "The value of the rank: ");
-        print(new int[]{rankTwo(binaryKey ,binaryArray)}, "The value of the rank: ");
+        print(new int[]{rankOne(binaryKey, binaryArray)}, "The value of the rank: ");
+        print(new int[]{rankTwo(binaryKey, binaryArray)}, "The value of the rank: ");
     }
 }

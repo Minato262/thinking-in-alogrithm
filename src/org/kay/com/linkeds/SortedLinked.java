@@ -23,37 +23,37 @@ package org.kay.com.linkeds;
  */
 public class SortedLinked {
 
-    private class Note{
+    private class Note {
         Object obj;
         Note next = null;
 
-        Note(Object obj){
+        Note(Object obj) {
             this.obj = obj;
         }
     }
 
     private Note first;
 
-    private void insert(Object obj){
+    private void insert(Object obj) {
         // obj cannot be null
         Note note = new Note(obj);
         Note pre = null;
         Note cur = first;
-        while(cur != null && (Integer.valueOf(note.obj.toString()).intValue() >
-                Integer.valueOf(cur.obj.toString()).intValue())){
+        while (cur != null && (Integer.valueOf(note.obj.toString()).intValue() >
+                Integer.valueOf(cur.obj.toString()).intValue())) {
             pre = cur;
             cur = cur.next;
         }
 
-        if(pre == null)
+        if (pre == null)
             first = note;
         else
             pre.next = note;
         note.next = cur;
     }
 
-    private Object delete(){
-        if(first == null){
+    private Object delete() {
+        if (first == null) {
             throw new NullPointerException("SortedLinked is empty!");
         }
 
@@ -62,21 +62,21 @@ public class SortedLinked {
         return temp.obj;
     }
 
-    private void display(){
-        if(first == null) {
+    private void display() {
+        if (first == null) {
             System.out.println("SortedLinked is empty!");
         }
 
         System.out.print("first -> last : ");
         Note cur = first;
-        while(cur != null){
+        while (cur != null) {
             System.out.print(cur.obj.toString() + " -> ");
             cur = cur.next;
         }
         System.out.println();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SortedLinked linked = new SortedLinked();
         linked.insert(80);
         linked.insert(2);
