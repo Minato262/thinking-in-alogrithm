@@ -49,7 +49,7 @@ public class Stack {
         for (int i = 0; i <= top; i++) {
             System.out.print(objs[i] + " | ");
         }
-        System.out.print("\n");
+        System.out.println();
     }
 
     public static void main(String[] args) {
