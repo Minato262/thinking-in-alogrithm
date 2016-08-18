@@ -33,7 +33,6 @@ public class BinarySearch {
         int low = 0;
         int high = srcArray.length - 1;
         int mid;
-
         while (low <= high) { // Key is in a[low..high] or not present.
             mid = low + (high - low) / 2;
 

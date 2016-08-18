@@ -25,7 +25,6 @@ public class BubbleSort {
 
     private static void sort(int[] data) {
         int tmp;
-
         for (int p = data.length - 1; p > 0; p--) {
             for (int i = 0; i < p; i++) {
                 if (data[i] > data[i + 1]) {

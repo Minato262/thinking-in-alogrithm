@@ -26,7 +26,6 @@ public class InsertSort {
     private static void sort(int[] data) {
         int tmp;
         int insertPoint;
-
         for (int i = 1; i < data.length; i++) {
             tmp = data[i];
             insertPoint = i;
