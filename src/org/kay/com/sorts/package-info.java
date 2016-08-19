@@ -16,10 +16,10 @@
 
 /**
  * Sort include:
- *    1.Bubble Sort.
- *    2.Select Sort.
- *    3.Insert Sort.
- *    4.Shell  Sort.
- *    5.Merge  Sort.
+ * 1.Bubble Sort.
+ * 2.Select Sort.
+ * 3.Insert Sort.
+ * 4.Shell  Sort.
+ * 5.Merge  Sort.
  */
 package org.kay.com.sorts;

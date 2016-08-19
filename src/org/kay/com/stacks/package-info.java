@@ -16,6 +16,6 @@
 
 /**
  * Stack include:
- *      1,Stack
+ * 1,Stack
  */
 package org.kay.com.stacks;

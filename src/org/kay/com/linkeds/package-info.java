@@ -16,8 +16,8 @@
 
 /**
  * Linked include:
- *     1.Single Linked.
- *     2.Double Linked.
- *     3.Sorted Listed.
+ * 1.Single Linked.
+ * 2.Double Linked.
+ * 3.Sorted Listed.
  */
 package org.kay.com.linkeds;
