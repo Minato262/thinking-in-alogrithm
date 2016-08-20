@@ -36,7 +36,7 @@ public class SortedLinked {
 
     private void insert(Object obj) {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null!");
+            throw new LinkedNoteException("obj cannot be null!");
         }
 
         Note note = new Note(obj);
@@ -57,7 +57,7 @@ public class SortedLinked {
 
     private Object delete() {
         if (first == null) {
-            throw new NullPointerException("SortedLinked is empty!");
+            throw new LinkedNoteException("SortedLinked is empty!");
         }
 
         Note temp = first;
@@ -67,7 +67,7 @@ public class SortedLinked {
 
     private void display() {
         if (first == null) {
-            throw new NullPointerException("SortedLinked is empty!");
+            throw new LinkedNoteException("SortedLinked is empty!");
         }
 
         System.out.print("first -> last : ");

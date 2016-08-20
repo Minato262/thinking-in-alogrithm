@@ -36,7 +36,7 @@ public class SingleLinked {
 
     private void insert(Object obj) {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null!");
+            throw new LinkedNoteException("obj cannot be null!");
         }
 
         Note note = new Note(obj);
@@ -46,7 +46,7 @@ public class SingleLinked {
 
     private Object delete() {
         if (first == null) {
-            throw new NullPointerException("SingleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
         Note temp = first;
@@ -56,7 +56,7 @@ public class SingleLinked {
 
     private Object find(Object obj) {
         if (first == null) {
-            throw new NullPointerException("SingleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
         Note cur = first;
@@ -71,7 +71,7 @@ public class SingleLinked {
 
     private void remove(Object obj) {
         if (first == null) {
-            throw new NullPointerException("SingleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
         if (first.obj.equals(obj)) {
@@ -91,7 +91,7 @@ public class SingleLinked {
 
     private void display() {
         if (first == null) {
-            System.out.println("SingleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
         Note cur = first;

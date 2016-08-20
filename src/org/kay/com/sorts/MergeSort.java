@@ -24,9 +24,7 @@ package org.kay.com.sorts;
 public class MergeSort {
 
     private static void sort(int[] A, int[] B, int[] C) {
-        int a = 0;
-        int b = 0;
-        int c = 0;
+        int a = 0, b = 0, c = 0;
         while (a < A.length && b < B.length) {
             if (A[a] < B[b])
                 C[c++] = A[a++];

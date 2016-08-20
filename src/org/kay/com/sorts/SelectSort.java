@@ -24,9 +24,7 @@ package org.kay.com.sorts;
 public class SelectSort {
 
     private static void sort(int[] data) {
-        int flag;
-        int tmp;
-        for (int i = 0; i < data.length - 1; i++) {
+        for (int i = 0, flag, tmp; i < data.length - 1; i++) {
             flag = i;
             for (int j = i + 1; j <= data.length - 1; j++) {
                 if (data[j] < data[flag]) {

@@ -37,7 +37,7 @@ public class DoubleLinked {
 
     private void insertFirst(Object obj) {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null!");
+            throw new LinkedNoteException("obj cannot be null!");
         }
 
         Note note = new Note(obj);
@@ -50,7 +50,7 @@ public class DoubleLinked {
 
     private void insertLast(Object obj) {
         if (obj == null) {
-            throw new NullPointerException("obj cannot be null!");
+            throw new LinkedNoteException("obj cannot be null!");
         }
 
         Note note = new Note(obj);
@@ -64,7 +64,7 @@ public class DoubleLinked {
 
     private Object deleteFirst() {
         if (first == null) {
-            throw new NullPointerException("DoubleLinked is empty!");
+            throw new LinkedNoteException("DoubleLinked is empty!");
         }
 
         Note temp = first;
@@ -77,7 +77,7 @@ public class DoubleLinked {
 
     private void deleteLast() {
         if (first == null) {
-            throw new NullPointerException("DoubleLinked is empty!");
+            throw new LinkedNoteException("DoubleLinked is empty!");
         }
 
         if (first.next == null) {
@@ -98,7 +98,7 @@ public class DoubleLinked {
 
     private void display() {
         if (first == null) {
-            System.out.println("DoubleLinked is empty!");
+            throw new LinkedNoteException("DoubleLinked is empty!");
         }
 
         Note cur = first;

@@ -24,9 +24,7 @@ package org.kay.com.sorts;
 public class InsertSort {
 
     private static void sort(int[] data) {
-        int tmp;
-        int insertPoint;
-        for (int i = 1; i < data.length; i++) {
+        for (int i = 1, tmp, insertPoint; i < data.length; i++) {
             tmp = data[i];
             insertPoint = i;
             while (insertPoint > 0 && data[insertPoint - 1] > tmp) {
