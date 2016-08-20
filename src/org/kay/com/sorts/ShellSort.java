@@ -30,8 +30,7 @@ public class ShellSort {
             h = h * 3 + 1;
         }
 
-        int tmp, insertPoint;
-        while (h > 0) {
+        for (int tmp, insertPoint; h > 0; ) {
             System.out.println(h);
             for (int i = h; i < data.length; i++) {
                 tmp = data[i];
