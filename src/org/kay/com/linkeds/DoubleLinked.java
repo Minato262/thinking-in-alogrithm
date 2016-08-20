@@ -101,6 +101,7 @@ public class DoubleLinked {
             throw new LinkedNoteException("DoubleLinked is empty!");
         }
 
+        System.out.print("first -> last : ");
         Note cur = first;
         while (cur != null) {
             System.out.print(cur.obj.toString() + " -> ");

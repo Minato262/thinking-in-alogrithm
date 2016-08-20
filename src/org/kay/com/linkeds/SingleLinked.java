@@ -94,6 +94,7 @@ public class SingleLinked {
             throw new LinkedNoteException("SingleLinked is empty!");
         }
 
+        System.out.print("first -> last : ");
         Note cur = first;
         while (cur != null) {
             System.out.print(cur.obj.toString() + " -> ");
@@ -115,7 +116,7 @@ public class SingleLinked {
 
         linked.remove(3);
         linked.display();
-        System.out.println(linked.find(1));
-        System.out.println(linked.find(4));
+        System.out.println("first -> last : " + linked.find(1));
+        System.out.println("first -> last : " + linked.find(4));
     }
 }

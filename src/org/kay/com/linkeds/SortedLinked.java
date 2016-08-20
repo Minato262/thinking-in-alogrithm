@@ -85,7 +85,7 @@ public class SortedLinked {
         linked.insert(2);
         linked.insert(100);
         linked.display();
-        System.out.println(linked.delete());
+        System.out.println("first -> last : " + linked.delete());
 
         linked.insert(33);
         linked.display();
