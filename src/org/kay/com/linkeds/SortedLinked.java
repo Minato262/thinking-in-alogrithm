@@ -67,7 +67,7 @@ public class SortedLinked {
 
     private void display() {
         if (first == null) {
-            System.out.println("SortedLinked is empty!");
+            throw new NullPointerException("SortedLinked is empty!");
         }
 
         System.out.print("first -> last : ");
