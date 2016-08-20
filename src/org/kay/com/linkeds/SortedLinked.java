@@ -42,8 +42,8 @@ public class SortedLinked {
         Note note = new Note(obj);
         Note pre = null;
         Note cur = first;
-        while (cur != null && (Integer.valueOf(note.obj.toString()).intValue() >
-                Integer.valueOf(cur.obj.toString()).intValue())) {
+        while (cur != null && (Integer.valueOf(note.obj.toString()) >
+                Integer.valueOf(cur.obj.toString()))) {
             pre = cur;
             cur = cur.next;
         }
