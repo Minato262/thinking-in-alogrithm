@@ -35,7 +35,10 @@ public class SingleLinked {
     private Note first;
 
     private void insert(Object obj) {
-        // obj cannot be null
+        if (obj == null) {
+            throw new NullPointerException("obj cannot be null!");
+        }
+
         Note note = new Note(obj);
         note.next = first;
         first = note;
