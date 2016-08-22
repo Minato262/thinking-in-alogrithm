@@ -14,7 +14,6 @@ public class BeerTest {
      * @param a 初始购买瓶数
      * @param b 啤酒:啤酒瓶兑换比例
      * @param c 啤酒:啤酒盖对话比例
-     *          a > b > c
      * @return
      */
     public static int queryWineNumFinal(int a, int b, int c) {
