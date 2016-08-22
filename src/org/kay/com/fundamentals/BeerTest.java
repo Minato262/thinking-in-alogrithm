@@ -9,7 +9,7 @@ package org.kay.com.fundamentals;
 public class BeerTest {
 
     /**
-     * 啤酒兑换计算工具 -- 精简代码 装13用
+     * 啤酒兑换计算工具
      *
      * @param a 初始购买瓶数
      * @param b 啤酒:啤酒瓶兑换比例
