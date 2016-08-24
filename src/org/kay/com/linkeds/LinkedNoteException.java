@@ -25,9 +25,10 @@ public class LinkedNoteException extends NullPointerException {
 
     /**
      * 默认构造器
+     *
      * @param message 异常信息
      */
-    public LinkedNoteException(String message){
+    public LinkedNoteException(String message) {
         super(message);
     }
 }
