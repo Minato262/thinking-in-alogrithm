@@ -17,9 +17,5 @@
 /**
  * Fundamentals include:
  * 1.Basic Programming Model:BinarySearch
- * 2.Data Abstraction:
- * 3.Bags,Queues,and Stacks:
- * 4.Analysis of Algorithms:
- * 5.Case Study:Union-Find:
  */
 package org.kay.com.fundamentals;
