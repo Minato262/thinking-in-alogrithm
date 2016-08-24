@@ -16,7 +16,7 @@
 package org.kay.com.linkeds;
 
 /**
- * <p>链表节点异常</p>
+ * <p>Linked Note Exception</p>
  *
  * @author kay
  * @version 1.0
