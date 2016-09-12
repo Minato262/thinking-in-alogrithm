@@ -36,7 +36,7 @@ public class SchedulingAlgorithm {
                 time += 1;      // 获取往返次数
             }
 
-            Thread threads[] = new Thread[1000];
+            Thread threads[] = new Thread[time];
             for (int i = 0; i < time; i++) {
                 threads[i] = new Thread(new Runnable() {
                     public void run() {
