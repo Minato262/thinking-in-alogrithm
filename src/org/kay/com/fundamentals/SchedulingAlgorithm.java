@@ -36,28 +36,8 @@ public class SchedulingAlgorithm {
                 time += 1;      // 获取往返次数
             }
 
-            Thread threads[] = new Thread[time];
-            for (int i = 0; i < time; i++) {
-                threads[i] = new Thread(new Runnable() {
-                    public void run() {
-                        try {
-                            TimeUnit.MICROSECONDS.sleep(k * 1000); // 每次启动时间
-                            TimeUnit.MICROSECONDS.sleep(y * z * g * h * 2 * 1000); // 电梯往返时间
-                        }
-                        catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-
-                try {
-                    threads[i].start();
-                    threads[i].join();
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+            TimeUnit.MICROSECONDS.sleep(time * k * 1000); // 每次启动时间
+            TimeUnit.MICROSECONDS.sleep(time * y * z * g * h * 2 * 1000); // 电梯往返时间
             return 0;
         }
     }
