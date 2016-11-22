@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.linkeds;
+package org.kay.com.alogrithm.linkeds;
 
 /**
  * <p>Sorted Linked</p>

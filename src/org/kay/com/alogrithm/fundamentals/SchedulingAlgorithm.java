@@ -1,4 +1,4 @@
-package org.kay.com.fundamentals;
+package org.kay.com.alogrithm.fundamentals;
 
 import java.util.Timer;
 import java.util.TimerTask;

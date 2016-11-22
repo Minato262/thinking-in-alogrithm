@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.linkeds;
+package org.kay.com.alogrithm.linkeds;
 
 /**
- * <p>Double Linked</p>
+ * <p>Single Linked</p>
  *
  * @author kay
  * @version 1.0
  */
-public class DoubleLinked {
+public class SingleLinked {
 
     private class Note {
         Object obj;
@@ -33,72 +33,65 @@ public class DoubleLinked {
     }
 
     private Note first;
-    private Note last;
 
-    private void insertFirst(Object obj) {
+    private void insert(Object obj) {
         if (obj == null) {
             throw new LinkedNoteException("obj cannot be null!");
         }
 
         Note note = new Note(obj);
-        if (first == null) {
-            last = note;
-        }
         note.next = first;
         first = note;
     }
 
-    private void insertLast(Object obj) {
-        if (obj == null) {
-            throw new LinkedNoteException("obj cannot be null!");
-        }
-
-        Note note = new Note(obj);
+    private Object delete() {
         if (first == null) {
-            first = note;
-        } else {
-            last.next = note;
-        }
-        last = note;
-    }
-
-    private Object deleteFirst() {
-        if (first == null) {
-            throw new LinkedNoteException("DoubleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
         Note temp = first;
-        if (first.next == null) {
-            last = null;
-        }
         first = first.next;
         return temp.obj;
     }
 
-    private void deleteLast() {
+    private Object find(Object obj) {
         if (first == null) {
-            throw new LinkedNoteException("DoubleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
-        if (first.next == null) {
-            first = null;
-            last = null;
+        Note cur = first;
+        while (cur != null) {
+            if (cur.obj.equals(obj)) {
+                return cur.obj;
+            }
+            cur = cur.next;
+        }
+        return null;
+    }
+
+    private void remove(Object obj) {
+        if (first == null) {
+            throw new LinkedNoteException("SingleLinked is empty!");
+        }
+
+        if (first.obj.equals(obj)) {
+            first = first.next;
         } else {
-            Note temp = first;
-            while (temp.next != null) {
-                if (temp.next == last) {
-                    last = temp;
-                    last.next = null;
-                    break;
+            Note pre = first;
+            Note cur = first.next;
+            while (cur != null) {
+                if (cur.obj.equals(obj)) {
+                    pre.next = cur.next;
                 }
-                temp = temp.next;
+                pre = cur;
+                cur = cur.next;
             }
         }
     }
 
     private void display() {
         if (first == null) {
-            throw new LinkedNoteException("DoubleLinked is empty!");
+            throw new LinkedNoteException("SingleLinked is empty!");
         }
 
         System.out.print("first -> last : ");
@@ -111,18 +104,19 @@ public class DoubleLinked {
     }
 
     public static void main(String[] args) {
-        DoubleLinked linked = new DoubleLinked();
-        linked.insertFirst(2);
-        linked.insertFirst(1);
+        SingleLinked linked = new SingleLinked();
+        linked.insert(4);
+        linked.insert(3);
+        linked.insert(2);
+        linked.insert(1);
         linked.display();
 
-        linked.insertLast(3);
+        linked.delete();
         linked.display();
 
-        linked.deleteFirst();
+        linked.remove(3);
         linked.display();
-
-        linked.deleteLast();
-        linked.display();
+        System.out.println("first -> last : " + linked.find(1));
+        System.out.println("first -> last : " + linked.find(4));
     }
 }

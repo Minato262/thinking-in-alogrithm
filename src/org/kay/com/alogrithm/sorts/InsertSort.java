@@ -13,35 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.sorts;
+package org.kay.com.alogrithm.sorts;
 
 /**
- * <p>Shell Sort</p>
+ * <p>Insert Sort</p>
  *
  * @author kay
  * @version 1.0
  */
-public class ShellSort {
+public class InsertSort {
 
     private static void sort(int[] data) {
-        int num = data.length;
-        int h = 1;
-        while (h * 3 + 1 < num) {
-            h = h * 3 + 1;
-        }
-
-        for (int tmp, insertPoint; h > 0; ) {
-            System.out.println(h);
-            for (int i = h; i < data.length; i++) {
-                tmp = data[i];
-                insertPoint = i;
-                while (insertPoint - h >= 0 && data[insertPoint - h] > tmp) {
-                    data[insertPoint] = data[insertPoint - h];
-                    insertPoint -= h;
-                }
+        for (int i = 1, tmp, insertPoint; i < data.length; i++) {
+            tmp = data[i];
+            insertPoint = i;
+            while (insertPoint > 0 && data[insertPoint - 1] > tmp) {
+                data[insertPoint] = data[insertPoint - 1];
+                insertPoint -= 1;
+            }
+            if (insertPoint < i) {
                 data[insertPoint] = tmp;
             }
-            h = (h - 1) / 3;
         }
 
         display(data);
@@ -51,11 +43,10 @@ public class ShellSort {
         for (int i : data) {
             System.out.print(i + " ");
         }
-        System.out.println();
     }
 
     public static void main(String[] args) {
-        final int[] data = {7, 10, 1, 9, 2, 5, 8, 6, 4, 3};
+        final int[] data = {1, 2, 3, 6, 5, 4};
         sort(data);
     }
 }

@@ -13,25 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.sorts;
+package org.kay.com.alogrithm.sorts;
 
 /**
- * <p>Bubble Sort</p>
+ * <p>Select Sort</p>
  *
  * @author kay
  * @version 1.0
  */
-public class BubbleSort {
+public class SelectSort {
 
     private static void sort(int[] data) {
-        for (int p = data.length - 1, tmp; p > 0; p--) {
-            for (int i = 0; i < p; i++) {
-                if (data[i] > data[i + 1]) {
-                    tmp = data[i];
-                    data[i] = data[i + 1];
-                    data[i + 1] = tmp;
+        for (int i = 0, flag, tmp; i < data.length - 1; i++) {
+            flag = i;
+            for (int j = i + 1; j <= data.length - 1; j++) {
+                if (data[j] < data[flag]) {
+                    flag = j;
                 }
             }
+            tmp = data[i];
+            data[i] = data[flag];
+            data[flag] = tmp;
         }
 
         display(data);

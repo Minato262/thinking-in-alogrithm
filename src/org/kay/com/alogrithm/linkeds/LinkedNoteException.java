@@ -13,9 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.kay.com.alogrithm.linkeds;
 
 /**
- * Fundamentals include:
- * 1.Basic Programming Model:BinarySearch
+ * <p>Linked Note Exception</p>
+ *
+ * @author kay
+ * @version 1.0
  */
-package org.kay.com.fundamentals;
+public class LinkedNoteException extends NullPointerException {
+
+    /**
+     * 默认构造器
+     *
+     * @param message 异常信息
+     */
+    public LinkedNoteException(String message) {
+        super(message);
+    }
+}

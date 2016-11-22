@@ -15,11 +15,7 @@
  */
 
 /**
- * Sort include:
- * 1.Bubble Sort.
- * 2.Select Sort.
- * 3.Insert Sort.
- * 4.Shell  Sort.
- * 5.Merge  Sort.
+ * Stack include:
+ * 1,Stack
  */
-package org.kay.com.sorts;
+package org.kay.com.alogrithm.stacks;

@@ -20,4 +20,4 @@
  * 2.Double Linked.
  * 3.Sorted Listed.
  */
-package org.kay.com.linkeds;
+package org.kay.com.alogrithm.linkeds;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.sorts;
+package org.kay.com.alogrithm.sorts;
 
 /**
  * <p>Merge Sort</p>

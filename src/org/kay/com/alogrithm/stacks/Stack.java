@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.stacks;
+package org.kay.com.alogrithm.stacks;
 
 /**
  * <p>Stack</p>
@@ -26,7 +26,7 @@ public class Stack {
     private int top = -1;
     private Object[] objs;
 
-    public Stack(int capacity) {
+    private Stack(int capacity) {
         if (capacity < 0)
             throw new IllegalArgumentException("Illegal capacity:" + capacity);
         objs = new Object[capacity];
