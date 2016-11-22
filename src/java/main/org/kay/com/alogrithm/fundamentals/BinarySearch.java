@@ -58,8 +58,8 @@ public class BinarySearch {
 
     private static void print(int[] array, String warn) {
         out.println(warn);
-        for (int i = 0; i < array.length; i++) {
-            out.print(array[i] + " ");
+        for (int anArray : array) {
+            out.print(anArray + " ");
         }
         out.println();
     }
