@@ -56,7 +56,7 @@ public class SchedulingAlgorithm {
 
     public static void main(String[] args) throws Exception {
         ExecutorService service = Executors.newCachedThreadPool();
-        Future<Integer> future  = service.submit(new Transport()); //电梯运输人
+        Future<Integer> future = service.submit(new Transport()); //电梯运输人
         while (!future.isDone()) {
             Timer timer = new Timer();
             timer.schedule(new Satisfaction(), a * 1000, c * 1000); //计算满意度
