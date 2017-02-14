@@ -56,7 +56,8 @@ public class DoubleLinked {
         Note note = new Note(obj);
         if (first == null) {
             first = note;
-        } else {
+        }
+        else {
             last.next = note;
         }
         last = note;
@@ -83,7 +84,8 @@ public class DoubleLinked {
         if (first.next == null) {
             first = null;
             last = null;
-        } else {
+        }
+        else {
             Note temp = first;
             while (temp.next != null) {
                 if (temp.next == last) {

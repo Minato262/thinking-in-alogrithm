@@ -76,7 +76,8 @@ public class SingleLinked {
 
         if (first.obj.equals(obj)) {
             first = first.next;
-        } else {
+        }
+        else {
             Note pre = first;
             Note cur = first.next;
             while (cur != null) {
