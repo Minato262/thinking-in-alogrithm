@@ -47,10 +47,12 @@ public class SortedLinked {
             cur = cur.next;
         }
 
-        if (pre == null)
+        if (pre == null) {
             first = note;
-        else
+        }
+        else {
             pre.next = note;
+        }
         note.next = cur;
     }
 
