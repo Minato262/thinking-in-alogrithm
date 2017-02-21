@@ -23,28 +23,28 @@ package org.kay.com.alogrithm.sorts;
  */
 public class BubbleSort {
 
-    private static void sort(int[] data) {
-        for (int p = data.length - 1, tmp; p > 0; p--) {
-            for (int i = 0; i < p; i++) {
-                if (data[i] > data[i + 1]) {
-                    tmp = data[i];
-                    data[i] = data[i + 1];
-                    data[i + 1] = tmp;
-                }
-            }
-        }
+	private static void sort(int[] data) {
+		for (int p = data.length - 1, tmp; p > 0; p--) {
+			for (int i = 0; i < p; i++) {
+				if (data[i] > data[i + 1]) {
+					tmp = data[i];
+					data[i] = data[i + 1];
+					data[i + 1] = tmp;
+				}
+			}
+		}
 
-        display(data);
-    }
+		display(data);
+	}
 
-    private static void display(int[] data) {
-        for (int i : data) {
-            System.out.print(i + " ");
-        }
-    }
+	private static void display(int[] data) {
+		for (int i : data) {
+			System.out.print(i + " ");
+		}
+	}
 
-    public static void main(String[] args) {
-        final int[] data = {6, 5, 4, 3, 2, 1};
-        sort(data);
-    }
+	public static void main(String[] args) {
+		final int[] data = {6, 5, 4, 3, 2, 1};
+		sort(data);
+	}
 }
