@@ -25,7 +25,7 @@ public class ShellSort {
 
     private static void sort(int[] data) {
         int num = data.length;
-        int h = 1;
+        int h   = 1;
         while (h * 3 + 1 < num) {
             h = h * 3 + 1;
         }

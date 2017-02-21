@@ -40,18 +40,19 @@ public class SortedLinked {
         }
 
         Note note = new Note(obj);
-        Note pre = null;
-        Note cur = first;
-        while (cur != null && (Integer.valueOf(note.obj.toString()) >
-                Integer.valueOf(cur.obj.toString()))) {
+        Note pre  = null;
+        Note cur  = first;
+        while (cur != null && (Integer.valueOf(note.obj.toString()) > Integer.valueOf(cur.obj.toString()))) {
             pre = cur;
             cur = cur.next;
         }
 
-        if (pre == null)
+        if (pre == null) {
             first = note;
-        else
+        }
+        else {
             pre.next = note;
+        }
         note.next = cur;
     }
 

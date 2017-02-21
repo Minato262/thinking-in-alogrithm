@@ -13,4 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * list.
+ */
 package org.kay.com.collections.list;

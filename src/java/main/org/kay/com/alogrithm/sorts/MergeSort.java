@@ -26,10 +26,12 @@ public class MergeSort {
     private static void sort(int[] A, int[] B, int[] C) {
         int a = 0, b = 0, c = 0;
         while (a < A.length && b < B.length) {
-            if (A[a] < B[b])
+            if (A[a] < B[b]) {
                 C[c++] = A[a++];
-            else
+            }
+            else {
                 C[c++] = B[b++];
+            }
         }
         while (a < A.length) {
             C[c++] = A[a++];

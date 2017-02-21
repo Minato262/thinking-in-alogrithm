@@ -23,108 +23,106 @@ package org.kay.com.alogrithm.linkeds;
  */
 public class DoubleLinked {
 
-	private class Note {
-		Object obj;
-		Note next = null;
+    private class Note {
+        Object obj;
+        Note next = null;
 
-		Note(Object obj) {
-			this.obj = obj;
-		}
-	}
+        Note(Object obj) {
+            this.obj = obj;
+        }
+    }
 
-	private Note first;
-	private Note last;
+    private Note first;
+    private Note last;
 
-	private void insertFirst(Object obj) {
-		if (obj == null) {
-			throw new LinkedNoteException("obj cannot be null!");
-		}
+    private void insertFirst(Object obj) {
+        if (obj == null) {
+            throw new LinkedNoteException("obj cannot be null!");
+        }
 
-		Note note = new Note(obj);
-		if (first == null) {
-			last = note;
-		}
-		note.next = first;
-		first = note;
-	}
+        Note note = new Note(obj);
+        if (first == null) {
+            last = note;
+        }
+        note.next = first;
+        first = note;
+    }
 
-	private void insertLast(Object obj) {
-		if (obj == null) {
-			throw new LinkedNoteException("obj cannot be null!");
-		}
+    private void insertLast(Object obj) {
+        if (obj == null) {
+            throw new LinkedNoteException("obj cannot be null!");
+        }
 
-		Note note = new Note(obj);
-		if (first == null) {
-			first = note;
-		}
-		else {
-			last.next = note;
-		}
-		last = note;
-	}
+        Note note = new Note(obj);
+        if (first == null) {
+            first = note;
+        } else {
+            last.next = note;
+        }
+        last = note;
+    }
 
-	private Object deleteFirst() {
-		if (first == null) {
-			throw new LinkedNoteException("DoubleLinked is empty!");
-		}
+    private Object deleteFirst() {
+        if (first == null) {
+            throw new LinkedNoteException("DoubleLinked is empty!");
+        }
 
-		Note temp = first;
-		if (first.next == null) {
-			last = null;
-		}
-		first = first.next;
-		return temp.obj;
-	}
+        Note temp = first;
+        if (first.next == null) {
+            last = null;
+        }
+        first = first.next;
+        return temp.obj;
+    }
 
-	private void deleteLast() {
-		if (first == null) {
-			throw new LinkedNoteException("DoubleLinked is empty!");
-		}
+    private void deleteLast() {
+        if (first == null) {
+            throw new LinkedNoteException("DoubleLinked is empty!");
+        }
 
-		if (first.next == null) {
-			first = null;
-			last = null;
-		}
-		else {
-			Note temp = first;
-			while (temp.next != null) {
-				if (temp.next == last) {
-					last = temp;
-					last.next = null;
-					break;
-				}
-				temp = temp.next;
-			}
-		}
-	}
+        if (first.next == null) {
+            first = null;
+            last = null;
+        } else {
+            Note temp = first;
+            while (temp.next != null) {
+                if (temp.next == last) {
+                    last = temp;
+                    last.next = null;
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+    }
 
-	private void display() {
-		if (first == null) {
-			throw new LinkedNoteException("DoubleLinked is empty!");
-		}
+    private void display() {
+        if (first == null) {
+            throw new LinkedNoteException("DoubleLinked is empty!");
+        }
 
-		System.out.print("first -> last : ");
-		Note cur = first;
-		while (cur != null) {
-			System.out.print(cur.obj.toString() + " -> ");
-			cur = cur.next;
-		}
-		System.out.println();
-	}
+        System.out.print("first -> last : ");
+        Note cur = first;
+        while (cur != null) {
+            System.out.print(cur.obj.toString() + " -> ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
 
-	public static void main(String[] args) {
-		DoubleLinked linked = new DoubleLinked();
-		linked.insertFirst(2);
-		linked.insertFirst(1);
-		linked.display();
+    public static void main(String[] args) {
+        DoubleLinked linked = new DoubleLinked();
+        linked.insertFirst(2);
+        linked.insertFirst(1);
+        linked.display();
 
-		linked.insertLast(3);
-		linked.display();
+        linked.insertLast(3);
+        linked.display();
 
-		linked.deleteFirst();
-		linked.display();
+        linked.deleteFirst();
+        linked.display();
 
-		linked.deleteLast();
-		linked.display();
-	}
+        linked.deleteLast();
+        linked.display();
+    }
 }
