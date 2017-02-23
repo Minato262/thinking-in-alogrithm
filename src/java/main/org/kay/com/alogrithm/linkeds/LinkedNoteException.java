@@ -21,7 +21,7 @@ package org.kay.com.alogrithm.linkeds;
  * @author kay
  * @version 1.0
  */
-public class LinkedNoteException extends NullPointerException {
+class LinkedNoteException extends NullPointerException {
 
     /**
      * 默认构造器

@@ -3,7 +3,7 @@ package org.kay.com.collections.list;
 import java.util.Iterator;
 
 /**
- *
+ * Array List.
  *
  * @param <T>
  */
