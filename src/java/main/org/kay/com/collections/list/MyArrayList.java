@@ -9,6 +9,8 @@ import java.util.Iterator;
  */
 public class MyArrayList<T> implements Iterable<T> {
 
+    private Entry[] entries;
+
     public Iterator<T> iterator() {
         return null;
     }
