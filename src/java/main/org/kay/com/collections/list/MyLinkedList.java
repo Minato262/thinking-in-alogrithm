@@ -8,6 +8,8 @@ import java.util.Iterator;
  * @param <T>
  */
 public class MyLinkedList<T> implements Iterable<T> {
+
+    private Entry[] entries;
     
     public Iterator<T> iterator() {
         return null;
