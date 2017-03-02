@@ -7,6 +7,7 @@ package org.kay.com.collections;
  * @param <V> value
  */
 public class Entry<K, V> {
+
     private K key;
     private V value;
 
