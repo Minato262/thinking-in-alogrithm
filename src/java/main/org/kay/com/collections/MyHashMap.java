@@ -1,4 +1,4 @@
-package org.kay.com.collections.list;
+package org.kay.com.collections;
 
 /**
  * Hash Map.

@@ -1,4 +1,4 @@
-package org.kay.com.collections.list;
+package org.kay.com.collections;
 
 /**
  * entry.
@@ -6,7 +6,7 @@ package org.kay.com.collections.list;
  * @param <K> key
  * @param <V> value
  */
-class Entry<K, V> {
+public class Entry<K, V> {
     private K key;
     private V value;
 

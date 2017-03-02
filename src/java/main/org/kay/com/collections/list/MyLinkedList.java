@@ -1,5 +1,7 @@
 package org.kay.com.collections.list;
 
+import org.kay.com.collections.Entry;
+
 import java.util.Iterator;
 
 /**
