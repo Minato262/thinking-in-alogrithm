@@ -37,7 +37,7 @@ public class DoubleLinked {
 
     private void insertFirst(Object obj) {
         if (obj == null) {
-            throw new LinkedNoteException("obj cannot be null!");
+            throw new LinkedNoteException("object cannot be null!");
         }
 
         Note note = new Note(obj);
@@ -50,7 +50,7 @@ public class DoubleLinked {
 
     private void insertLast(Object obj) {
         if (obj == null) {
-            throw new LinkedNoteException("obj cannot be null!");
+            throw new LinkedNoteException("object cannot be null!");
         }
 
         Note note = new Note(obj);
