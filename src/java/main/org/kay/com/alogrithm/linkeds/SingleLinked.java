@@ -23,101 +23,101 @@ package org.kay.com.alogrithm.linkeds;
  */
 public class SingleLinked {
 
-	private class Note {
-		Object obj;
-		Note next = null;
+    private class Note {
+        Object obj;
+        Note next = null;
 
-		Note(Object obj) {
-			this.obj = obj;
-		}
-	}
+        Note(Object obj) {
+            this.obj = obj;
+        }
+    }
 
-	private Note first;
+    private Note first;
 
-	private void insert(Object obj) {
-		if (obj == null) {
-			throw new LinkedNoteException("obj cannot be null!");
-		}
+    private void insert(Object obj) {
+        if (obj == null) {
+            throw new LinkedNoteException("obj cannot be null!");
+        }
 
-		Note note = new Note(obj);
-		note.next = first;
-		first = note;
-	}
+        Note note = new Note(obj);
+        note.next = first;
+        first = note;
+    }
 
-	private Object delete() {
-		if (first == null) {
-			throw new LinkedNoteException("SingleLinked is empty!");
-		}
+    private Object delete() {
+        if (first == null) {
+            throw new LinkedNoteException("SingleLinked is empty!");
+        }
 
-		Note temp = first;
-		first = first.next;
-		return temp.obj;
-	}
+        Note temp = first;
+        first = first.next;
+        return temp.obj;
+    }
 
-	private Object find(Object obj) {
-		if (first == null) {
-			throw new LinkedNoteException("SingleLinked is empty!");
-		}
+    private Object find(Object obj) {
+        if (first == null) {
+            throw new LinkedNoteException("SingleLinked is empty!");
+        }
 
-		Note cur = first;
-		while (cur != null) {
-			if (cur.obj.equals(obj)) {
-				return cur.obj;
-			}
-			cur = cur.next;
-		}
-		return null;
-	}
+        Note cur = first;
+        while (cur != null) {
+            if (cur.obj.equals(obj)) {
+                return cur.obj;
+            }
+            cur = cur.next;
+        }
+        return null;
+    }
 
-	private void remove(Object obj) {
-		if (first == null) {
-			throw new LinkedNoteException("SingleLinked is empty!");
-		}
+    private void remove(Object obj) {
+        if (first == null) {
+            throw new LinkedNoteException("SingleLinked is empty!");
+        }
 
-		if (first.obj.equals(obj)) {
-			first = first.next;
-		}
-		else {
-			Note pre = first;
-			Note cur = first.next;
-			while (cur != null) {
-				if (cur.obj.equals(obj)) {
-					pre.next = cur.next;
-				}
-				pre = cur;
-				cur = cur.next;
-			}
-		}
-	}
+        if (first.obj.equals(obj)) {
+            first = first.next;
+        }
+        else {
+            Note pre = first;
+            Note cur = first.next;
+            while (cur != null) {
+                if (cur.obj.equals(obj)) {
+                    pre.next = cur.next;
+                }
+                pre = cur;
+                cur = cur.next;
+            }
+        }
+    }
 
-	private void display() {
-		if (first == null) {
-			throw new LinkedNoteException("SingleLinked is empty!");
-		}
+    private void display() {
+        if (first == null) {
+            throw new LinkedNoteException("SingleLinked is empty!");
+        }
 
-		System.out.print("first -> last : ");
-		Note cur = first;
-		while (cur != null) {
-			System.out.print(cur.obj.toString() + " -> ");
-			cur = cur.next;
-		}
-		System.out.println();
-	}
+        System.out.print("first -> last : ");
+        Note cur = first;
+        while (cur != null) {
+            System.out.print(cur.obj.toString() + " -> ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
 
-	public static void main(String[] args) {
-		SingleLinked linked = new SingleLinked();
-		linked.insert(4);
-		linked.insert(3);
-		linked.insert(2);
-		linked.insert(1);
-		linked.display();
+    public static void main(String[] args) {
+        SingleLinked linked = new SingleLinked();
+        linked.insert(4);
+        linked.insert(3);
+        linked.insert(2);
+        linked.insert(1);
+        linked.display();
 
-		linked.delete();
-		linked.display();
+        linked.delete();
+        linked.display();
 
-		linked.remove(3);
-		linked.display();
-		System.out.println("first -> last : " + linked.find(1));
-		System.out.println("first -> last : " + linked.find(4));
-	}
+        linked.remove(3);
+        linked.display();
+        System.out.println("first -> last : " + linked.find(1));
+        System.out.println("first -> last : " + linked.find(4));
+    }
 }
