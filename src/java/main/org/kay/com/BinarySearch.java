@@ -71,7 +71,7 @@ public class BinarySearch {
         print(new int[]{binaryKey}, "The value of the key: ");
 
         Arrays.sort(binaryArray);
-        print(binaryArray, "a sorted array of int values:");
+        print(binaryArray, "A sorted array of int values:");
         print(new int[]{rankOne(binaryKey, binaryArray)}, "The value of the rank: ");
         print(new int[]{rankTwo(binaryKey, binaryArray)}, "The value of the rank: ");
     }
