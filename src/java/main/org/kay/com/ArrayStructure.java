@@ -15,15 +15,16 @@
  */
 package org.kay.com;
 
+import java.util.Arrays;
+
 /**
- *
- *
  * @author kay
  * @version v0.0.1
  */
 public class ArrayStructure {
 
-    public void println(){
-        System.out.println("1");
+    public static  <T> T[] expandCapacity(T[] datas, int newLen) {
+        newLen = newLen < 0 ? 0 : newLen;
+        return Arrays.copyOf(datas, newLen);
     }
 }

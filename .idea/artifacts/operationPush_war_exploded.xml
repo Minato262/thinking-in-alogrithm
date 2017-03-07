@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="operationPush:war exploded">
+    <output-path>$USER_HOME$/svn/operationPush/branches/operationPush_v0.0.1_20161128_活动推送开发/target/operationPush</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="operationPush" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/tf56/sofa/0.0.24-SNAPSHOT/sofa-0.0.24-20170210.061038-24.jar" output-file-name="sofa-0.0.24-SNAPSHOT.jar" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$USER_HOME$/svn/operationPush/branches/operationPush_v0.0.1_20161128_活动推送开发/target/operationPush/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="operationPush/web/Web" />
+    </root>
+  </artifact>
+</component>

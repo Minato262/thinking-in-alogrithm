@@ -15,6 +15,8 @@
  */
 package org.kay.com;
 
+import org.junit.jupiter.api.Test;
+
 /**
  *
  *
@@ -25,6 +27,8 @@ public class ArrayStructureTest {
 
     @Test
     public void printlnTest(){
-
+        Integer[] ints = new Integer[60];
+        ints = ArrayStructure.expandCapacity(ints, 80);
+        System.out.println(ints.length);
     }
 }
