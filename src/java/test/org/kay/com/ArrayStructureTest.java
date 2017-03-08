@@ -18,17 +18,15 @@ package org.kay.com;
 import org.junit.jupiter.api.Test;
 
 /**
- *
- *
  * @author kay
  * @version v0.0.1
  */
 public class ArrayStructureTest {
 
     @Test
-    public void printlnTest(){
+    public void printlnTest() {
         Integer[] ints = new Integer[60];
-        ints = ArrayStructure.expandCapacity(ints, 80);
+        ints = ArrayStructure.expandCapacity(null, 80);
         System.out.println(ints.length);
     }
 }

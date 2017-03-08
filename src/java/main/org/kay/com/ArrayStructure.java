@@ -23,8 +23,14 @@ import java.util.Arrays;
  */
 public class ArrayStructure {
 
-    public static  <T> T[] expandCapacity(T[] datas, int newLen) {
+    public static <T> T[] expandCapacity(T[] datas, int newLen) {
         newLen = newLen < 0 ? 0 : newLen;
         return Arrays.copyOf(datas, newLen);
+    }
+
+    public static void main(String[] args) {
+        Integer[] ints = new Integer[60];
+        ints = ArrayStructure.expandCapacity(ints, 80);
+        System.out.println(ints.length);
     }
 }
