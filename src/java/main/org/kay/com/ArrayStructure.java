@@ -18,6 +18,8 @@ package org.kay.com;
 import java.util.Arrays;
 
 /**
+ * Array Structure.
+ *
  * @author kay
  * @version v0.0.1
  */

@@ -18,6 +18,8 @@ package org.kay.com;
 import org.junit.jupiter.api.Test;
 
 /**
+ * Array Structure Test.
+ *
  * @author kay
  * @version v0.0.1
  */
