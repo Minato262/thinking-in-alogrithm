@@ -1,4 +1,4 @@
-﻿# Thinking in Alogrithm
+﻿# Thinking in Arithmetic
 
 --- 
 
