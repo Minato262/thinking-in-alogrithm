@@ -13,24 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com;
+package org.kay.com.structure;
 
-import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 
 /**
- * Array Structure.
+ * Array Structure Test.
  *
  * @author kay
  * @version v0.0.1
  */
-public class ArrayStructure {
+public class ArrayStructureTest {
 
-    public static <T> T[] expandCapacity(T[] datas, int newLen) {
-        newLen = newLen < 0 ? 0 : newLen;
-        return Arrays.copyOf(datas, newLen);
-    }
-
-    public static void main(String[] args) {
+    @Test
+    public void printlnTest() {
         Integer[] ints = new Integer[60];
         ints = ArrayStructure.expandCapacity(ints, 80);
         System.out.println(ints.length);
