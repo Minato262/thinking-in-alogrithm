@@ -13,26 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure;
-
-import java.util.Arrays;
 
 /**
- * Array Structure.
- *
  * @author kay
  * @version v0.0.1
  */
-public class ArrayStructure {
-
-    public static <T> T[] expandCapacity(T[] datas, int newLen) {
-        newLen = newLen < 0 ? 0 : newLen;
-        return Arrays.copyOf(datas, newLen);
-    }
-
-    public static void main(String[] args) {
-        Integer[] ints = new Integer[60];
-        ints = ArrayStructure.expandCapacity(ints, 80);
-        System.out.println(ints.length);
-    }
-}
+package org.kay.com.structure.array;

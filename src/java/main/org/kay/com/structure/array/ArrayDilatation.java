@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure;
+package org.kay.com.structure.array;
 
-import org.junit.jupiter.api.Test;
+import java.util.Arrays;
 
 /**
- * Array Structure Test.
+ * Array Structure.
  *
  * @author kay
  * @version v0.0.1
  */
-public class ArrayStructureTest {
+public class ArrayDilatation {
 
-    @Test
-    public void printlnTest() {
+    public static <T> T[] expandCapacity(T[] datas, int newLen) {
+        newLen = newLen < 0 ? 0 : newLen;
+        return Arrays.copyOf(datas, newLen);
+    }
+
+    public static void main(String[] args) {
         Integer[] ints = new Integer[60];
-        ints = ArrayStructure.expandCapacity(ints, 80);
+        ints = ArrayDilatation.expandCapacity(ints, 80);
         System.out.println(ints.length);
     }
 }
