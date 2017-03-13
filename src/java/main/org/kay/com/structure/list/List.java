@@ -13,9 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.kay.com.structure.list;
 
 /**
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.alogrithc;
+public interface List<E> {
+
+    E get(int index);
+
+    void add(E e);
+
+    void remove(int index);
+
+    void insert(int index, E e);
+
+    boolean contains(Object obj);
+
+    int size();
+
+    boolean isEmpty();
+
+    void clear();
+
+}

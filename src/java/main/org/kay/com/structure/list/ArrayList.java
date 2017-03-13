@@ -13,9 +13,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.kay.com.structure.list;
 
 /**
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.alogrithc;
+public class ArrayList<E> implements List<E> {
+
+    @Override
+    public E get(int index) {
+        return null;
+    }
+
+    @Override
+    public void add(E e) {
+
+    }
+
+    @Override
+    public void remove(int index) {
+
+    }
+
+    @Override
+    public void insert(int index, E e) {
+
+    }
+
+    @Override
+    public boolean contains(Object obj) {
+        return false;
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+}
