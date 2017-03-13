@@ -13,28 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure.list;
+package org.kay.com.structure.map;
 
 /**
  *
- * @param <E>
+ * @param <K>
+ * @param <V>
  */
-public interface List<E> {
+public class HashMap<K, V> implements Map<K, V> {
 
-    E get(int index);
+    public static void main(String[] args) {
 
-    void add(E e);
-
-    void remove(int index);
-
-    void insert(int index, E e);
-
-    boolean contains(Object obj);
-
-    int size();
-
-    boolean isEmpty();
-
-    void clear();
-
+    }
 }

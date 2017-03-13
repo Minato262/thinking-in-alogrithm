@@ -16,8 +16,8 @@
 package org.kay.com.structure.list;
 
 /**
- * @author kay
- * @version v0.0.1
+ *
+ * @param <E>
  */
 public class ArrayList<E> implements List<E> {
 
@@ -58,6 +58,10 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public void clear() {
+
+    }
+
+    public static void main(String[] args) {
 
     }
 }
