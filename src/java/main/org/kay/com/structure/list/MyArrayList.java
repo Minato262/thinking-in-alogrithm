@@ -38,7 +38,7 @@ public class MyArrayList<E> implements List<E> {
 
     public MyArrayList(int size) {
         if (size < 0) {
-            throw new IndexOutOfBoundsException("Array size should not be less than 0!");
+            throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
         }
 
         this.elements = new Object[size];
@@ -48,7 +48,7 @@ public class MyArrayList<E> implements List<E> {
 
     private void confirmIndexOfBounds(int index) {
         if (index > capacity || index < 0) {
-            throw new IndexOutOfBoundsException("Index Out Of Bounds!");
+            throw new ArrayIndexOutOfBoundsException("Array Index Out Of Bounds!");
         }
     }
 
