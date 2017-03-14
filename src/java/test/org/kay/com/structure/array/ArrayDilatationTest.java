@@ -13,9 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.kay.com.structure.array;
+
+import org.junit.jupiter.api.Test;
 
 /**
+ * {@link ArrayDilatation} Test.
+ *
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.structure;
+public class ArrayDilatationTest {
+
+    @Test
+    public void printlnTest() {
+        Integer[] ints = new Integer[60];
+        ints = ArrayDilatation.expandCapacity(ints, 80);
+        System.out.println(ints.length);
+    }
+}

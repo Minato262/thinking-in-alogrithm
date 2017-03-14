@@ -20,7 +20,7 @@ package org.kay.com.structure.map;
  * @param <K>
  * @param <V>
  */
-public class HashMap<K, V> implements Map<K, V> {
+public class MyHashMap<K, V> implements Map<K, V> {
 
     public static void main(String[] args) {
 
