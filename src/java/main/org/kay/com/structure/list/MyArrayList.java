@@ -24,13 +24,13 @@ package org.kay.com.structure.list;
  */
 public class MyArrayList<E> implements List<E> {
 
-    private static int DEFAULT_SIZE = 10;  // 数组默认长度
+    private static int DEFAULT_SIZE = 10;  // array default size
 
-    private Object[] elements;  // 存储队列
+    private Object[] elements;  // queue storage
 
-    private int capacity;   // 数组指针
+    private int capacity;   // array pointer
 
-    private int current;    // 当前游标
+    private int current;    // the current record
 
     public MyArrayList() {
         this(DEFAULT_SIZE);
@@ -46,9 +46,9 @@ public class MyArrayList<E> implements List<E> {
         this.current = 0;
     }
 
-    private void confirmIndexOfBounds(int index) {
+    private void confirmIndexOutOfBounds(int index) {
         if (index > capacity || index < 0) {
-            throw new ArrayIndexOutOfBoundsException("Array Index Out Of Bounds!");
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
         }
     }
 
@@ -63,7 +63,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        confirmIndexOfBounds(index);
+        confirmIndexOutOfBounds(index);
         return (E) this.elements[index];
     }
 
@@ -76,7 +76,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void remove(int index) {
-        confirmIndexOfBounds(index);
+        confirmIndexOutOfBounds(index);
         for (int i = index; i < elements.length; i++) {
             if (i + 1 < elements.length) {
                 this.elements[i] = this.elements[i + 1];
@@ -87,7 +87,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void insert(int index, E e) {
-        confirmIndexOfBounds(index);
+        confirmIndexOutOfBounds(index);
         for (int i = 0; i < elements.length; i++) {
             if (i >= index && i + 2 < elements.length) {
                 this.elements[i] = e;
