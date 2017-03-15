@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure.map;
+package org.kay.com.structure.list;
 
 /**
- * Map.
+ * {@link MyLinkedList} Test.
  *
- * @param <K>
- * @param <V>
+ * @author kay
+ * @version v0.0.1
  */
-public interface Map<K, V> {
+public class MyLinkedListTest {
 }

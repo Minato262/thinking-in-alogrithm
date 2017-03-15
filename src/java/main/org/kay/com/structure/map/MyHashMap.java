@@ -16,9 +16,10 @@
 package org.kay.com.structure.map;
 
 /**
+ * My Hash Map.
  *
- * @param <K>
- * @param <V>
+ * @param <K> Key.
+ * @param <V> Value.
  */
 public class MyHashMap<K, V> implements Map<K, V> {
 

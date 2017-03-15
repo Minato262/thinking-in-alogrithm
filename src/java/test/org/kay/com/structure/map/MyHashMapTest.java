@@ -16,10 +16,10 @@
 package org.kay.com.structure.map;
 
 /**
- * Map.
+ * {@link MyHashMap} Test.
  *
- * @param <K>
- * @param <V>
+ * @author kay
+ * @version v0.0.1
  */
-public interface Map<K, V> {
+public class MyHashMapTest {
 }

@@ -16,6 +16,7 @@
 package org.kay.com.structure.list;
 
 /**
+ * List.
  *
  * @param <E>
  */
