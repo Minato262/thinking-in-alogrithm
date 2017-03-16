@@ -114,7 +114,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public boolean isEmpty() {
-        return this.current > 0;
+        return size() == 0;
     }
 
     @Override
