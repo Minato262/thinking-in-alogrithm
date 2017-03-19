@@ -11,22 +11,22 @@ import org.kay.com.structure.Iterator;
 public class MyLinkedList<E> implements List<E> {
 
     @Override
-    public boolean hasNext() {
-        return false;
-    }
-
-    @Override
-    public E next() {
+    public E get(int index) {
         return null;
     }
 
     @Override
-    public void remove() {
+    public void add(E e) {
 
     }
 
     @Override
-    public void add(E e) {
+    public boolean remove(E e) {
+        return false;
+    }
+
+    @Override
+    public void remove() {
 
     }
 
@@ -47,7 +47,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public int size() {
-        return 0;
+        return -1;
     }
 
     @Override
@@ -66,12 +66,12 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     @Override
-    public E get(int index) {
-        return null;
+    public boolean hasNext() {
+        return false;
     }
 
     @Override
-    public boolean remove(E e) {
-        return false;
+    public E next() {
+        return null;
     }
 }
