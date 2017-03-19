@@ -22,8 +22,4 @@ package org.kay.com.structure.map;
  * @param <V> Value.
  */
 public class MyHashMap<K, V> implements Map<K, V> {
-
-    public static void main(String[] args) {
-
-    }
 }
