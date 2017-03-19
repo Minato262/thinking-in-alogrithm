@@ -67,15 +67,20 @@ public class MyArrayList<E> implements List<E> {
     }
 
     @Override
+    public void add(E e) {
+        confirmSize();
+        this.elements[current] = e;
+        this.current++;
+    }
+
+    @Override
     public boolean remove(E e) {
         return false;
     }
 
     @Override
-    public void add(E e) {
-        confirmSize();
-        this.elements[current] = e;
-        this.current++;
+    public void remove() {
+
     }
 
     @Override
@@ -139,10 +144,5 @@ public class MyArrayList<E> implements List<E> {
     @Override
     public E next() {
         return null;
-    }
-
-    @Override
-    public void remove() {
-
     }
 }
