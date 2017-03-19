@@ -17,6 +17,8 @@ package org.kay.com.structure.list;
 
 import org.junit.jupiter.api.Test;
 
+import static java.lang.System.out;
+
 /**
  * {@link MyArrayList} Test.
  *
@@ -26,7 +28,28 @@ import org.junit.jupiter.api.Test;
 public class MyArrayListTest {
 
     @Test
-    public void IndexOutOfBoundsTest(){
-        new MyArrayList<>(-1);
+    public void IndexOutOfBoundsTest() {
+        List<String> list = new MyArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+        out.println("下标为3的元素为:" + list.get(3));
+        out.println("数组size:" + list.size());
+
+        list.remove(2);
+        out.println("remove后的数组size:" + list.size());
+
+        out.print("remove后的数组:");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + ",");
+        }
+        out.println("");
+
+        list.insert(3, "gg");
+        out.print("insert后的数组:");
+        for (int i = 0; i < list.size(); i++) {
+            out.print(list.get(i) + ",");
+        }
     }
 }

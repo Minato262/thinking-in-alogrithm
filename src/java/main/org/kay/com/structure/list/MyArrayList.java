@@ -26,13 +26,10 @@ import org.kay.com.structure.Iterator;
  */
 public class MyArrayList<E> implements List<E> {
 
-    private static int DEFAULT_SIZE = 10;  // array default size
-
-    private Object[] elements;  // queue storage
-
-    private int capacity;   // array pointer
-
-    private int current;    // the current record
+    private static final int DEFAULT_SIZE = 10;     // array default size
+    private Object[] elements;                      // queue storage
+    private int      capacity;                      // array pointer
+    private int      current;                       // the current record
 
     public MyArrayList() {
         this(DEFAULT_SIZE);
@@ -127,31 +124,6 @@ public class MyArrayList<E> implements List<E> {
     @Override
     public void clear() {
         this.elements = new Object[DEFAULT_SIZE];
-    }
-
-    public static void main(String[] args) {
-        List<String> list = new MyArrayList<>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        list.add("d");
-        System.out.println("下标为3的元素为:" + list.get(3));
-        System.out.println("数组size:" + list.size());
-
-        list.remove(2);
-        System.out.println("remove后的数组size:" + list.size());
-
-        System.out.print("remove后的数组:");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + ",");
-        }
-        System.out.println("");
-
-        list.insert(3, "gg");
-        System.out.print("insert后的数组:");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + ",");
-        }
     }
 
     @Override
