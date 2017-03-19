@@ -27,25 +27,35 @@ import static java.lang.System.out;
  */
 public class MyArrayListTest {
 
-    @Test
-    public void IndexOutOfBoundsTest() {
+    private List<String> init(){
         List<String> list = new MyArrayList<>();
         list.add("a");
         list.add("b");
         list.add("c");
         list.add("d");
-        out.println("下标为3的元素为:" + list.get(3));
-        out.println("数组size:" + list.size());
+        return list;
+    }
 
+    @Test
+    public void getBoundsTest() {
+        List<String> list = init();
+        out.println("下标为3的元素为:" + list.get(3));
+    }
+
+    @Test
+    public void removeBoundsTest() {
+        List<String> list = new MyArrayList<>();
         list.remove(2);
         out.println("remove后的数组size:" + list.size());
-
         out.print("remove后的数组:");
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + ",");
         }
-        out.println("");
+    }
 
+    @Test
+    public void insertBoundsTest(){
+        List<String> list = new MyArrayList<>();
         list.insert(3, "gg");
         out.print("insert后的数组:");
         for (int i = 0; i < list.size(); i++) {
