@@ -15,6 +15,8 @@
  */
 package org.kay.com.structure.list;
 
+import org.kay.com.structure.Iterator;
+
 /**
  * My Array List.
  *
@@ -65,6 +67,11 @@ public class MyArrayList<E> implements List<E> {
     public E get(int index) {
         confirmIndexOutOfBounds(index);
         return (E) this.elements[index];
+    }
+
+    @Override
+    public boolean remove(E e) {
+        return false;
     }
 
     @Override
@@ -145,5 +152,25 @@ public class MyArrayList<E> implements List<E> {
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + ",");
         }
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return null;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override
+    public E next() {
+        return null;
+    }
+
+    @Override
+    public void remove() {
+
     }
 }

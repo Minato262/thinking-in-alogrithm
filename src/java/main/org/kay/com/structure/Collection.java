@@ -13,20 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure.list;
-
-import org.kay.com.structure.Collection;
+package org.kay.com.structure;
 
 /**
- * List.
+ * Collection.
  *
- * @param <E>
  * @author kay
  * @version v0.0.1
  */
-public interface List<E> extends Collection<E> {
+public interface Collection<E> extends Iterator<E> {
 
-    E get(int index);
+    void add(E e);
 
-    boolean remove(E e);
+    void remove(int index);
+
+    void insert(int index, E e);
+
+    boolean contains(Object obj);
+
+    int size();
+
+    boolean isEmpty();
+
+    void clear();
+
+    Iterator<E> iterator();
 }
