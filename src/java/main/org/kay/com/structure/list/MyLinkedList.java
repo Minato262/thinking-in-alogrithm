@@ -16,6 +16,11 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     @Override
+    public E previous() {
+        return null;
+    }
+
+    @Override
     public void add(E e) {
 
     }
@@ -74,4 +79,5 @@ public class MyLinkedList<E> implements List<E> {
     public E next() {
         return null;
     }
+
 }

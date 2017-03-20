@@ -67,6 +67,11 @@ public class MyArrayList<E> implements List<E> {
     }
 
     @Override
+    public E previous() {
+        return null;
+    }
+
+    @Override
     public void add(E e) {
         confirmSize();
         this.elements[current] = e;
@@ -117,6 +122,11 @@ public class MyArrayList<E> implements List<E> {
     }
 
     @Override
+    public E next() {
+        return null;
+    }
+
+    @Override
     public int size() {
         return this.current;
     }
@@ -141,8 +151,4 @@ public class MyArrayList<E> implements List<E> {
         return false;
     }
 
-    @Override
-    public E next() {
-        return null;
-    }
 }

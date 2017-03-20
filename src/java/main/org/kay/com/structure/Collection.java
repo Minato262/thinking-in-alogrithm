@@ -38,4 +38,5 @@ public interface Collection<E> extends Iterator<E> {
     void clear();
 
     Iterator<E> iterator();
+
 }

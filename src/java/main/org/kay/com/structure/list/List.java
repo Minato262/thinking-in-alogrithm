@@ -28,5 +28,8 @@ public interface List<E> extends Collection<E> {
 
     E get(int index);
 
+    E previous();
+
     boolean remove(E e);
+
 }
