@@ -44,7 +44,7 @@ public class MyArrayListTest {
 
     @Test
     public void removeBoundsTest() {
-        List<String> list = new MyArrayList<>();
+        List<String> list = init();
         list.remove(2);
         out.println("remove后的数组size:" + list.size());
         out.print("remove后的数组:");
@@ -55,7 +55,7 @@ public class MyArrayListTest {
 
     @Test
     public void insertBoundsTest(){
-        List<String> list = new MyArrayList<>();
+        List<String> list = init();
         list.insert(3, "gg");
         out.print("insert后的数组:");
         for (int i = 0; i < list.size(); i++) {
