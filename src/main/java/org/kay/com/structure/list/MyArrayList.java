@@ -29,7 +29,7 @@ public class MyArrayList<E> implements List<E> {
     /* array default size */
     private static final int DEFAULT_SIZE = 10;
 
-    /* array default size */
+    /* object array */
     private Object[] elements;
 
     /* array pointer */
