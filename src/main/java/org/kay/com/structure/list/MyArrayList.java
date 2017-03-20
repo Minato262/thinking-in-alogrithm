@@ -26,10 +26,17 @@ import org.kay.com.structure.Iterator;
  */
 public class MyArrayList<E> implements List<E> {
 
-    private static final int DEFAULT_SIZE = 10;     // array default size
-    private Object[] elements;                      // queue storage
-    private int      capacity;                      // array pointer
-    private int      current;                       // the current record
+    /* array default size */
+    private static final int DEFAULT_SIZE = 10;
+
+    /* array default size */
+    private Object[] elements;
+
+    /* array pointer */
+    private int capacity;
+
+    /* the current record */
+    private int current;
 
     public MyArrayList() {
         this(DEFAULT_SIZE);
@@ -84,7 +91,6 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void remove() {
-
     }
 
     @Override
