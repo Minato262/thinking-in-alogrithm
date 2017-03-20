@@ -18,4 +18,4 @@
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.alogrithc;
+package org.kay.com.algorithm;

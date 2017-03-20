@@ -39,7 +39,6 @@ public class MyArrayList<E> implements List<E> {
         if (size < 0) {
             throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
         }
-
         this.elements = new Object[size];
         this.capacity = size;
         this.current = 0;

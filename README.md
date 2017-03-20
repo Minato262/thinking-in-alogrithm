@@ -1,4 +1,4 @@
-﻿# Thinking in Arithmetic
+﻿# Thinking in Algorithm
 
 --- 
 

@@ -25,7 +25,7 @@
     </dependencies>
 
     <build>
-        <finalName>Thinking-in-Alogrithm</finalName>
+        <finalName>Thinking-in-Algorithm</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

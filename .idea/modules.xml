@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Thinking-in-Alogrithm.iml" filepath="$PROJECT_DIR$/Thinking-in-Alogrithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Thinking-in-Algorithm.iml" filepath="$PROJECT_DIR$/Thinking-in-Algorithm.iml" />
       <module fileurl="file://$USER_HOME$/svn/operationPush/branches/operationPush_v0.0.1_20161128_活动推送开发/operationPush.iml" filepath="$USER_HOME$/svn/operationPush/branches/operationPush_v0.0.1_20161128_活动推送开发/operationPush.iml" />
     </modules>
   </component>
