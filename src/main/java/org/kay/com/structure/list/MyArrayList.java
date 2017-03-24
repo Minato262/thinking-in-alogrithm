@@ -91,6 +91,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void remove() {
+        remove(size() - 1);
     }
 
     @Override
