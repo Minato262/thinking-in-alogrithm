@@ -22,4 +22,65 @@ package org.kay.com.structure.map;
  * @param <V> Value.
  */
 public class MyHashMap<K, V> implements Map<K, V> {
+
+    private static int    DEfAULT_CAPACITY = 16;
+    private static double A                = (Math.pow(5, 0.5) - 1) / 2;
+
+    private int capacity;
+    private int size = 0;
+
+    private Node<K, V>[] nodes;
+
+    public MyHashMap() {
+        this(DEfAULT_CAPACITY);
+    }
+
+    public MyHashMap(int capacity) {
+        if (capacity <= 0) {
+            throw new IllegalArgumentException("capacity can not be negative or zero!");
+        }
+
+        int temp = 1;
+        while (temp < capacity) {
+            temp <<= 2;
+        }
+        this.capacity = temp;
+
+        nodes = new Node[this.capacity];
+    }
+
+    private class Node<K, V> {
+        private K          key;
+        private V          value;
+        private Node<K, V> next;
+
+        public Node(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public void setKey(K key) {
+            this.key = key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        public void setValue(V value) {
+            this.value = value;
+        }
+
+        public Node<K, V> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<K, V> next) {
+            this.next = next;
+        }
+    }
 }
