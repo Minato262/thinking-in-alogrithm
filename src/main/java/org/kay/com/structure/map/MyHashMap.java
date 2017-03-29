@@ -25,8 +25,8 @@ import java.util.Objects;
  */
 public class MyHashMap<K, V> implements Map<K, V> {
 
-    private static int    DEfAULT_CAPACITY = 16;
-    private static double A                = (Math.pow(5, 0.5) - 1) / 2;
+    private static final int DEFAULT_CAPACITY = 16;
+    private static final double HASH_RANDOM = (Math.pow(5, 0.5) - 1) / 2;
 
     private transient int capacity;
     private transient int size = 0;
@@ -34,7 +34,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
     private transient Node<K, V>[] nodes;
 
     public MyHashMap() {
-        this(DEfAULT_CAPACITY);
+        this(DEFAULT_CAPACITY);
     }
 
     public MyHashMap(int capacity) {
@@ -47,34 +47,139 @@ public class MyHashMap<K, V> implements Map<K, V> {
             temp <<= 2;
         }
         this.capacity = temp;
-
         nodes = new Node[this.capacity];
     }
 
+    @Override
+    public void insert(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException("key must be not null!");
+        }
+
+        int position = index(key);
+        Node<K, V> node = new Node<>(key, value);
+        if (nodes[position] != null) {
+            node.setNext(nodes[position]);
+        }
+
+        nodes[position] = node;
+        size++;
+    }
+
+    @Override
+    public void put(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException("key must be not null!");
+        }
+
+        int position = index(key);
+        Node<K, V> node = nodes[position];
+        while (node != null) {
+            if (node.key.equals(key)) {
+                node.value = value;
+                return;
+            }
+            node = node.next;
+        }
+
+        Node<K, V> newNode = new Node<>(key, value);
+        if (nodes[position] != null) {
+            newNode.setNext(nodes[position]);
+        }
+
+        nodes[position] = newNode;
+        size++;
+    }
+
+    @Override
+    public void remove(K key) {
+        if (key == null) {
+            throw new IllegalArgumentException("key must be not null!");
+        }
+
+        int position = index(key);
+        Node<K, V> node = nodes[position];
+        if (node == null) {
+            return;
+        }
+
+        if (node.key.equals(key)) {
+            nodes[position] = node.next;
+            size--;
+        }
+
+        while (node.next != null) {
+            if (node.next.key.equals(key)) {
+                node.next = node.next.next;
+                size--;
+                break;
+            }
+            node = node.next;
+        }
+    }
+
+    @Override
+    public V get(K key) {
+        if (key == null) {
+            throw new IllegalArgumentException("key can not be null");
+        }
+
+        int position = index(key);
+        Node<K, V> node = nodes[position];
+        while (node != null) {
+            if (node.key.equals(key)) {
+                return node.value;
+            }
+
+            node = node.next;
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append("{");
+        for (int i = 0; i < capacity; i++) {
+            Node<K, V> node = nodes[i];
+            while (node != null) {
+                buffer.append(node.key).append(":").append(node.value).append(", ");
+                node = node.next;
+            }
+        }
+
+        if (buffer.length() > 1) {
+            buffer.delete(buffer.length() - 2, buffer.length());
+        }
+        buffer.append("}");
+        return buffer.toString();
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    private int index(K key) {
+        int hashCode = key.hashCode();
+        double temp = hashCode * HASH_RANDOM;
+        double digit = temp - Math.floor(temp);
+        return (int) Math.floor(digit * capacity);
+    }
+
     private static class Node<K, V> {
-        private final K          key;
-        private       V          value;
-        private       Node<K, V> next;
+        private final K key;
+        private V value;
+        private Node<K, V> next;
 
         public Node(K key, V value) {
             this.key = key;
             this.value = value;
-        }
-
-        public final K getKey() {
-            return key;
-        }
-
-        public final V getValue() {
-            return value;
-        }
-
-        public final void setValue(V value) {
-            this.value = value;
-        }
-
-        public final Node<K, V> getNext() {
-            return next;
         }
 
         public final void setNext(Node<K, V> next) {
@@ -85,4 +190,24 @@ public class MyHashMap<K, V> implements Map<K, V> {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
         }
     }
+
+    public static void main(String[] args) {
+        Map<String, String> map = new MyHashMap<>();
+        map.put("001", "James");
+        map.put("002", "Antony");
+        map.put("003", "Bosh");
+        map.put("004", "Wade");
+        map.put("004", "WestBrook");
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.get("004") + "\n");
+
+        map.insert("005", "test");
+        map.remove("003");
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.get("004"));
+        System.out.println(map.isEmpty());
+    }
+
 }

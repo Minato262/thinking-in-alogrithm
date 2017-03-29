@@ -22,4 +22,17 @@ package org.kay.com.structure.map;
  * @param <V>
  */
 public interface Map<K, V> {
+
+    void insert(K key, V value);
+
+    void put(K key, V value);
+
+    void remove(K key);
+
+    V get(K key);
+
+    int size();
+
+    boolean isEmpty();
+
 }
