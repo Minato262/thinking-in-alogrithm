@@ -15,6 +15,8 @@
  */
 package org.kay.com.structure.map;
 
+import org.junit.jupiter.api.Test;
+
 /**
  * {@link MyHashMap} Test.
  *
@@ -22,4 +24,24 @@ package org.kay.com.structure.map;
  * @version v0.0.1
  */
 public class MyHashMapTest {
+
+    @Test
+    public void test() {
+        Map<String, String> map = new MyHashMap<>();
+        map.put("001", "James");
+        map.put("002", "Antony");
+        map.put("003", "Bosh");
+        map.put("004", "Wade");
+        map.put("004", "WestBrook");
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.get("004") + "\n");
+
+        map.insert("005", "test");
+        map.remove("003");
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.get("004"));
+        System.out.println(map.isEmpty());
+    }
 }

@@ -50,6 +50,13 @@ public class MyHashMap<K, V> implements Map<K, V> {
         nodes = new Node[this.capacity];
     }
 
+    private int index(K key) {
+        int hashCode = key.hashCode();
+        double temp = hashCode * HASH_RANDOM;
+        double digit = temp - Math.floor(temp);
+        return (int) Math.floor(digit * capacity);
+    }
+
     @Override
     public void insert(K key, V value) {
         if (key == null) {
@@ -165,13 +172,6 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return size() == 0;
     }
 
-    private int index(K key) {
-        int hashCode = key.hashCode();
-        double temp = hashCode * HASH_RANDOM;
-        double digit = temp - Math.floor(temp);
-        return (int) Math.floor(digit * capacity);
-    }
-
     private static class Node<K, V> {
         private final K key;
         private V value;
@@ -189,25 +189,6 @@ public class MyHashMap<K, V> implements Map<K, V> {
         public final int hashCode() {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
         }
-    }
-
-    public static void main(String[] args) {
-        Map<String, String> map = new MyHashMap<>();
-        map.put("001", "James");
-        map.put("002", "Antony");
-        map.put("003", "Bosh");
-        map.put("004", "Wade");
-        map.put("004", "WestBrook");
-        System.out.println(map);
-        System.out.println(map.size());
-        System.out.println(map.get("004") + "\n");
-
-        map.insert("005", "test");
-        map.remove("003");
-        System.out.println(map);
-        System.out.println(map.size());
-        System.out.println(map.get("004"));
-        System.out.println(map.isEmpty());
     }
 
 }
