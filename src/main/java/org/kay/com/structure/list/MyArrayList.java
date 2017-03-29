@@ -57,7 +57,7 @@ public class MyArrayList<E> implements List<E> {
         }
     }
 
-    private void confirmSize() {
+    private void index() {
         if (this.current == this.capacity) {
             this.capacity = this.capacity + DEFAULT_SIZE;
             Object[] newElements = new Object[this.capacity];
@@ -79,7 +79,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void add(E e) {
-        confirmSize();
+        index();
         this.elements[current] = e;
         this.current++;
     }

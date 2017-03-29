@@ -99,6 +99,23 @@ public class MyHashMap<K, V> implements Map<K, V> {
     }
 
     @Override
+    public V get(K key) {
+        if (key == null) {
+            throw new IllegalArgumentException("key must be not null!");
+        }
+
+        int position = index(key);
+        Node<K, V> node = nodes[position];
+        while (node != null) {
+            if (node.getKey().equals(key)) {
+                return node.getValue();
+            }
+            node = node.getNext();
+        }
+        return null;
+    }
+
+    @Override
     public void remove(K key) {
         if (key == null) {
             throw new IllegalArgumentException("key must be not null!");
@@ -126,23 +143,6 @@ public class MyHashMap<K, V> implements Map<K, V> {
     }
 
     @Override
-    public V get(K key) {
-        if (key == null) {
-            throw new IllegalArgumentException("key can not be null");
-        }
-
-        int position = index(key);
-        Node<K, V> node = nodes[position];
-        while (node != null) {
-            if (node.getKey().equals(key)) {
-                return node.getValue();
-            }
-            node = node.getNext();
-        }
-        return null;
-    }
-
-    @Override
     public int size() {
         return size;
     }
@@ -154,19 +154,19 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public String toString() {
-        StringBuilder buffer = new StringBuilder().append("{");
+        StringBuilder builder = new StringBuilder().append("{");
         for (int i = 0; i < capacity; i++) {
             Node<K, V> node = nodes[i];
             while (node != null) {
-                buffer.append(node.getKey()).append(":").append(node.getValue()).append(", ");
+                builder.append(node.getKey()).append(":").append(node.getValue()).append(", ");
                 node = node.getNext();
             }
         }
 
-        if (buffer.length() > 1) {
-            buffer.delete(buffer.length() - 2, buffer.length());
+        if (builder.length() > 1) {
+            builder.delete(builder.length() - 2, builder.length());
         }
-        return buffer.append("}").toString();
+        return builder.append("}").toString();
     }
 
     private static class Node<K, V> {
