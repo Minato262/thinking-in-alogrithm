@@ -137,7 +137,6 @@ public class MyHashMap<K, V> implements Map<K, V> {
             if (node.key.equals(key)) {
                 return node.value;
             }
-
             node = node.next;
         }
         return null;
@@ -145,8 +144,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public String toString() {
-        StringBuilder buffer = new StringBuilder();
-        buffer.append("{");
+        StringBuilder buffer = new StringBuilder().append("{");
         for (int i = 0; i < capacity; i++) {
             Node<K, V> node = nodes[i];
             while (node != null) {
@@ -158,8 +156,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
         if (buffer.length() > 1) {
             buffer.delete(buffer.length() - 2, buffer.length());
         }
-        buffer.append("}");
-        return buffer.toString();
+        return buffer.append("}").toString();
     }
 
     @Override
