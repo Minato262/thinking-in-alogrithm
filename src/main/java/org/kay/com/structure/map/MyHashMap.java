@@ -82,11 +82,11 @@ public class MyHashMap<K, V> implements Map<K, V> {
         int position = index(key);
         Node<K, V> node = nodes[position];
         while (node != null) {
-            if (node.key.equals(key)) {
+            if (node.getKey().equals(key)) {
                 node.value = value;
                 return;
             }
-            node = node.next;
+            node = node.getNext();
         }
 
         Node<K, V> newNode = new Node<>(key, value);
@@ -110,18 +110,18 @@ public class MyHashMap<K, V> implements Map<K, V> {
             return;
         }
 
-        if (node.key.equals(key)) {
-            nodes[position] = node.next;
+        if (node.getKey().equals(key)) {
+            nodes[position] = node.getNext();
             size--;
         }
 
-        while (node.next != null) {
-            if (node.next.key.equals(key)) {
-                node.next = node.next.next;
+        while (node.getNext() != null) {
+            if (node.getNext().getKey().equals(key)) {
+                node.setNext(node.getNext().getNext());
                 size--;
                 break;
             }
-            node = node.next;
+            node = node.getNext();
         }
     }
 
@@ -134,29 +134,12 @@ public class MyHashMap<K, V> implements Map<K, V> {
         int position = index(key);
         Node<K, V> node = nodes[position];
         while (node != null) {
-            if (node.key.equals(key)) {
-                return node.value;
+            if (node.getKey().equals(key)) {
+                return node.getValue();
             }
-            node = node.next;
+            node = node.getNext();
         }
         return null;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder buffer = new StringBuilder().append("{");
-        for (int i = 0; i < capacity; i++) {
-            Node<K, V> node = nodes[i];
-            while (node != null) {
-                buffer.append(node.key).append(":").append(node.value).append(", ");
-                node = node.next;
-            }
-        }
-
-        if (buffer.length() > 1) {
-            buffer.delete(buffer.length() - 2, buffer.length());
-        }
-        return buffer.append("}").toString();
     }
 
     @Override
@@ -169,6 +152,23 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return size() == 0;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder buffer = new StringBuilder().append("{");
+        for (int i = 0; i < capacity; i++) {
+            Node<K, V> node = nodes[i];
+            while (node != null) {
+                buffer.append(node.getKey()).append(":").append(node.getValue()).append(", ");
+                node = node.getNext();
+            }
+        }
+
+        if (buffer.length() > 1) {
+            buffer.delete(buffer.length() - 2, buffer.length());
+        }
+        return buffer.append("}").toString();
+    }
+
     private static class Node<K, V> {
         private final K key;
         private V value;
@@ -179,8 +179,20 @@ public class MyHashMap<K, V> implements Map<K, V> {
             this.value = value;
         }
 
+        public final K getKey(){
+            return this.key;
+        }
+
+        public final V getValue(){
+            return this.value;
+        }
+
         public final void setNext(Node<K, V> next) {
             this.next = next;
+        }
+
+        public final Node<K, V> getNext(){
+            return this.next;
         }
 
         public final int hashCode() {
