@@ -15,6 +15,9 @@
  */
 package org.kay.com.structure.list;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * {@link MyLinkedList} Test.
  *
@@ -22,4 +25,8 @@ package org.kay.com.structure.list;
  * @version v0.0.1
  */
 public class MyLinkedListTest {
+
+    public void test(){
+        Map<String, String> map = new HashMap<String, String>();
+    }
 }
