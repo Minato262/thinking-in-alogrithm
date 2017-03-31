@@ -51,12 +51,6 @@ public class MyArrayList<E> implements List<E> {
         clear();
     }
 
-    private void confirmIndexOutOfBounds(int index) {
-        if (index > capacity || index < 0) {
-            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-        }
-    }
-
     private void index() {
         if (this.current == this.capacity) {
             this.capacity = this.capacity + DEFAULT_SIZE;
@@ -68,7 +62,9 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        confirmIndexOutOfBounds(index);
+        if (index > capacity || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+        }
         return (E) this.elements[index];
     }
 
@@ -96,7 +92,10 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void remove(int index) {
-        confirmIndexOutOfBounds(index);
+        if (index > capacity || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+        }
+
         for (int i = index; i < elements.length; i++) {
             if (i + 1 < elements.length) {
                 this.elements[i] = this.elements[i + 1];
@@ -107,7 +106,10 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void insert(int index, E e) {
-        confirmIndexOutOfBounds(index);
+        if (index > capacity || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+        }
+
         for (int i = 0; i < elements.length; i++) {
             if (i >= index && i + 2 < elements.length) {
                 this.elements[i] = e;
