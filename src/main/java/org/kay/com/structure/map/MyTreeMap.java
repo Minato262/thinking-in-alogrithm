@@ -10,17 +10,14 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 
     @Override
     public void insert(K key, V value) {
-
     }
 
     @Override
     public void put(K key, V value) {
-
     }
 
     @Override
     public void remove(K key) {
-
     }
 
     @Override
