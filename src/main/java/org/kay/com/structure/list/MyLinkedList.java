@@ -10,6 +10,14 @@ import org.kay.com.structure.Iterator;
  */
 public class MyLinkedList<E> implements List<E> {
 
+    private transient Node<E> begin;
+
+    private transient Node<E> end;
+
+    private transient int size;
+
+    private transient int capacity;
+
     @Override
     public E get(int index) {
         return null;
@@ -67,7 +75,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new NodeIterator();
     }
 
     @Override
@@ -78,6 +86,39 @@ public class MyLinkedList<E> implements List<E> {
     @Override
     public E next() {
         return null;
+    }
+
+    private class NodeIterator implements Iterator<E> {
+
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public E next() {
+            return null;
+        }
+
+        @Override
+        public void remove() {
+
+        }
+    }
+
+    private static class Node<E> {
+
+        private E data;
+
+        private Node<E> prev;
+
+        private Node<E> next;
+
+        public Node(E data, Node<E> prev, Node<E> next) {
+            this.data = data;
+            this.prev = prev;
+            this.next = next;
+        }
     }
 
 }
