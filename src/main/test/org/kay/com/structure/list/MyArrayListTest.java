@@ -37,16 +37,16 @@ public class MyArrayListTest {
     }
 
     private void printList(List list, String message){
-        out.print(message);
+        out.printf(message);
         for (int i = 0; i < list.size(); i++) {
-            out.print(list.get(i) + ",");
+            out.printf(list.get(i) + ",");
         }
     }
 
     @Test
     public void getBoundsTest() {
         List<String> list = init();
-        out.println("get:" + list.get(3));
+        out.printf("get:" + list.get(3));
     }
 
     @Test
