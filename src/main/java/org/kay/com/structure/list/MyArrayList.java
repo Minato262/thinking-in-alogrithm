@@ -82,6 +82,12 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public boolean remove(E e) {
+        for (int i = 0; i < elements.length; i++) {
+            if (this.elements[i].equals(e)) {
+                remove(i);
+                return true;
+            }
+        }
         return false;
     }
 
