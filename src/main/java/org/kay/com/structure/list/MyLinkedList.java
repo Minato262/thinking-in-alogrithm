@@ -14,7 +14,7 @@ public class MyLinkedList<E> implements List<E> {
 
     private transient Node<E> end;
 
-    private transient int size;
+    private transient int current;
 
     private transient int capacity;
 
@@ -65,7 +65,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size() == 0;
     }
 
     @Override

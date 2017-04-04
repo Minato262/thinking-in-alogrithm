@@ -17,6 +17,8 @@ package org.kay.com.structure.map;
 
 import org.junit.jupiter.api.Test;
 
+import static java.lang.System.out;
+
 /**
  * {@link MyHashMap} Test.
  *
@@ -33,15 +35,31 @@ public class MyHashMapTest {
         map.put("003", "Bosh");
         map.put("004", "Wade");
         map.put("004", "WestBrook");
-        System.out.println(map);
-        System.out.println(map.size());
-        System.out.println(map.get("004") + "\n");
+        out.println(map);
+        out.println(map.size());
+        out.println(map.get("004") + "\n");
 
         map.insert("005", "test");
         map.remove("003");
-        System.out.println(map);
-        System.out.println(map.size());
-        System.out.println(map.get("004"));
-        System.out.println(map.isEmpty());
+        out.println(map);
+        out.println(map.size());
+        out.println(map.get("004"));
+        out.println(map.isEmpty());
+    }
+
+    @Test
+    public void test1() {
+        Map<String, String> map = new MyHashMap<>();
+        map.put(null, "");
+    }
+
+    @Test
+    public void test2() {
+        Map<String, String> map = new MyHashMap<>();
+        map.put("001", null);
+        out.println(map);
+
+        map.put("002", null);
+        out.println(map);
     }
 }
