@@ -117,9 +117,9 @@ public class MyArrayList<E> implements List<E> {
         }
 
         for (int i = 0; i < elements.length; i++) {
-            if (i >= index && i + 2 < elements.length) {
+            if (i == index && i + 2 < elements.length) {
+                this.elements[i + 1] = this.elements[i];
                 this.elements[i] = e;
-                this.elements[i + 1] = this.elements[i + 2];
             }
         }
         this.current++;
