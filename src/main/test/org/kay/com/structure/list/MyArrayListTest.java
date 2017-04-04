@@ -36,6 +36,12 @@ public class MyArrayListTest {
         return list;
     }
 
+    private void printList(List list){
+        for (int i = 0; i < list.size(); i++) {
+            out.print(list.get(i) + ",");
+        }
+    }
+
     @Test
     public void getBoundsTest() {
         List<String> list = init();
@@ -48,9 +54,16 @@ public class MyArrayListTest {
         list.remove(2);
         out.print("remove size:" + list.size() + "\n");
         out.print("remove:");
-        for (int i = 0; i < list.size(); i++) {
-            out.print(list.get(i) + ",");
-        }
+        printList(list);
+    }
+
+    @Test
+    public void removeTest() {
+        List<String> list = init();
+        list.remove("a");
+        out.print("remove size:" + list.size() + "\n");
+        out.print("remove:");
+        printList(list);
     }
 
     @Test
@@ -58,8 +71,6 @@ public class MyArrayListTest {
         List<String> list = init();
         list.insert(3, "gg");
         out.print("insert:");
-        for (int i = 0; i < list.size(); i++) {
-            out.print(list.get(i) + ",");
-        }
+        printList(list);
     }
 }
