@@ -35,16 +35,11 @@ public class MyHashMapTest {
         map.put("003", "Bosh");
         map.put("004", "Wade");
         map.put("004", "WestBrook");
-        out.println(map);
-        out.println(map.size());
-        out.println(map.get("004") + "\n");
+        out.println(map + "\n" + map.size() + "\n" + map.get("004") + "\n");
 
         map.insert("005", "test");
         map.remove("003");
-        out.println(map);
-        out.println(map.size());
-        out.println(map.get("004"));
-        out.println(map.isEmpty());
+        out.println(map + "\n" + map.size() + "\n" + map.get("004") + "\n" + map.isEmpty());
     }
 
     @Test
