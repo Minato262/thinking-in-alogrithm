@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="operationPush:war">
-    <output-path>$USER_HOME$/svn/operationPush/branches/operationPush_v0.0.1_20161128_活动推送开发/target</output-path>
-    <root id="archive" name="operationPush.war">
-      <element id="artifact" artifact-name="operationPush:war exploded" />
-    </root>
-  </artifact>
-</component>
