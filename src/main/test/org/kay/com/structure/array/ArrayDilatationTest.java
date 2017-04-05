@@ -26,7 +26,7 @@ import org.junit.Test;
 public class ArrayDilatationTest {
 
     @Test
-    public void printlnTest() {
+    public void test() {
         Integer[] ints = new Integer[60];
         ints = ArrayDilatation.expandCapacity(ints, 80);
         System.out.println(ints.length);

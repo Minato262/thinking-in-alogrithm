@@ -29,10 +29,4 @@ public class ArrayDilatation {
         newLen = newLen < 0 ? 0 : newLen;
         return Arrays.copyOf(datas, newLen);
     }
-
-    public static void main(String[] args) {
-        Integer[] ints = new Integer[60];
-        ints = ArrayDilatation.expandCapacity(ints, 80);
-        System.out.println(ints.length);
-    }
 }
