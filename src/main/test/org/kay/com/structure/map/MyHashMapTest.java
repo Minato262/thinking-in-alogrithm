@@ -15,7 +15,7 @@
  */
 package org.kay.com.structure.map;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static java.lang.System.out;
 

@@ -15,7 +15,7 @@
  */
 package org.kay.com.structure.array;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * {@link ArrayDilatation} Test.
