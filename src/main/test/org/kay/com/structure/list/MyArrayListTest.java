@@ -27,46 +27,46 @@ import static java.lang.System.out;
  */
 public class MyArrayListTest {
 
-	private List<String> init() {
-		List<String> list = new MyArrayList<>();
-		list.add("a");
-		list.add("b");
-		list.add("c");
-		list.add("d");
-		return list;
-	}
+    private List<String> init() {
+        List<String> list = new MyArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+        return list;
+    }
 
-	private void printList(List list, String message) {
-		out.printf(message);
-		for (int i = 0; i < list.size(); i++) {
-			out.printf(list.get(i) + ",");
-		}
-	}
+    private void print(List list, String message) {
+        out.printf(message);
+        for (int i = 0; i < list.size(); i++) {
+            out.printf(list.get(i) + ",");
+        }
+    }
 
-	@Test
-	public void getBoundsTest() {
-		List<String> list = init();
-		out.printf("get:" + list.get(3));
-	}
+    @Test
+    public void getBoundsTest() {
+        List<String> list = init();
+        out.printf("get:" + list.get(3));
+    }
 
-	@Test
-	public void removeBoundsTest() {
-		List<String> list = init();
-		list.remove(2);
-		printList(list, "remove size:" + list.size() + "\n" + "remove:");
-	}
+    @Test
+    public void removeBoundsTest() {
+        List<String> list = init();
+        list.remove(2);
+        print(list, "remove size:" + list.size() + "\n" + "remove:");
+    }
 
-	@Test
-	public void removeTest() {
-		List<String> list = init();
-		list.remove("a");
-		printList(list, "remove size:" + list.size() + "\n" + "remove:");
-	}
+    @Test
+    public void removeTest() {
+        List<String> list = init();
+        list.remove("a");
+        print(list, "remove size:" + list.size() + "\n" + "remove:");
+    }
 
-	@Test
-	public void insertBoundsTest() {
-		List<String> list = init();
-		list.insert(3, "gg");
-		printList(list, "insert:");
-	}
+    @Test
+    public void insertBoundsTest() {
+        List<String> list = init();
+        list.insert(3, "gg");
+        print(list, "insert:");
+    }
 }
