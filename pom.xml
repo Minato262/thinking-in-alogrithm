@@ -14,31 +14,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>Thinking-in-Alogrithm</groupId>
-            <artifactId>Thinking-in-Alogrithm</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>Thinking-in-Alogrithm</groupId>
-            <artifactId>Thinking-in-Alogrithm</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
