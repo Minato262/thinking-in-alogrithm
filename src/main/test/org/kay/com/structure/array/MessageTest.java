@@ -18,12 +18,12 @@ package org.kay.com.structure.array;
 import org.junit.Test;
 
 /**
- * {@link ArrayDilatation} Test.
+ * Message Test.
  *
  * @author kay
  * @version v0.0.1
  */
-public class ArrayDilatationTest {
+public class MessageTest {
 
     @Test
     public void Test1() {
@@ -31,7 +31,7 @@ public class ArrayDilatationTest {
         System.out.println(messageBean.getMessage());
 
         MessageBean messageBean1 = new MessageBean(Message.SUCCESS);
-        System.out.println(messageBean1.getMessage());
+        System.out.println(messageBean1.getCode());
     }
 }
 
