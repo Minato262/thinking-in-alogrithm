@@ -26,9 +26,53 @@ import org.junit.Test;
 public class ArrayDilatationTest {
 
     @Test
-    public void test() {
-        Integer[] ints = new Integer[60];
-        ints = ArrayDilatation.expandCapacity(ints, 80);
-        System.out.println(ints.length);
+    public void Test1() {
+        MessageBean messageBean = new MessageBean();
+        System.out.println(messageBean.getMessage());
+
+        MessageBean messageBean1 = new MessageBean(Message.SUCCESS);
+        System.out.println(messageBean1.getMessage());
+    }
+}
+
+class MessageBean {
+    private String message;
+    private String code;
+
+    MessageBean(Message message) {
+        this.message = message.getMessage();
+        this.code = message.getCode();
+    }
+
+    MessageBean() {
+        this(Message.ERROR);
+    }
+
+    String getMessage() {
+        return this.message;
+    }
+
+    String getCode() {
+        return this.code;
+    }
+}
+
+enum Message {
+    SUCCESS("success", "200"), ERROR("error", "401");
+
+    private String message;
+    private String code;
+
+    Message(String message, String code) {
+        this.message = message;
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public String getCode() {
+        return this.code;
     }
 }
