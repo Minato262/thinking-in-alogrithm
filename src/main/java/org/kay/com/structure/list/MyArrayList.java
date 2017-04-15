@@ -38,11 +38,11 @@ public class MyArrayList<E> implements List<E> {
     /* the current record */
     private transient int current;
 
-    public MyArrayList() {
+    MyArrayList() {
         this(DEFAULT_SIZE);
     }
 
-    public MyArrayList(int size) {
+    private MyArrayList(int size) {
         if (size < 0) {
             throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
         }
