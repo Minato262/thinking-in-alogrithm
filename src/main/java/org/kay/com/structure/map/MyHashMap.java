@@ -33,11 +33,11 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     private transient Node<K, V>[] nodes;
 
-    public MyHashMap() {
+    MyHashMap() {
         this(DEFAULT_CAPACITY);
     }
 
-    public MyHashMap(int capacity) {
+    private MyHashMap(int capacity) {
         if (capacity <= 0) {
             throw new IllegalArgumentException("capacity can not be negative or zero!");
         }
@@ -174,24 +174,24 @@ public class MyHashMap<K, V> implements Map<K, V> {
         private V value;
         private Node<K, V> next;
 
-        public Node(K key, V value) {
+        Node(K key, V value) {
             this.key = key;
             this.value = value;
         }
 
-        public final K getKey(){
+        final K getKey() {
             return this.key;
         }
 
-        public final V getValue(){
+        final V getValue() {
             return this.value;
         }
 
-        public final void setNext(Node<K, V> next) {
+        final void setNext(Node<K, V> next) {
             this.next = next;
         }
 
-        public final Node<K, V> getNext(){
+        final Node<K, V> getNext() {
             return this.next;
         }
 
