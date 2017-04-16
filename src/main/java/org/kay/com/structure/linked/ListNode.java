@@ -6,7 +6,7 @@ package org.kay.com.structure.linked;
  */
 public class ListNode {
 
-    private final int data;
+    private transient int data;
     private transient ListNode next;
 
     public ListNode(int data) {
