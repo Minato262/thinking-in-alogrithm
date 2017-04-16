@@ -18,4 +18,4 @@
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.structure.array;
+package org.kay.com.collection.array;

@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure;
+package org.kay.com.collection.list;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Iterator.
+ * {@link MyLinkedList} Test.
  *
  * @author kay
  * @version v0.0.1
  */
-public interface Iterator<E> {
+public class MyLinkedListTest {
 
-    boolean hasNext();
-
-    E next();
-
-    void remove();
-
+    public void test(){
+        Map<String, String> map = new HashMap<String, String>();
+    }
 }

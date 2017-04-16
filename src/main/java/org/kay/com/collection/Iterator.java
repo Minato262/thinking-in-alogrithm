@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure.array;
-
-import java.util.Arrays;
+package org.kay.com.collection;
 
 /**
- * Array Structure.
+ * Iterator.
  *
  * @author kay
  * @version v0.0.1
  */
-public class ArrayDilatation {
+public interface Iterator<E> {
 
-    public static <T> T[] expandCapacity(T[] datas, int newLen) {
-        newLen = newLen < 0 ? 0 : newLen;
-        return Arrays.copyOf(datas, newLen);
-    }
+    boolean hasNext();
+
+    E next();
+
+    void remove();
+
 }

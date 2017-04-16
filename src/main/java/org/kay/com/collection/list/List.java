@@ -13,9 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.kay.com.collection.list;
+
+import org.kay.com.collection.Collection;
 
 /**
+ * List.
+ *
+ * @param <E>
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.structure.tree;
+public interface List<E> extends Collection<E> {
+
+    E get(int index);
+
+    E previous();
+
+    boolean remove(E e);
+
+}

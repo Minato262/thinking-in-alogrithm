@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure.map;
+package org.kay.com.collection.map;
 
 import org.junit.Test;
 

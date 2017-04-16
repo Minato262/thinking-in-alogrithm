@@ -13,13 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.structure.map;
 
 /**
- * {@link MyTreeMap} Test.
- *
  * @author kay
  * @version v0.0.1
  */
-public class MyTreeMapTest {
-}
+package org.kay.com.collection.map;

@@ -13,9 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.kay.com.collection.array;
+
+import java.util.Arrays;
 
 /**
+ * Array Structure.
+ *
  * @author kay
  * @version v0.0.1
  */
-package org.kay.com.structure.map;
+public class ArrayDilatation {
+
+    public static <T> T[] expandCapacity(T[] datas, int newLen) {
+        newLen = newLen < 0 ? 0 : newLen;
+        return Arrays.copyOf(datas, newLen);
+    }
+}

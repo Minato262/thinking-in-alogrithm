@@ -1,4 +1,4 @@
-package org.kay.com.structure.map;
+package org.kay.com.collection.map;
 
 /**
  * My Tree Map.
