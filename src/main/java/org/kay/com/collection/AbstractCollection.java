@@ -1,8 +1,6 @@
 package org.kay.com.collection;
 
 /**
- *
- *
  * @param <E>
  */
 public abstract class AbstractCollection<E> implements Collection<E> {
@@ -14,7 +12,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 	public abstract int size();
 
 	@Override
-	public void add(E o) {
+	public void add(E e) {
 
 	}
 
@@ -24,7 +22,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 	}
 
 	@Override
-	public void insert(int index, E o) {
+	public void insert(int index, E e) {
 
 	}
 
@@ -56,5 +54,10 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 	@Override
 	public void remove() {
 
+	}
+
+	@Override
+	public String toString() {
+		return null;
 	}
 }

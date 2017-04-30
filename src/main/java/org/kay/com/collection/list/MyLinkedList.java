@@ -11,7 +11,7 @@ import org.kay.com.collection.Iterator;
  */
 public class MyLinkedList<E> extends AbstractList<E> implements List<E> {
 
-	private transient Node<E> begin;
+	private transient Node<E> start;
 
 	private transient Node<E> end;
 
