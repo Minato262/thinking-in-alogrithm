@@ -14,9 +14,9 @@ public class MyLinkedList<E> implements List<E> {
 
 	private transient Node<E> end;
 
-	private transient int current;
+	private int current;
 
-	private transient int capacity;
+	private int capacity;
 
 	@Override
 	public E get(int index) {

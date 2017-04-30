@@ -33,10 +33,10 @@ public class MyArrayList<E> implements List<E> {
 	private transient Object[] elements;
 
 	/* array pointer */
-	private transient int capacity;
+	private int capacity;
 
 	/* the current record */
-	private transient int current;
+	private int current;
 
 	public MyArrayList() {
 		this(DEFAULT_SIZE);
