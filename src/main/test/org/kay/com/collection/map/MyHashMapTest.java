@@ -27,34 +27,41 @@ import static java.lang.System.out;
  */
 public class MyHashMapTest {
 
-    @Test
-    public void test() {
-        Map<String, String> map = new MyHashMap<>();
-        map.put("001", "James");
-        map.put("002", "Antony");
-        map.put("003", "Bosh");
-        map.put("004", "Wade");
-        map.put("004", "WestBrook");
-        out.println(map + "\n" + map.size() + "\n" + map.get("004") + "\n");
+	@Test
+	public void test() {
+		Map<String, String> map = new MyHashMap<>();
+		map.put("001", "James");
+		map.put("002", "Antony");
+		map.put("003", "Bosh");
+		map.put("004", "Wade");
+		map.put("004", "WestBrook");
+		out.println(map + "\n" + map.size() + "\n" + map.get("004") + "\n");
 
-        map.insert("005", "test");
-        map.remove("003");
-        out.println(map + "\n" + map.size() + "\n" + map.get("004") + "\n" + map.isEmpty());
-    }
+		map.insert("005", "test");
+		map.remove("003");
+		out.println(map + "\n" + map.size() + "\n" + map.get("004") + "\n" + map.isEmpty());
+	}
 
-    @Test
-    public void test1() {
-        Map<String, String> map = new MyHashMap<>();
-        map.put(null, "");
-    }
+	@Test
+	public void test1() {
+		Map<String, String> map = new MyHashMap<>();
+		map.put(null, "");
+	}
 
-    @Test
-    public void test2() {
-        Map<String, String> map = new MyHashMap<>();
-        map.put("001", null);
-        out.println(map);
+	@Test
+	public void test2() {
+		Map<String, String> map = new MyHashMap<>();
+		map.put("001", null);
+		out.println(map);
 
-        map.put("002", null);
-        out.println(map);
-    }
+		map.put("002", null);
+		out.println(map);
+	}
+
+	@Test
+	public void test3() {
+		Map<String, String> map = new MyHashMap<>();
+		map.put("", "");
+		out.println(map.get(""));
+	}
 }

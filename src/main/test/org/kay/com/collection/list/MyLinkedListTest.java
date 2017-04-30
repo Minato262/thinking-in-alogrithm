@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public class MyLinkedListTest {
 
-    public void test(){
-        Map<String, String> map = new HashMap<String, String>();
-    }
+	public void test() {
+		Map<String, String> map = new HashMap<String, String>();
+	}
 }

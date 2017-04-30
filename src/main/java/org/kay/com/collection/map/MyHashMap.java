@@ -31,7 +31,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
     private transient int capacity;
     private transient int size = 0;
 
-    private transient Node<K, V>[] nodes;
+    private transient Node[] nodes;
 
     MyHashMap() {
         this(DEFAULT_CAPACITY);
