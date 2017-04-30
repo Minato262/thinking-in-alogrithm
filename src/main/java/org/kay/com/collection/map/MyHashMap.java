@@ -170,9 +170,9 @@ public class MyHashMap<K, V> implements Map<K, V> {
 	}
 
 	private static class Node<K, V> {
-		private final K key;
-		private V value;
-		private Node<K, V> next;
+		final K key;
+		V value;
+		Node<K, V> next;
 
 		Node(K key, V value) {
 			this.key = key;
@@ -195,6 +195,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
 			return this.next;
 		}
 
+		@Override
 		public final int hashCode() {
 			return Objects.hashCode(key) ^ Objects.hashCode(value);
 		}

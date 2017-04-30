@@ -107,12 +107,9 @@ public class MyLinkedList<E> implements List<E> {
 	}
 
 	private static class Node<E> {
-
-		private E data;
-
-		private Node<E> prev;
-
-		private Node<E> next;
+		E data;
+		Node<E> prev;
+		Node<E> next;
 
 		public Node(E data, Node<E> prev, Node<E> next) {
 			this.data = data;
