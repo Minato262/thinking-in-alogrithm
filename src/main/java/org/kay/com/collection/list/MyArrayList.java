@@ -26,143 +26,143 @@ import org.kay.com.collection.Iterator;
  */
 public class MyArrayList<E> implements List<E> {
 
-    /* array default size */
-    private static final int DEFAULT_SIZE = 10;
+	/* array default size */
+	private static final int DEFAULT_SIZE = 10;
 
-    /* object array */
-    private transient Object[] elements;
+	/* object array */
+	private transient Object[] elements;
 
-    /* array pointer */
-    private transient int capacity;
+	/* array pointer */
+	private transient int capacity;
 
-    /* the current record */
-    private transient int current;
+	/* the current record */
+	private transient int current;
 
-    MyArrayList() {
-        this(DEFAULT_SIZE);
-    }
+	public MyArrayList() {
+		this(DEFAULT_SIZE);
+	}
 
-    private MyArrayList(int size) {
-        if (size < 0) {
-            throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
-        }
-        this.capacity = size;
-        clear();
-    }
+	private MyArrayList(int size) {
+		if (size < 0) {
+			throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
+		}
+		this.capacity = size;
+		clear();
+	}
 
-    private void index() {
-        if (this.current == this.capacity) {
-            this.capacity = this.capacity + DEFAULT_SIZE;
-            Object[] newElements = new Object[this.capacity];
-            System.arraycopy(this.elements, 0, newElements, 0, this.elements.length);
-            this.elements = newElements;
-        }
-    }
+	private void index() {
+		if (this.current == this.capacity) {
+			this.capacity = this.capacity + DEFAULT_SIZE;
+			Object[] newElements = new Object[this.capacity];
+			System.arraycopy(this.elements, 0, newElements, 0, this.elements.length);
+			this.elements = newElements;
+		}
+	}
 
-    @Override
-    public E get(int index) {
-        if (index > capacity || index < 0) {
-            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-        }
-        return (E) this.elements[index];
-    }
+	@Override
+	public E get(int index) {
+		if (index > capacity || index < 0) {
+			throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+		}
+		return (E) this.elements[index];
+	}
 
-    @Override
-    public E previous() {
-        return null;
-    }
+	@Override
+	public E previous() {
+		return null;
+	}
 
-    @Override
-    public void add(E e) {
-        index();
-        this.elements[current] = e;
-        this.current++;
-    }
+	@Override
+	public void add(E e) {
+		index();
+		this.elements[current] = e;
+		this.current++;
+	}
 
-    @Override
-    public boolean remove(E e) {
-        for (int i = 0; i < elements.length; i++) {
-            if (this.elements[i].equals(e)) {
-                remove(i);
-                return true;
-            }
-        }
-        return false;
-    }
+	@Override
+	public boolean remove(E e) {
+		for (int i = 0; i < elements.length; i++) {
+			if (this.elements[i].equals(e)) {
+				remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
 
-    @Override
-    public void remove() {
-        remove(size() - 1);
-    }
+	@Override
+	public void remove() {
+		remove(size() - 1);
+	}
 
-    @Override
-    public void remove(int index) {
-        if (index > capacity || index < 0) {
-            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-        }
+	@Override
+	public void remove(int index) {
+		if (index > capacity || index < 0) {
+			throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+		}
 
-        for (int i = index; i < elements.length; i++) {
-            if (i + 1 < elements.length) {
-                this.elements[i] = this.elements[i + 1];
-            }
-        }
-        this.current--;
-    }
+		for (int i = index; i < elements.length; i++) {
+			if (i + 1 < elements.length) {
+				this.elements[i] = this.elements[i + 1];
+			}
+		}
+		this.current--;
+	}
 
-    @Override
-    public void insert(int index, E e) {
-        if (index > capacity || index < 0) {
-            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-        }
+	@Override
+	public void insert(int index, E e) {
+		if (index > capacity || index < 0) {
+			throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+		}
 
-        for (int i = 0; i < elements.length; i++) {
-            if (i == index && i + 2 < elements.length) {
-                this.elements[i + 1] = this.elements[i];
-                this.elements[i] = e;
-            }
-        }
-        this.current++;
-    }
+		for (int i = 0; i < elements.length; i++) {
+			if (i == index && i + 2 < elements.length) {
+				this.elements[i + 1] = this.elements[i];
+				this.elements[i] = e;
+			}
+		}
+		this.current++;
+	}
 
-    @Override
-    public boolean contains(Object obj) {
-        for (Object element : elements) {
-            if (element.equals(obj)) {
-                return true;
-            }
-        }
-        return false;
-    }
+	@Override
+	public boolean contains(Object obj) {
+		for (Object element : elements) {
+			if (element.equals(obj)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
-    @Override
-    public E next() {
-        return null;
-    }
+	@Override
+	public E next() {
+		return null;
+	}
 
-    @Override
-    public int size() {
-        return this.current;
-    }
+	@Override
+	public int size() {
+		return this.current;
+	}
 
-    @Override
-    public boolean isEmpty() {
-        return size() == 0;
-    }
+	@Override
+	public boolean isEmpty() {
+		return size() == 0;
+	}
 
-    @Override
-    public void clear() {
-        this.elements = new Object[DEFAULT_SIZE];
-        this.current = 0;
-    }
+	@Override
+	public void clear() {
+		this.elements = new Object[DEFAULT_SIZE];
+		this.current = 0;
+	}
 
-    @Override
-    public Iterator<E> iterator() {
-        return null;
-    }
+	@Override
+	public Iterator<E> iterator() {
+		return null;
+	}
 
-    @Override
-    public boolean hasNext() {
-        return false;
-    }
+	@Override
+	public boolean hasNext() {
+		return false;
+	}
 
 }
