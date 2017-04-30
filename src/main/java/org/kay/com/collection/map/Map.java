@@ -23,16 +23,16 @@ package org.kay.com.collection.map;
  */
 public interface Map<K, V> {
 
-    void insert(K key, V value);
+	void insert(K key, V value);
 
-    void put(K key, V value);
+	void put(K key, V value);
 
-    void remove(K key);
+	void remove(K key);
 
-    V get(K key);
+	V get(K key);
 
-    int size();
+	int size();
 
-    boolean isEmpty();
+	boolean isEmpty();
 
 }

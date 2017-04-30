@@ -5,10 +5,11 @@ import org.kay.com.collection.Iterator;
 /**
  * My Linked List.
  *
+ * @param <E>
  * @author kay
  * @version v0.0.1
  */
-public class MyLinkedList<E> implements List<E> {
+public class MyLinkedList<E> extends AbstractList<E> implements List<E> {
 
 	private transient Node<E> begin;
 

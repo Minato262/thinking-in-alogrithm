@@ -18,15 +18,16 @@ package org.kay.com.collection;
 /**
  * Iterator.
  *
+ * @param <E>
  * @author kay
  * @version v0.0.1
  */
 public interface Iterator<E> {
 
-    boolean hasNext();
+	boolean hasNext();
 
-    E next();
+	E next();
 
-    void remove();
+	void remove();
 
 }

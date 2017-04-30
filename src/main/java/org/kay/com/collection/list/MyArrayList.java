@@ -24,7 +24,7 @@ import org.kay.com.collection.Iterator;
  * @author kay
  * @version v0.0.1
  */
-public class MyArrayList<E> implements List<E> {
+public class MyArrayList<E> extends AbstractList<E> implements List<E> {
 
 	/* array default size */
 	private static final int DEFAULT_SIZE = 10;
