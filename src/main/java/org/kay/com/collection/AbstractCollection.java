@@ -1,9 +1,17 @@
 package org.kay.com.collection;
 
 /**
+ *
+ *
  * @param <E>
  */
 public abstract class AbstractCollection<E> implements Collection<E> {
+
+	@Override
+	public abstract Iterator iterator();
+
+	@Override
+	public abstract int size();
 
 	@Override
 	public void add(E o) {
@@ -26,11 +34,6 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 	}
 
 	@Override
-	public int size() {
-		return 0;
-	}
-
-	@Override
 	public boolean isEmpty() {
 		return false;
 	}
@@ -38,11 +41,6 @@ public abstract class AbstractCollection<E> implements Collection<E> {
 	@Override
 	public void clear() {
 
-	}
-
-	@Override
-	public Iterator iterator() {
-		return null;
 	}
 
 	@Override
