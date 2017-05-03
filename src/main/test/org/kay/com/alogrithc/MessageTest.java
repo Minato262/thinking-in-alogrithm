@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.collection.array;
+package org.kay.com.alogrithc;
 
 import org.junit.Test;
 
