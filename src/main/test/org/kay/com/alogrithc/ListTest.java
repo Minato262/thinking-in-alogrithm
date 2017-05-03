@@ -6,7 +6,20 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * {@link HashMap} and {@link LinkedHashMap} Test。
+ *
+ * @author kay
+ * @version v0.0.1
+ */
 public class ListTest {
+
+	private static void println(Map<String, String> map) {
+		for (Object obj : map.entrySet()) {
+			Map.Entry entry = (Map.Entry) obj;
+			System.out.println(entry.getKey() + "=" + entry.getValue());
+		}
+	}
 
 	@Test
 	public void test() {
@@ -16,13 +29,7 @@ public class ListTest {
 		map.put("banana", "香蕉");
 		map.put("peach", "桃子");
 
-		map.get("banana");
-		map.get("apple");
-
-		for (Object obj : map.entrySet()) {
-			Map.Entry entry = (Map.Entry) obj;
-			System.out.println(entry.getKey() + "=" + entry.getValue());
-		}
+		println(map);
 	}
 
 	@Test
@@ -33,9 +40,12 @@ public class ListTest {
 		map.put("banana", "香蕉");
 		map.put("peach", "桃子");
 
-		for (Object obj : map.entrySet()) {
-			Map.Entry entry = (Map.Entry) obj;
-			System.out.println(entry.getKey() + "=" + entry.getValue());
-		}
+		println(map);
+
+		map.get("banana");
+		map.get("apple");
+
+		System.out.println();
+		println(map);
 	}
 }
