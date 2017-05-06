@@ -5,7 +5,7 @@ package org.kay.com.collection.map;
  * @param <K>
  * @param <V>
  */
-public abstract class AbstractMap<K, V> implements Map<K, V> {
+public abstract class AbstractMap<K, V> implements MyMap<K, V> {
 
 	@Override
 	public void insert(K key, V value) {

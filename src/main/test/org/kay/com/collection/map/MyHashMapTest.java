@@ -29,7 +29,7 @@ public class MyHashMapTest {
 
 	@Test
 	public void test() {
-		Map<String, String> map = new MyHashMap<>();
+		MyMap<String, String> map = new MyHashMap<>();
 		map.put("001", "James");
 		map.put("002", "Antony");
 		map.put("003", "Bosh");
@@ -44,13 +44,13 @@ public class MyHashMapTest {
 
 	@Test
 	public void test1() {
-		Map<String, String> map = new MyHashMap<>();
+		MyMap<String, String> map = new MyHashMap<>();
 		map.put(null, "");
 	}
 
 	@Test
 	public void test2() {
-		Map<String, String> map = new MyHashMap<>();
+		MyMap<String, String> map = new MyHashMap<>();
 		map.put("001", null);
 		out.println(map);
 
@@ -60,7 +60,7 @@ public class MyHashMapTest {
 
 	@Test
 	public void test3() {
-		Map<String, String> map = new MyHashMap<>();
+		MyMap<String, String> map = new MyHashMap<>();
 		map.put("", "");
 		out.println(map.get(""));
 	}

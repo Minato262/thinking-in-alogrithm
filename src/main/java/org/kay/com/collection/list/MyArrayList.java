@@ -15,7 +15,7 @@
  */
 package org.kay.com.collection.list;
 
-import org.kay.com.collection.Iterator;
+import org.kay.com.collection.MyIterator;
 
 /**
  * My Array List.
@@ -24,7 +24,7 @@ import org.kay.com.collection.Iterator;
  * @author kay
  * @version v0.0.1
  */
-public class MyArrayList<E> extends AbstractList<E> implements List<E> {
+public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
 
 	/* array default size */
 	private static final int DEFAULT_SIZE = 10;
@@ -156,7 +156,7 @@ public class MyArrayList<E> extends AbstractList<E> implements List<E> {
 	}
 
 	@Override
-	public Iterator<E> iterator() {
+	public MyIterator<E> iterator() {
 		return null;
 	}
 

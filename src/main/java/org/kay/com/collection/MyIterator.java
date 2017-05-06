@@ -16,28 +16,18 @@
 package org.kay.com.collection;
 
 /**
- * Collection.
+ * Iterator.
  *
  * @param <E>
  * @author kay
  * @version v0.0.1
  */
-public interface Collection<E> extends Iterator<E> {
+public interface MyIterator<E> {
 
-	void add(E e);
+	boolean hasNext();
 
-	void remove(int index);
+	E next();
 
-	void insert(int index, E e);
-
-	boolean contains(Object obj);
-
-	int size();
-
-	boolean isEmpty();
-
-	void clear();
-
-	Iterator<E> iterator();
+	void remove();
 
 }

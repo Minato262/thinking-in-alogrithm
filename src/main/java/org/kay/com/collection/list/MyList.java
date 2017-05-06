@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kay.com.collection;
+package org.kay.com.collection.list;
+
+import org.kay.com.collection.MyCollection;
 
 /**
- * Iterator.
+ * List.
  *
  * @param <E>
  * @author kay
  * @version v0.0.1
  */
-public interface Iterator<E> {
+public interface MyList<E> extends MyCollection<E> {
 
-	boolean hasNext();
+    E get(int index);
 
-	E next();
+    E previous();
 
-	void remove();
+    boolean remove(E e);
 
 }

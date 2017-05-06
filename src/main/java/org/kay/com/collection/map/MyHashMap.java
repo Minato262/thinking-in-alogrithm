@@ -23,7 +23,7 @@ import java.util.Objects;
  * @param <K> Key.
  * @param <V> Value.
  */
-public class MyHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
+public class MyHashMap<K, V> extends AbstractMap<K, V> implements MyMap<K, V> {
 
 	private static final int DEFAULT_CAPACITY = 16;
 	private static final double HASH_RANDOM = (Math.pow(5, 0.5) - 1) / 2;

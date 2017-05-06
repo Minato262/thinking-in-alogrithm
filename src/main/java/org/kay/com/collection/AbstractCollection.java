@@ -3,10 +3,10 @@ package org.kay.com.collection;
 /**
  * @param <E>
  */
-public abstract class AbstractCollection<E> implements Collection<E> {
+public abstract class AbstractCollection<E> implements MyCollection<E> {
 
 	@Override
-	public abstract Iterator iterator();
+	public abstract MyIterator iterator();
 
 	@Override
 	public abstract int size();

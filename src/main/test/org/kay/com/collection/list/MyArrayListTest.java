@@ -27,8 +27,8 @@ import static java.lang.System.out;
  */
 public class MyArrayListTest {
 
-	private List<String> init() {
-		List<String> list = new MyArrayList<>();
+	private MyList<String> init() {
+		MyList<String> list = new MyArrayList<>();
 		list.add("a");
 		list.add("b");
 		list.add("c");
@@ -36,7 +36,7 @@ public class MyArrayListTest {
 		return list;
 	}
 
-	private void print(List list, String message) {
+	private void print(MyList list, String message) {
 		out.printf(message);
 		for (int i = 0; i < list.size(); i++) {
 			out.printf(list.get(i) + ",");
@@ -45,27 +45,27 @@ public class MyArrayListTest {
 
 	@Test
 	public void getBoundsTest() {
-		List<String> list = init();
+		MyList<String> list = init();
 		out.printf("get:" + list.get(3));
 	}
 
 	@Test
 	public void removeBoundsTest() {
-		List<String> list = init();
+		MyList<String> list = init();
 		list.remove(2);
 		print(list, "remove size:" + list.size() + "\n" + "remove:");
 	}
 
 	@Test
 	public void removeTest() {
-		List<String> list = init();
+		MyList<String> list = init();
 		list.remove("a");
 		print(list, "remove size:" + list.size() + "\n" + "remove:");
 	}
 
 	@Test
 	public void insertBoundsTest() {
-		List<String> list = init();
+		MyList<String> list = init();
 		list.insert(3, "gg");
 		print(list, "insert:");
 	}

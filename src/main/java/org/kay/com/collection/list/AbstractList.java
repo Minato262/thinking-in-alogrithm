@@ -6,7 +6,7 @@ import org.kay.com.collection.AbstractCollection;
  *
  * @param <E>
  */
-public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
+public abstract class AbstractList<E> extends AbstractCollection<E> implements MyList<E> {
 
 	@Override
 	public E get(int index) {

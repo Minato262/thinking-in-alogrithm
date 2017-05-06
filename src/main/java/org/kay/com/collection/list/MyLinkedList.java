@@ -1,6 +1,6 @@
 package org.kay.com.collection.list;
 
-import org.kay.com.collection.Iterator;
+import org.kay.com.collection.MyIterator;
 
 /**
  * My Linked List.
@@ -9,7 +9,7 @@ import org.kay.com.collection.Iterator;
  * @author kay
  * @version v0.0.1
  */
-public class MyLinkedList<E> extends AbstractList<E> implements List<E> {
+public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
 
 	private transient Node<E> start;
 
@@ -75,7 +75,7 @@ public class MyLinkedList<E> extends AbstractList<E> implements List<E> {
 	}
 
 	@Override
-	public Iterator<E> iterator() {
+	public MyIterator<E> iterator() {
 		return new NodeIterator();
 	}
 
@@ -89,7 +89,7 @@ public class MyLinkedList<E> extends AbstractList<E> implements List<E> {
 		return null;
 	}
 
-	private class NodeIterator implements Iterator<E> {
+	private class NodeIterator implements MyIterator<E> {
 
 		@Override
 		public boolean hasNext() {

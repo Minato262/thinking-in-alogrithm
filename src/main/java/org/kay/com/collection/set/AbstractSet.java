@@ -1,16 +1,16 @@
 package org.kay.com.collection.set;
 
 import org.kay.com.collection.AbstractCollection;
-import org.kay.com.collection.Iterator;
+import org.kay.com.collection.MyIterator;
 
 /**
  *
  * @param <E>
  */
-public class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
+public class AbstractSet<E> extends AbstractCollection<E> implements MySet<E> {
 
 	@Override
-	public Iterator iterator() {
+	public MyIterator iterator() {
 		return null;
 	}
 

@@ -21,7 +21,7 @@ package org.kay.com.collection.map;
  * @param <K>
  * @param <V>
  */
-public interface Map<K, V> {
+public interface MyMap<K, V> {
 
 	void insert(K key, V value);
 

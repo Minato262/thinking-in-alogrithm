@@ -1,17 +1,17 @@
 package org.kay.com.collection.queue;
 
 import org.kay.com.collection.AbstractCollection;
-import org.kay.com.collection.Iterator;
+import org.kay.com.collection.MyIterator;
 
 /**
  *
  *
  * @param <E>
  */
-public abstract class AbstractQueue<E> extends AbstractCollection<E> implements Queue<E> {
+public abstract class AbstractQueue<E> extends AbstractCollection<E> implements MyQueue<E> {
 
 	@Override
-	public Iterator iterator() {
+	public MyIterator iterator() {
 		return null;
 	}
 

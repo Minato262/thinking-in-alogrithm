@@ -6,7 +6,7 @@ package org.kay.com.collection.map;
  * @author kay
  * @version v0.0.1
  */
-public class MyTreeMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
+public class MyTreeMap<K, V> extends AbstractMap<K, V> implements MyMap<K, V> {
 
 	@Override
 	public void insert(K key, V value) {
