@@ -151,7 +151,8 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
 
 	@Override
 	public void clear() {
-		this.elements = new Object[DEFAULT_SIZE];
+		for (int i = 0; i < size(); i++)
+			elements[i] = null;
 		this.current = 0;
 	}
 
