@@ -13,7 +13,7 @@ public abstract class AbstractCollection<E> implements MyCollection<E> {
 
 	@Override
 	public void add(E e) {
-
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -28,12 +28,23 @@ public abstract class AbstractCollection<E> implements MyCollection<E> {
 
 	@Override
 	public boolean contains(Object obj) {
+		MyIterator<E> e = iterator();
+		if (obj == null) {
+			while (e.hasNext())
+				if (e.next() == null)
+					return true;
+		}
+		else {
+			while (e.hasNext())
+				if (obj.equals(e.next()))
+					return true;
+		}
 		return false;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return false;
+		return size() == 0;
 	}
 
 	@Override
