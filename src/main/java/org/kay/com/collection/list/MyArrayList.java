@@ -26,139 +26,175 @@ import org.kay.com.collection.MyIterator;
  */
 public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
 
-	/* array default size */
-	private static final int DEFAULT_SIZE = 10;
+    /* array default size */
+    private static final int DEFAULT_SIZE = 10;
 
-	/* object array */
-	private transient Object[] elements;
+    /* object array */
+    private transient Object[] elements;
 
-	/* array pointer */
-	private int capacity;
+    /* array pointer */
+    private int capacity;
 
-	/* the current record */
-	private int current;
+    /* the current record */
+    private int current;
 
-	public MyArrayList() {
-		this(DEFAULT_SIZE);
-	}
+    /**
+     * 默认构造器。
+     */
+    public MyArrayList() {
+        this(DEFAULT_SIZE);
+    }
 
-	private MyArrayList(int size) {
-		if (size < 0) {
-			throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
-		}
-		this.capacity = size;
-		clear();
-	}
+    /**
+     * 设置数组长度的构造器。
+     *
+     * @param size 设置数组长度
+     */
+    private MyArrayList(int size) {
+        if (size < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array size should not be less than 0!");
+        }
+        this.capacity = size;
+        clear();
+    }
 
-	private void index() {
-		if (this.current == this.capacity) {
-			this.capacity = this.capacity + DEFAULT_SIZE;
-			Object[] newElements = new Object[this.capacity];
-			System.arraycopy(this.elements, 0, newElements, 0, this.elements.length);
-			this.elements = newElements;
-		}
-	}
+    /**
+     * 移动游标，调整数据组，对应长度。
+     */
+    private void index() {
+        if (this.current == this.capacity) {
+            this.capacity = this.capacity + DEFAULT_SIZE;
+            Object[] newElements = new Object[this.capacity];
+            System.arraycopy(this.elements, 0, newElements, 0, this.elements.length);
+            this.elements = newElements;
+        }
+    }
 
-	@Override
-	public E get(int index) {
-		if (index > capacity || index < 0) {
-			throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-		}
-		return (E) this.elements[index];
-	}
+    /**
+     * 根据游标获取数据组数据。
+     *
+     * @param index 游标
+     * @return 数据组游标对应的数据
+     */
+    @Override
+    public E get(int index) {
+        if (index > capacity || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+        }
+        return (E) this.elements[index];
+    }
 
-	@Override
-	public void add(E e) {
-		index();
-		this.elements[current] = e;
-		this.current++;
-	}
+    /**
+     * 为数组添加数据。
+     *
+     * @param e 需要添加的数据
+     */
+    @Override
+    public void add(E e) {
+        index();
+        this.elements[current] = e;
+        this.current++;
+    }
 
-	@Override
-	public boolean remove(E e) {
-		for (int i = 0; i < elements.length; i++) {
-			if (this.elements[i].equals(e)) {
-				remove(i);
-				return true;
-			}
-		}
-		return false;
-	}
+    /**
+     * 根据需要移除的数据，移除数据组内对应数据。
+     *
+     * @param e 需要移除的数据
+     * @return 是否移除成功
+     */
+    @Override
+    public boolean remove(E e) {
+        for (int i = 0; i < elements.length; i++) {
+            if (this.elements[i].equals(e)) {
+                remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 
-	@Override
-	public void remove() {
-		remove(size() - 1);
-	}
+    /**
+     * 移除数据组内最后一位数据。
+     */
+    @Override
+    public void remove() {
+        remove(size() - 1);
+    }
 
-	@Override
-	public void remove(int index) {
-		if (index > capacity || index < 0) {
-			throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-		}
+    /**
+     * 根据数组清单，移除数据组内数据。
+     *
+     * @param index 游标
+     */
+    @Override
+    public void remove(int index) {
+        if (index > capacity || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+        }
 
-		for (int i = index; i < elements.length; i++) {
-			if (i + 1 < elements.length) {
-				this.elements[i] = this.elements[i + 1];
-			}
-		}
-		this.current--;
-	}
+        for (int i = index; i < elements.length; i++) {
+            if (i + 1 < elements.length) {
+                this.elements[i] = this.elements[i + 1];
+            }
+        }
+        this.current--;
+    }
 
-	@Override
-	public void insert(int index, E e) {
-		if (index > capacity || index < 0) {
-			throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
-		}
+    @Override
+    public void insert(int index, E e) {
+        if (index > capacity || index < 0) {
+            throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
+        }
 
-		for (int i = 0; i < elements.length; i++) {
-			if (i == index && i + 2 < elements.length) {
-				this.elements[i + 1] = this.elements[i];
-				this.elements[i] = e;
-			}
-		}
-		this.current++;
-	}
+        for (int i = 0; i < elements.length; i++) {
+            if (i == index && i + 2 < elements.length) {
+                this.elements[i + 1] = this.elements[i];
+                this.elements[i] = e;
+            }
+        }
+        this.current++;
+    }
 
-	@Override
-	public boolean contains(Object obj) {
-		for (Object element : elements) {
-			if (element.equals(obj)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    @Override
+    public boolean contains(Object obj) {
+        for (Object element : elements) {
+            if (element.equals(obj)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	@Override
-	public E next() {
-		return null;
-	}
+    @Override
+    public E next() {
+        return null;
+    }
 
-	@Override
-	public int size() {
-		return this.current;
-	}
+    @Override
+    public int size() {
+        return this.current;
+    }
 
-	@Override
-	public boolean isEmpty() {
-		return size() == 0;
-	}
+    @Override
+    public boolean isEmpty() {
+        return size() == 0;
+    }
 
-	@Override
-	public void clear() {
-		for (int i = 0; i < size(); i++)
-			elements[i] = null;
-		this.current = 0;
-	}
+    @Override
+    public void clear() {
+        for (int i = 0; i < size(); i++)
+            elements[i] = null;
+        this.current = 0;
+    }
 
-	@Override
-	public MyIterator<E> iterator() {
-		return null;
-	}
+    @Override
+    public MyIterator<E> iterator() {
+        return null;
+    }
 
-	@Override
-	public boolean hasNext() {
-		return false;
-	}
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
 
 }
