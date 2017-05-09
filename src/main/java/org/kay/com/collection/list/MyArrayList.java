@@ -68,11 +68,6 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
 	}
 
 	@Override
-	public E previous() {
-		return null;
-	}
-
-	@Override
 	public void add(E e) {
 		index();
 		this.elements[current] = e;
