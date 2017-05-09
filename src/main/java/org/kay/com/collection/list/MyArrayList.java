@@ -26,16 +26,16 @@ import org.kay.com.collection.MyIterator;
  */
 public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
 
-    /* array default size */
+    /* 数组默认长度 */
     private static final int DEFAULT_SIZE = 10;
 
-    /* object array */
+    /* 数组 */
     private transient Object[] elements;
 
-    /* array pointer */
+    /* 数组指针 */
     private int capacity;
 
-    /* the current record */
+    /* 当前记录 */
     private int current;
 
     /**
