@@ -140,6 +140,12 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
         this.current--;
     }
 
+    /**
+     * 按照游标新增对象。
+     *
+     * @param index 游标
+     * @param e 新增对象
+     */
     @Override
     public void insert(int index, E e) {
         if (index > capacity || index < 0) {
@@ -155,6 +161,12 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
         this.current++;
     }
 
+    /**
+     * 判断是否包含对象。
+     *
+     * @param obj 对象
+     * @return 是否包含
+     */
     @Override
     public boolean contains(Object obj) {
         for (Object element : elements) {
@@ -170,16 +182,29 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
         return null;
     }
 
+    /**
+     * 数组尺寸。
+     *
+     * @return 数组尺寸
+     */
     @Override
     public int size() {
         return this.current;
     }
 
+    /**
+     * 数组是否为空。
+     *
+     * @return 是否为空
+     */
     @Override
     public boolean isEmpty() {
         return size() == 0;
     }
 
+    /**
+     * 清除。
+     */
     @Override
     public void clear() {
         for (int i = 0; i < size(); i++)
