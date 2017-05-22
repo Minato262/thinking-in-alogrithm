@@ -222,4 +222,24 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
         return false;
     }
 
+    private class ArrayListIterator implements MyIterator<E> {
+
+        private int current = 0;
+
+        @Override
+        public boolean hasNext() {
+            return current < size();
+        }
+
+        @Override
+        public E next() {
+            return (E) elements[current++];
+        }
+
+        @Override
+        public void remove() {
+            MyArrayList.this.remove(--current);
+        }
+    }
+
 }
