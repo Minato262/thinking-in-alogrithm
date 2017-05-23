@@ -8,6 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * {@link MyList} Test.
+ *
  * @author kay
  * @version v0.0.1
  */
