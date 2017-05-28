@@ -19,17 +19,18 @@ package org.kay.com.cocurrent.thread;
  * @author kay
  * @version v0.0.1
  */
-public class ThreadTest {
+public class ThreadSleepTest {
 
     public static void main(String[] args) {
-        MyRunnable myRunnable = new MyRunnable();
+        MySleepRunnable myRunnable = new MySleepRunnable();
         Thread thread = new Thread(myRunnable);
+
         for (int i = 0; i < 100; i++) {
             System.out.println(Thread.currentThread().getName() + " " + i);
             if (i == 30) {
                 thread.start();
                 try {
-                    thread.join();
+                    Thread.sleep(1);
                 }
                 catch (InterruptedException e) {
                     e.printStackTrace();
@@ -39,7 +40,8 @@ public class ThreadTest {
     }
 }
 
-class MyRunnable implements Runnable {
+class MySleepRunnable implements Runnable {
+
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
