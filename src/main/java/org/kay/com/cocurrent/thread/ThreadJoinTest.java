@@ -16,6 +16,8 @@
 package org.kay.com.cocurrent.thread;
 
 /**
+ * Join Test.
+ *
  * @author kay
  * @version v0.0.1
  */
@@ -41,6 +43,7 @@ public class ThreadJoinTest {
 }
 
 class MyJoinRunnable implements Runnable {
+
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
