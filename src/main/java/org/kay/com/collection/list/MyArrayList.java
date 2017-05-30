@@ -41,7 +41,7 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
     /**
      * 默认构造器。
      */
-    public MyArrayList() {
+    MyArrayList() {
         this(DEFAULT_SIZE);
     }
 
@@ -70,6 +70,11 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
         }
     }
 
+    @Override
+    public void add(int index, E e) {
+
+    }
+
     /**
      * 根据游标获取数据组数据。
      *
@@ -82,6 +87,11 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
             throw new ArrayIndexOutOfBoundsException("Array index out of range: " + index);
         }
         return (E) this.elements[index];
+    }
+
+    @Override
+    public E set(int index, E newVal) {
+        return null;
     }
 
     /**
@@ -214,7 +224,7 @@ public class MyArrayList<E> extends AbstractList<E> implements MyList<E> {
 
     @Override
     public MyIterator<E> iterator() {
-        return null;
+        return new ArrayListIterator();
     }
 
     @Override

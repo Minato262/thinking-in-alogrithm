@@ -25,7 +25,17 @@ import org.kay.com.collection.AbstractCollection;
 public abstract class AbstractList<E> extends AbstractCollection<E> implements MyList<E> {
 
     @Override
+    public void add(int index, E e) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override
     public E get(int index) {
+        return null;
+    }
+
+    @Override
+    public E set(int index, E newVal) {
         return null;
     }
 
@@ -37,5 +47,10 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements M
     @Override
     public boolean remove(E e) {
         return false;
+    }
+
+    @Override
+    public int size() {
+        return 0;
     }
 }
