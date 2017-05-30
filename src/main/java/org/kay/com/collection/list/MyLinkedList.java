@@ -71,8 +71,8 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
     }
 
     @Override
-    public E get(int idx) {
-        return getNode(idx).data;
+    public E get(int index) {
+        return getNode(index).data;
     }
 
     @Override
@@ -84,8 +84,9 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
     }
 
     @Override
-    public void remove(int idx) {
-        remove(getNode(idx));
+    public void remove(int index) {
+        Node<E> p = getNode(index);
+        remove(p);
     }
 
     private void addBefore(Node<E> p, E x) {
@@ -110,19 +111,21 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
 
     private Node<E> getNode(int index, int lower, int upper) {
         Node<E> p;
-
-        if (index < lower || index > upper)
+        if (index < lower || index > upper) {
             throw new IndexOutOfBoundsException();
+        }
 
         if (index < size() >> 1) {
             p = first.next;
-            for (int i = 0; i < index; i++)
+            for (int i = 0; i < index; i++) {
                 p = p.next;
+            }
         }
         else {
             p = last;
-            for (int i = size(); i > index; i--)
+            for (int i = size(); i > index; i--) {
                 p = p.prev;
+            }
         }
         return p;
     }
@@ -147,7 +150,7 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
     private class LinkedListIterator implements MyIterator<E> {
         private Node<E> current = first.next;
         private int expectedModCount = modCount;
-        private boolean okToRemove = false;
+        private boolean isRemove = false;
 
         @Override
         public boolean hasNext() {
@@ -156,27 +159,31 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
 
         @Override
         public E next() {
-            if (modCount != expectedModCount)
+            if (modCount != expectedModCount) {
                 throw new ConcurrentModificationException();
-            if (!hasNext())
+            }
+            if (!hasNext()) {
                 throw new NoSuchElementException();
+            }
 
-            E nextItem = current.data;
+            E e = current.data;
             current = current.next;
-            okToRemove = true;
-            return nextItem;
+            isRemove = true;
+            return e;
         }
 
         @Override
         public void remove() {
-            if (modCount != expectedModCount)
+            if (modCount != expectedModCount) {
                 throw new ConcurrentModificationException();
-            if (!okToRemove)
+            }
+            if (!isRemove) {
                 throw new IllegalStateException();
+            }
 
             MyLinkedList.this.remove(current.prev);
             expectedModCount++;
-            okToRemove = false;
+            isRemove = false;
         }
     }
 

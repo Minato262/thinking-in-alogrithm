@@ -26,26 +26,23 @@ import org.kay.com.collection.MyIterator;
  */
 public class MyLinkedListTest {
 
-	@Test
-	public void test() {
-		MyLinkedList<String> linked = new MyLinkedList<>();
-		linked.add("www.");
-		linked.add("bw");
-		linked.add(".com");
-		linked.add("s");
-		linked.remove(3);
-		linked.add(".cn");
+    @Test
+    public void test() {
+        MyLinkedList<String> linked = new MyLinkedList<>();
+        linked.add("www.");
+        linked.add("bw");
+        linked.add(".com");
+        linked.add("s");
+        linked.remove(3);
+        linked.add(".cn");
 
-		System.out.println(linked.get(2));
-		System.out.println(linked.set(1, "hello"));
+        System.out.println(linked.get(2));
+        System.out.println(linked.set(1, "hello"));
 
-		printAll(linked.iterator());
-	}
-
-	private static void printAll(MyIterator<String> iterator) {
-		while (iterator.hasNext()) {
-			String item = iterator.next();
-			System.out.print(item);
-		}
-	}
+        MyIterator<String> iterator = linked.iterator();
+        while (iterator.hasNext()) {
+            String item = iterator.next();
+            System.out.print(item);
+        }
+    }
 }
