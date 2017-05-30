@@ -31,9 +31,9 @@ public class MyListTest {
     }
 
     private static long insertTime(List<Integer> list) {
-        long time = System.currentTimeMillis();
+        final long time = System.currentTimeMillis();
         for (int i = 100; i < DEFAULT_SIZE; i++) {
-            list.add(5000, i);
+            list.add(i);
         }
         return System.currentTimeMillis() - time;
     }
@@ -49,5 +49,12 @@ public class MyListTest {
         System.out.println("linked time:" + getTime(linked));
         System.out.println("array insert time:" + insertTime(array));
         System.out.println("linked insert time:" + insertTime(linked));
+    }
+
+    // @Test
+    public void test1() {
+        linked.add(1);
+        linked.add(2);
+        linked.add(3);
     }
 }
