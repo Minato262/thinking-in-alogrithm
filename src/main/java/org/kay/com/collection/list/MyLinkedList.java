@@ -35,14 +35,14 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
     private int modCount = 0;
 
     public MyLinkedList() {
-        doClear();
+        init();
     }
 
     public void clear() {
-        doClear();
+        init();
     }
 
-    private void doClear() {
+    private void init() {
         beginMarker = new Node<E>(null, null, null);
         endMarker = new Node<E>(null, beginMarker, null);
         beginMarker.next = endMarker;
@@ -83,7 +83,7 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
     }
 
     private void addBefore(Node<E> p, E x) {
-        Node<E> newNode = new Node<E>(x, p.prev, p);
+        Node<E> newNode = new Node<>(x, p.prev, p);
         newNode.prev.next = newNode;
         p.prev = newNode;
         theSize++;
@@ -109,7 +109,7 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
         if (idx < lower || idx > upper)
             throw new IndexOutOfBoundsException();
 
-        if (idx < size() / 2) {
+        if (idx < size() >> 1) {
             p = beginMarker.next;
             for (int i = 0; i < idx; i++)
                 p = p.next;

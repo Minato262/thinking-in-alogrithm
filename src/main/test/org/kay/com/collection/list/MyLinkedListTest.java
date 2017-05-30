@@ -18,9 +18,6 @@ package org.kay.com.collection.list;
 import org.junit.Test;
 import org.kay.com.collection.MyIterator;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * {@link MyLinkedList} Test.
  *
@@ -31,18 +28,18 @@ public class MyLinkedListTest {
 
 	@Test
 	public void test() {
-		MyLinkedList<String> marr = new MyLinkedList<String>();
-		marr.add("www.");
-		marr.add("bw");
-		marr.add(".com");
-		marr.add("s");
-		marr.remove(3);
-		marr.add(".cn");
+		MyLinkedList<String> linked = new MyLinkedList<>();
+		linked.add("www.");
+		linked.add("bw");
+		linked.add(".com");
+		linked.add("s");
+		linked.remove(3);
+		linked.add(".cn");
 
-		System.out.println(marr.get(2));
-		System.out.println(marr.set(1, "hello"));
+		System.out.println(linked.get(2));
+		System.out.println(linked.set(1, "hello"));
 
-		printAll(marr.iterator());
+		printAll(linked.iterator());
 	}
 
 	private static void printAll(MyIterator<String> iterator) {
