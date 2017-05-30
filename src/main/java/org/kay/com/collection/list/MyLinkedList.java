@@ -61,8 +61,8 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
     }
 
     @Override
-    public void add(E x) {
-        add(size(), x);
+    public void add(E e) {
+        add(size(), e);
     }
 
     @Override
@@ -89,8 +89,8 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
         remove(p);
     }
 
-    private void addBefore(Node<E> p, E x) {
-        Node<E> newNode = new Node<>(x, p.prev, p);
+    private void addBefore(Node<E> p, E e) {
+        Node<E> newNode = new Node<>(e, p.prev, p);
         newNode.prev.next = newNode;
         p.prev = newNode;
         size++;
@@ -140,10 +140,10 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
         Node<E> prev;
         Node<E> next;
 
-        Node(E d, Node<E> p, Node<E> n) {
-            data = d;
-            prev = p;
-            next = n;
+        Node(E data, Node<E> prev, Node<E> next) {
+            this.data = data;
+            this.prev = prev;
+            this.next = next;
         }
     }
 

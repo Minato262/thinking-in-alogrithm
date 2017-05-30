@@ -51,7 +51,7 @@ public class MyListTest {
         System.out.println("linked insert time:" + insertTime(linked));
     }
 
-    // @Test
+    @Test
     public void test1() {
         linked.add(1);
         linked.add(2);
