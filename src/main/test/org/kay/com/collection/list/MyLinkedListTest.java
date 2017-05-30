@@ -15,6 +15,9 @@
  */
 package org.kay.com.collection.list;
 
+import org.junit.Test;
+import org.kay.com.collection.MyIterator;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +29,26 @@ import java.util.Map;
  */
 public class MyLinkedListTest {
 
+	@Test
 	public void test() {
-		Map<String, String> map = new HashMap<String, String>();
+		MyLinkedList<String> marr = new MyLinkedList<String>();
+		marr.add("www.");
+		marr.add("bw");
+		marr.add(".com");
+		marr.add("s");
+		marr.remove(3);
+		marr.add(".cn");
+
+		System.out.println(marr.get(2));
+		System.out.println(marr.set(1, "hello"));
+
+		printAll(marr.iterator());
+	}
+
+	private static void printAll(MyIterator<String> iterator) {
+		while (iterator.hasNext()) {
+			String item = iterator.next();
+			System.out.print(item);
+		}
 	}
 }

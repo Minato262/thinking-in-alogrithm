@@ -17,6 +17,9 @@ package org.kay.com.collection.list;
 
 import org.kay.com.collection.MyIterator;
 
+import java.util.ConcurrentModificationException;
+import java.util.NoSuchElementException;
+
 /**
  * My Linked List.
  *
@@ -26,100 +29,101 @@ import org.kay.com.collection.MyIterator;
  */
 public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
 
-    private transient Node<E> start;
+    private transient Node<E> beginMarker;
+    private transient Node<E> endMarker;
+    private int theSize;
+    private int modCount = 0;
 
-    private transient Node<E> end;
-
-    private int current;
-
-    private int capacity;
-
-    @Override
-    public E get(int index) {
-        return null;
+    public MyLinkedList() {
+        doClear();
     }
 
-    @Override
-    public E previous() {
-        return null;
+    public void clear() {
+        doClear();
     }
 
-    @Override
-    public void add(E e) {
+    private void doClear() {
+        beginMarker = new Node<E>(null, null, null);
+        endMarker = new Node<E>(null, beginMarker, null);
+        beginMarker.next = endMarker;
 
+        theSize = 0;
+        modCount++;
     }
 
-    @Override
-    public boolean remove(E e) {
-        return false;
-    }
-
-    @Override
-    public void remove() {
-
-    }
-
-    @Override
-    public void remove(int index) {
-
-    }
-
-    @Override
-    public void insert(int index, E e) {
-
-    }
-
-    @Override
-    public boolean contains(Object obj) {
-        return false;
-    }
-
-    @Override
     public int size() {
-        return -1;
+        return theSize;
     }
 
-    @Override
     public boolean isEmpty() {
         return size() == 0;
     }
 
-    @Override
-    public void clear() {
-
+    public void add(E x) {
+        add(size(), x);
     }
 
-    @Override
+    public void add(int idx, E x) {
+        addBefore(getNode(idx, 0, size()), x);
+    }
+
+    public E get(int idx) {
+        return getNode(idx).data;
+    }
+
+    public E set(int index, E newVal) {
+        Node<E> p = getNode(index);
+        E oldVal = p.data;
+        p.data = newVal;
+        return oldVal;
+    }
+
+    public void remove(int idx) {
+        remove(getNode(idx));
+    }
+
+    private void addBefore(Node<E> p, E x) {
+        Node<E> newNode = new Node<E>(x, p.prev, p);
+        newNode.prev.next = newNode;
+        p.prev = newNode;
+        theSize++;
+        modCount++;
+    }
+
+    private E remove(Node<E> p) {
+        p.prev.next = p.next;
+        p.next.prev = p.prev;
+        theSize--;
+        modCount++;
+
+        return p.data;
+    }
+
+    private Node<E> getNode(int idx) {
+        return getNode(idx, 0, size() - 1);
+    }
+
+    private Node<E> getNode(int idx, int lower, int upper) {
+        Node<E> p;
+
+        if (idx < lower || idx > upper)
+            throw new IndexOutOfBoundsException();
+
+        if (idx < size() / 2) {
+            p = beginMarker.next;
+            for (int i = 0; i < idx; i++)
+                p = p.next;
+        }
+        else {
+            p = endMarker;
+            for (int i = size(); i > idx; i--)
+                p = p.prev;
+        }
+        return p;
+    }
+
     public MyIterator<E> iterator() {
-        return new NodeIterator();
-    }
-
-    @Override
-    public boolean hasNext() {
-        return false;
-    }
-
-    @Override
-    public E next() {
-        return null;
-    }
-
-    private class NodeIterator implements MyIterator<E> {
-
-        @Override
-        public boolean hasNext() {
-            return false;
-        }
-
-        @Override
-        public E next() {
-            return null;
-        }
-
-        @Override
-        public void remove() {
-
-        }
+        return new LinkedListIterator();
     }
 
     private static class Node<E> {
@@ -127,10 +131,43 @@ public class MyLinkedList<E> extends AbstractList<E> implements MyList<E> {
         Node<E> prev;
         Node<E> next;
 
-        public Node(E data, Node<E> prev, Node<E> next) {
-            this.data = data;
-            this.prev = prev;
-            this.next = next;
+        Node(E d, Node<E> p, Node<E> n) {
+            data = d;
+            prev = p;
+            next = n;
+        }
+    }
+
+    private class LinkedListIterator implements MyIterator<E> {
+        private Node<E> current = beginMarker.next;
+        private int expectedModCount = modCount;
+        private boolean okToRemove = false;
+
+        public boolean hasNext() {
+            return current != endMarker;
+        }
+
+        public E next() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+            if (!hasNext())
+                throw new NoSuchElementException();
+
+            E nextItem = current.data;
+            current = current.next;
+            okToRemove = true;
+            return nextItem;
+        }
+
+        public void remove() {
+            if (modCount != expectedModCount)
+                throw new ConcurrentModificationException();
+            if (!okToRemove)
+                throw new IllegalStateException();
+
+            MyLinkedList.this.remove(current.prev);
+            expectedModCount++;
+            okToRemove = false;
         }
     }
 
