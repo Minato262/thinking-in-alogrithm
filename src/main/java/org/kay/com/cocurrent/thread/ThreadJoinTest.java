@@ -26,7 +26,6 @@ public class ThreadJoinTest {
     public static void main(String[] args) {
         MyJoinRunnable myRunnable = new MyJoinRunnable();
         Thread thread = new Thread(myRunnable);
-
         for (int i = 0; i < 100; i++) {
             System.out.println(Thread.currentThread().getName() + " " + i);
             if (i == 30) {

@@ -26,7 +26,6 @@ public class ThreadSleepTest {
     public static void main(String[] args) {
         MySleepRunnable myRunnable = new MySleepRunnable();
         Thread thread = new Thread(myRunnable);
-
         for (int i = 0; i < 100; i++) {
             System.out.println(Thread.currentThread().getName() + " " + i);
             if (i == 30) {

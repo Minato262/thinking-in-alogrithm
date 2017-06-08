@@ -18,6 +18,8 @@ package org.kay.com.algorithm;
 import java.util.Random;
 
 /**
+ * URL Random.
+ *
  * @author kay
  * @version v0.0.1
  */
