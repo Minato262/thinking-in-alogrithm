@@ -18,16 +18,16 @@ public class SegmentLock<T> {
         init(null, false);
     }
 
-    public SegmentLock(Integer counts, boolean fair) {
-        init(counts, fair);
+    public SegmentLock(Integer counts, boolean isFair) {
+        init(counts, isFair);
     }
 
-    private void init(Integer counts, boolean fair) {
+    private void init(Integer counts, boolean isFair) {
         if (counts != null) {
             segments = counts;
         }
         for (int i = 0; i < segments; i++) {
-            lockMap.put(i, new ReentrantLock(fair));
+            lockMap.put(i, new ReentrantLock(isFair));
         }
     }
 

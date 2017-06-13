@@ -18,8 +18,8 @@ public class HashLock<T> {
     public HashLock() {
     }
 
-    public HashLock(boolean fair) {
-        isFair = fair;
+    public HashLock(boolean isFair) {
+        this.isFair = isFair;
     }
 
     public void lock(T key) {
