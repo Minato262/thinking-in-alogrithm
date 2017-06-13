@@ -24,8 +24,8 @@ package org.kay.com.cocurrent.thread;
 public class ThreadSleepTest {
 
     public static void main(String[] args) {
-        MySleepRunnable myRunnable = new MySleepRunnable();
-        Thread thread = new Thread(myRunnable);
+        MySleepRunnable runnable = new MySleepRunnable();
+        Thread thread = new Thread(runnable);
         for (int i = 0; i < 100; i++) {
             System.out.println(Thread.currentThread().getName() + " " + i);
             if (i == 30) {
