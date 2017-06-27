@@ -10,5 +10,5 @@ public interface InterfaceTest1 {
 
     void setParams(List<AsynParam> params);
 
-    ResultWrap1 createAsyn();
+    ResultWrap createAsyn();
 }
