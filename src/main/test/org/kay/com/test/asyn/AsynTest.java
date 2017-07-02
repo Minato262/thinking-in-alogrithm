@@ -19,10 +19,10 @@ public class AsynTest {
         map.put("3", 1L);
 
         Result<Map> json = new Result<>(1, map);
-        Result<Map> result = (Result) json;
+        Result<Map> result = (Result<Map>) json;
         Map id = result.getData();
         System.out.println(result.getInt());
-        System.out.println(id.get("1"));
+        System.out.println(id.get("2"));
         System.out.println(map);
     }
 }
