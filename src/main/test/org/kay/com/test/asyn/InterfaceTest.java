@@ -14,7 +14,7 @@ public interface InterfaceTest<V> {
 
     void setParam(Map<String, String> param);
 
-    void setHote(boolean isHote);
+    void setHost(boolean isHost);
 
     void setHandle(Handler handle);
 
