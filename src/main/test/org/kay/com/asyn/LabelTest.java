@@ -8,7 +8,7 @@ import java.util.Random;
  * @author kay
  * @version v0.0.1
  */
-public class TestLable {
+public class LabelTest {
 
     @Test
     public void test1() {
