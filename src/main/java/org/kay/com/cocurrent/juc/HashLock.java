@@ -16,6 +16,7 @@ public class HashLock<T> {
     private final ConcurrentHashMap<T, LockInfo> lockMap = new ConcurrentHashMap<>();
 
     public HashLock() {
+        //
     }
 
     public HashLock(boolean isFair) {

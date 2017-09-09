@@ -1,4 +1,4 @@
-package org.kay.com.test;
+package org.kay.com.asyn;
 
 import org.junit.Test;
 
