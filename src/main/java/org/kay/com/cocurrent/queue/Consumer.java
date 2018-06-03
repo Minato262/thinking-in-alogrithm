@@ -19,9 +19,6 @@ public class Consumer implements Runnable {
     public void run() {
         while (!queue.isEmpty()) {
             Bread bread = queue.poll();
-            if (bread == null) {
-                break;
-            }
             System.out.println("consumer:" + bread);
 
             System.out.println("==>山治开始做 " + bread);
