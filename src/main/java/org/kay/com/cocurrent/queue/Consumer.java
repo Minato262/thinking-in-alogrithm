@@ -1,7 +1,6 @@
 package org.kay.com.cocurrent.queue;
 
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author kay
@@ -11,7 +10,7 @@ public class Consumer implements Runnable {
 
     private final Queue<Bread> queue;
 
-    public Consumer(ArrayBlockingQueue<Bread> queue) {
+    public Consumer(Queue<Bread> queue) {
         this.queue = queue;
     }
 

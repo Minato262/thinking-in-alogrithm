@@ -17,17 +17,12 @@ public class Producer implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 3; i++) {
-            try {
-                Bread bread = new Bread();
-                queue.add(bread);
-                System.out.println("Producer:" + bread);
+            Bread bread = new Bread();
+            queue.add(bread);
+            System.out.println("Producer:" + bread);
 
-                System.out.println("-->路飞拿到 " + bread);
-                System.out.println("-->路飞吃完 " + bread);
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
+            System.out.println("-->路飞拿到 " + bread);
+            System.out.println("-->路飞吃完 " + bread);
         }
     }
 }
