@@ -1,6 +1,6 @@
 package org.kay.com.cocurrent.queue;
 
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.Queue;
 
 /**
  * @author kay
@@ -8,24 +8,24 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class Producer implements Runnable {
 
-    private final ArrayBlockingQueue<Bread> queue;
+    private final Queue<Bread> queue;
 
-    public Producer(ArrayBlockingQueue<Bread> queue){
+    public Producer(Queue<Bread> queue) {
         this.queue = queue;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 10 ;i++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 Bread bread = new Bread();
-                queue.put(bread);
+                queue.add(bread);
                 System.out.println("Producer:" + bread);
 
                 System.out.println("-->路飞拿到 " + bread);
                 System.out.println("-->路飞吃完 " + bread);
             }
-            catch (InterruptedException e) {
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }

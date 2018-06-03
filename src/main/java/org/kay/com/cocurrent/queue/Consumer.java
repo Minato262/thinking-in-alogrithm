@@ -1,5 +1,6 @@
 package org.kay.com.cocurrent.queue;
 
+import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
@@ -8,25 +9,23 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class Consumer implements Runnable {
 
-    private final ArrayBlockingQueue<Bread> queue;
+    private final Queue<Bread> queue;
 
-    public Consumer(ArrayBlockingQueue<Bread> queue){
+    public Consumer(ArrayBlockingQueue<Bread> queue) {
         this.queue = queue;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 10 ;i++) {
-            try {
-                Bread bread = queue.take();
-                System.out.println("consumer:" + bread);
+        while (!queue.isEmpty()) {
+            Bread bread = queue.poll();
+            if (bread == null) {
+                break;
+            }
+            System.out.println("consumer:" + bread);
 
-                System.out.println("==>山治开始做 " + bread);
-                System.out.println("==>山治做好了 " + bread);
-            }
-            catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            System.out.println("==>山治开始做 " + bread);
+            System.out.println("==>山治做好了 " + bread);
         }
     }
 }
