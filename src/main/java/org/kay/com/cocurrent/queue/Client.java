@@ -14,6 +14,7 @@ public class Client {
         new Thread(new Producer(queue)).start();
         Thread.sleep(1000);
         new Thread(new Consumer(queue)).start();
+        new Thread(new Consumer(queue)).start();
     }
 
 }
