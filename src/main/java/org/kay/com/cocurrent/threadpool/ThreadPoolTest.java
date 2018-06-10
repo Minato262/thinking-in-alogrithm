@@ -19,8 +19,14 @@ public class ThreadPoolTest implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName());
-        System.out.println(i);
+        try {
+            System.out.println(Thread.currentThread().getName());
+            System.out.println(i);
+            Thread.sleep(100);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
