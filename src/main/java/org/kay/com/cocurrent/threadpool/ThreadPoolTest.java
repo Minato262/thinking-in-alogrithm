@@ -1,9 +1,6 @@
 package org.kay.com.cocurrent.threadpool;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author kay
@@ -31,11 +28,10 @@ public class ThreadPoolTest implements Runnable {
 
     public static void main(String[] args) {
         BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 6, 1, TimeUnit.DAYS, queue);
+        ExecutorService executor = new ThreadPoolExecutor(2, 6, 1, TimeUnit.MICROSECONDS, queue);
         for (int i = 0; i < 10; i++) {
             executor.execute(new ThreadPoolTest(i));
-            int threadSize = queue.size();
-            System.out.println("线程队列大小为-->" + threadSize);
+            System.out.println("线程队列大小为-->" + queue.size());
         }
         executor.shutdown();
     }
