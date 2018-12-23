@@ -35,7 +35,7 @@ public class FingerGuessingGame {
         int c = new Random().nextInt(3);
         int x = (u - c + 3) % 3;
         out.printf("你出的是：%s, 电脑出的是：%s,\n猜拳游戏结束！\n%s\n", FINGER_GUESS[u],
-                FINGER_GUESS[c],
-                FINGER_ENDING[x]);
+                                                                     FINGER_GUESS[c],
+                                                                     FINGER_ENDING[x]);
     }
 }

@@ -28,6 +28,18 @@ import static java.lang.System.out;
  */
 public class BinarySearch {
 
+    public static void main(String[] args) {
+        final int[] binaryArray = {1, 2, 5, 4, 3, 7, 7, 6, 8, 7, 8, 9, 10};
+        final int   binaryKey   = 8;    // Read key, print if not in binaryArray.
+
+        print(new int[]{binaryKey}, "The value of the key: ");
+
+        Arrays.sort(binaryArray);
+        print(binaryArray, "A sorted array of int values:");
+        print(new int[]{rankOne(binaryKey, binaryArray)}, "The value of the rank: ");
+        print(new int[]{rankTwo(binaryKey, binaryArray)}, "The value of the rank: ");
+    }
+
     private static int rankOne(int key, int[] srcArray) {
         // Array must be sorted.
         int low  = 0;
@@ -62,17 +74,5 @@ public class BinarySearch {
             out.print(anArray + " ");
         }
         out.println();
-    }
-
-    public static void main(String[] args) {
-        final int[] binaryArray = {1, 2, 5, 4, 3, 7, 7, 6, 8, 7, 8, 9, 10};
-        final int   binaryKey   = 8;    // Read key, print if not in binaryArray.
-
-        print(new int[]{binaryKey}, "The value of the key: ");
-
-        Arrays.sort(binaryArray);
-        print(binaryArray, "A sorted array of int values:");
-        print(new int[]{rankOne(binaryKey, binaryArray)}, "The value of the rank: ");
-        print(new int[]{rankTwo(binaryKey, binaryArray)}, "The value of the rank: ");
     }
 }
