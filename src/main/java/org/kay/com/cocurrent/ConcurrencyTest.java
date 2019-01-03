@@ -46,7 +46,7 @@ public class ConcurrencyTest {
         long start = System.currentTimeMillis();
         int a = 0;
         for (long i = 0; i < count; i++) {
-            a+=5;
+            a += 5;
         }
 
         int b = 0;
