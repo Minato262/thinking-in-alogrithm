@@ -33,8 +33,7 @@ public class Solution {
     }
 
     /**
-     * Runtime: 22 ms
-     * Memory: 38.5 MB
+     * Runtime: 22 ms, Memory: 38.5 MB
      */
     private static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
@@ -49,8 +48,7 @@ public class Solution {
     }
 
     /**
-     * Runtime: 3 ms
-     * Memory: 38.9 MB
+     * Runtime: 3 ms, Memory: 38.9 MB
      */
     private static int[] twoSum1(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>(2);
