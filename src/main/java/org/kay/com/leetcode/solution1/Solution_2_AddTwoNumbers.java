@@ -1,4 +1,4 @@
-package org.kay.com.leetcode;
+package org.kay.com.leetcode.solution1;
 
 /**
  * 2_Add Two Numbers
