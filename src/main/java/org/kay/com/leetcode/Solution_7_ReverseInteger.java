@@ -24,11 +24,40 @@ package org.kay.com.leetcode;
  */
 public class Solution_7_ReverseInteger {
 
-    public static void main() {
+    public static void main(String[] args) {
+        int x = reverse(123);
+        System.out.println(x);
 
+        x = reverse(120);
+        System.out.println(x);
+
+        x = reverse(-1);
+        System.out.println(x);
+
+        x = reverse(-123);
+        System.out.println(x);
+
+        x = reverse(-120);
+        System.out.println(x);
     }
 
-    private int reverse(int x) {
-        return 0;
+    private static int reverse(int x) {
+        final int low = -2147483648, high = 2147483647;
+        long result = 0;
+        boolean flag = false;
+        if (x < 0) {
+            flag = true;
+        }
+
+        while (x != 0) {
+            result = result * 10 + Math.abs(x % 10);
+            x /= 10;
+        }
+        if ((-result) < low || result > high) {
+            return 0;
+        }
+        else {
+            return flag ? (int) (-result) : (int) result;
+        }
     }
 }
