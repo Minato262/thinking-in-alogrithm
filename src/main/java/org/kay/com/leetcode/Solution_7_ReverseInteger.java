@@ -44,10 +44,7 @@ public class Solution_7_ReverseInteger {
     private static int reverse(int x) {
         final int low = -2147483648, high = 2147483647;
         long result = 0;
-        boolean flag = false;
-        if (x < 0) {
-            flag = true;
-        }
+        boolean flag = x < 0;
 
         while (x != 0) {
             result = result * 10 + Math.abs(x % 10);
