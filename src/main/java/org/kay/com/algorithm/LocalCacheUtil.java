@@ -108,7 +108,6 @@ public class LocalCacheUtil {
             LOG.info("setCache:cache is null, {}, {}, {}", key, value, expireTime);
             return false;
         }
-
         if (StringUtils.isEmpty(key) || null == expireTime || 0 == expireTime) {
             LOG.info("setCache:params is not ok, {}, {}, {}", key, value, expireTime);
             return false;
