@@ -2,7 +2,7 @@ package org.kay.com.leetcode.solution06;
 
 public class Solution_53_MaxSubArray {
 
-    public int maxSubArray(int[] nums) {
+    public static int maxSubArray(int[] nums) {
         //max就是上面的dp[i]
         int max = nums[0];
         //因为这个dp[i]老是变，所以比如你dp[4]是8 dp[5]就变成-7了，所以需要res保存一下
